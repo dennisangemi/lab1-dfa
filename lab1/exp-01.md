@@ -8,15 +8,15 @@
 
 Consultare il prof. Cherubini per concordare struttura relazione
 
-# Introduzione
+## Introduzione
 
 lalala
 
-# Scopo dell'esperienza
+## Scopo dell'esperienza
 
 Calcolare il momento di inerzia della ruota di un carrello che si muove su una rotaia inclinata di moto rettilineo uniformemente accelerato
 
-# Cenni teorici
+## Cenni teorici
 
 Momento di inerzia lala
 
@@ -50,13 +50,13 @@ dove
 
 <img src="https://latex.codecogs.com/gif.latex?\inline&space;R"/> è il raggio della ruota grande
 
-# Apparato sperimentale
+## Apparato sperimentale
 
 L'apparato sperimentale è costituito da una rotaia inclinata sulla quale bla bla
 
 ⚠️ Inserire immagine
 
-# Strumenti di misura
+## Strumenti di misura
 
 Durante l'esecuazione dell'esperimento sono stati utilizzati i seguenti strumenti: (specificare sensibilità)
 
@@ -88,11 +88,11 @@ dd2=str.sensibilita(4);
 dt=str.sensibilita(5);
 ```
 
-# Descrizione esperienza
+## Descrizione esperienza
 
 lala
 
-# Dati sperimentali ed elaborazione
+## Dati sperimentali ed elaborazione
 
 L'acquisizione dei dati sperimentali avviene bla bla
 
@@ -208,7 +208,7 @@ Se teniamo per buono lo scopo sopraindicato, abbiamo raccolto dei dati inutili:
    -  Altezza iniziale e finale 
    -  Spazio iniziale e finale 
 
-# Propagazione degli errori
+## Propagazione degli errori
 
 ⚠️Da contro️llare
 
