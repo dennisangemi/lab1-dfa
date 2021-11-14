@@ -5,6 +5,16 @@
 > Dennis Angemi, Giuseppe Di Silvestre, Federica Ingrassia
 
 
+| Strumento               | Sensibilità | Unità di misura |
+|-------------------------|-------------|-----------------|
+| Bilancia                | 0.0001      | Kg              |
+| Flessometro             | 0.001       | m               |
+| Calibro cinquantesimale | 0.00005     | m               |
+| Calibro ventesimale     | 0.00002     | m               |
+| Cronometro              | 0.001       | s               |
+
+
+
 
 | index | t1    | t2    |
 |-------|-------|-------|
