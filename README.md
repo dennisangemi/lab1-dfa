@@ -11,7 +11,7 @@ In questo repo verranno caricati i dati sperimentali e gli script realizzati nel
 │   ├── 📄report.md
 │   ├── 📄livescript.mlx
 │   └── 📄script.m
-└── 📂exp-2
+└── 📂exp-n
     ├── 📄experimental-data.csv
     ├── 📄report.md
     ├── 📄livescript.mlx
