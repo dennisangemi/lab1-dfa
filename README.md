@@ -20,4 +20,10 @@ In questo repo verranno caricati i dati sperimentali e gli script realizzati nel
 Da definire
 
 ## Author
-Dennis Angemi
+**Dennis Angemi**
+
+📫 How to reach me:
+  - [Email](mailto:dennisangemi@gmail.com)
+  - [Twitter](https://twitter.com/dennisangemi)
+  - [Telegram](https://t.me/dennisangemi)
+  - [Instagram](http://instagram.com/dennisangemi)
