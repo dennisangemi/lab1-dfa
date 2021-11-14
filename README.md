@@ -9,10 +9,12 @@ In questo repo verranno caricati i dati sperimentali e gli script realizzati nel
 ├── 📂exp-1
 │   ├── 📄experimental-data.csv
 │   ├── 📄report.md
+│   ├── 📄livescript.mlx
 │   └── 📄script.m
 └── 📂exp-2
     ├── 📄experimental-data.csv
     ├── 📄report.md
+    ├── 📄livescript.mlx
     └── 📄script.m
 ```
 
