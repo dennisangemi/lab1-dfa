@@ -19,7 +19,7 @@ In questo repo verranno caricati i dati sperimentali e gli script realizzati nel
 ```
 
 ## Licenza
-Da definire
+CC-BY?
 
 ## Author
 **Dennis Angemi**
