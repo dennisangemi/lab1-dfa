@@ -71,13 +71,13 @@ Durante l'esecuazione dell'esperimento sono stati utilizzati i seguenti strument
 str=readtable("https://docs.google.com/spreadsheets/d/e/2PACX-1vSC3Gk4j3Y8cfINnphnT1vhJcTuift2Doi90v9b_dOSIzSWogT87rn0idNxg6YGJPIPi07q6yoWcgeh/pub?gid=1971590321&single=true&output=csv")
 ```
 
-| |strumento|sensibilita|udm|
-|:--:|:--:|:--:|:--:|
-|1|'Bilancia'|1.000000000000000e-0...|'Kg'|
-|2|'Flessometro'|1.000000000000000e-0...|'m'|
-|3|'Calibro'|5.000000000000000e-0...|'m'|
-|4|'Calibro'|2.000000000000000e-0...|'m'|
-|5|'Cronometro'|1.000000000000000e-0...|'s'|
+| Strumento               | Sensibilità | Unità di misura |
+|-------------------------|-------------|-----------------|
+| Bilancia                | 0.0001      | Kg              |
+| Flessometro             | 0.001       | m               |
+| Calibro cinquantesimale | 0.00005     | m               |
+| Calibro ventesimale     | 0.00002     | m               |
+| Cronometro              | 0.001       | s               |
 
 ```matlab:Code
 % Definisco le incertezze
