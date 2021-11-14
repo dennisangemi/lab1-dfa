@@ -1,1 +1,0 @@
-Cartella laboratorio 1
