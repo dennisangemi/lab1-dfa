@@ -13,6 +13,8 @@ figures/img
 sc80k44p8m8.html
 figures/experimental-data-1
 bcoj9c70gbg.html
+figures/experimental-data-2
+6v8vaj1dq68.html
 idpnqha9qq8.html
 dmlo99blvc8.html
 snjakvcl69.html
