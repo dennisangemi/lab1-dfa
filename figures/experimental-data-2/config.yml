@@ -18,4 +18,5 @@ grid:
     - 1
     url: "/users/446429/articles/545668/master/file/figures/experimental-data-2/experimental-data-2.csv"
     folder_url: "/users/446429/articles/545668/master/folder/figures/experimental-data-2"
+    treatFirstLineAsHeader: true
 external-data-url: https://raw.githubusercontent.com/dennisangemi/lab1-dfa/main/exp-1/experimental-data-2.csv
