@@ -5,6 +5,8 @@ os0pbsh518o.tex
 5jop3tnbm3g.html
 qn0312ie9lo.html
 qjd923lso58.html
+ksui6nii54g.tex
+ungnkcb852o.html
 figures/img
 sc80k44p8m8.html
 c3betuoturo.md
