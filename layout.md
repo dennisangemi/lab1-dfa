@@ -13,7 +13,6 @@ figures/img
 sc80k44p8m8.html
 l0fdcqdpm4o.md
 6v8vaj1dq68.html
-09jjvrp1mgo.html
 idpnqha9qq8.html
 dmlo99blvc8.html
 snjakvcl69.html
