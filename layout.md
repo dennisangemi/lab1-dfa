@@ -2,8 +2,6 @@ untitled.html
 ccl5fe49pro.html
 apjvjs6l1o.html
 dch5ghn26bo.html
-4lnfno5qjr8.tex
-2k0mvl0s7sg.tex
 dpsbucvvoso.tex
 5jop3tnbm3g.html
 qn0312ie9lo.html
