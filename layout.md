@@ -12,7 +12,6 @@ sc80k44p8m8.html
 c3betuoturo.md
 crho8qu602o.html
 eonnsds1lc.html
-l0fdcqdpm4o.md
 6v8vaj1dq68.html
 idpnqha9qq8.html
 dmlo99blvc8.html
