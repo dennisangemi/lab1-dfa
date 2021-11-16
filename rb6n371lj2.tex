@@ -1,0 +1,18 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{This is the heading}
+\caption*{\footnotesize Smaller note of table that describes what the table is all about.}
+\begin{tabular}{l*{3}{c}}
+\toprule
+                &\multicolumn{1}{c}{(1)}   &\multicolumn{1}{c}{(2)}   &\multicolumn{1}{c}{(3)}   \\
+                &     Base   &   Robust   &  Cluster   \\
+\midrule
+Size            &-0.000645   &-0.000645   &-0.000645   \\
+                &  (-0.83)   &  (-0.83)   &  (-0.39)   \\
+\midrule
+Observations    &     5035   &     5035   &     5035   \\
+\bottomrule
+\multicolumn{4}{l}{\footnotesize \textit{t} statistics in parentheses}\\
+\multicolumn{4}{l}{\footnotesize * p<0.10, ** p<0.05, *** p<0.01}\\
+\end{tabular}
+\end{table}
