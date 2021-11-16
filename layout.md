@@ -6,6 +6,12 @@ dch5ghn26bo.html
 2k0mvl0s7sg.tex
 dpsbucvvoso.tex
 5jop3tnbm3g.html
+qn0312ie9lo.html
+rujeuokl138.html
+dds9tghsh18.html
+7rggq53u9m.html
+rkpnu4alhg.html
+ubupatup4lo.html
 figures/img
 sc80k44p8m8.html
 dmlo99blvc8.html
