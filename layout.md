@@ -11,6 +11,8 @@ rkpnu4alhg.html
 ubupatup4lo.html
 figures/img
 sc80k44p8m8.html
+9370a440l.md
+crho8qu602o.html
 l0fdcqdpm4o.md
 6v8vaj1dq68.html
 idpnqha9qq8.html
