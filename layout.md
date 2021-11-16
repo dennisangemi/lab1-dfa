@@ -11,7 +11,6 @@ rkpnu4alhg.html
 ubupatup4lo.html
 figures/img
 sc80k44p8m8.html
-figures/experimental-data-1
 bcoj9c70gbg.html
 l0fdcqdpm4o.md
 figures/experimental-data-2
