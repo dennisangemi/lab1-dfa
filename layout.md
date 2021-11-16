@@ -2,6 +2,8 @@ untitled.html
 ccl5fe49pro.html
 apjvjs6l1o.html
 dch5ghn26bo.html
+figures/img
+sc80k44p8m8.html
 dmlo99blvc8.html
 snjakvcl69.html
 ur4l31v1cl.html
