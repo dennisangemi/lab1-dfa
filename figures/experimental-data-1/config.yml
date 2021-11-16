@@ -17,5 +17,3 @@ grid:
     - 1
     - 1
     url: "/users/446429/articles/545668/master/file/figures/experimental-data-1/experimental-data-1.csv"
-    folder_url: "/users/446429/articles/545668/master/folder/figures/experimental-data-1"
-    treatFirstLineAsHeader: true
