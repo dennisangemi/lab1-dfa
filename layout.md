@@ -11,10 +11,8 @@ rkpnu4alhg.html
 ubupatup4lo.html
 figures/img
 sc80k44p8m8.html
-bcoj9c70gbg.html
 l0fdcqdpm4o.md
 6v8vaj1dq68.html
-rb6n371lj2.tex
 09jjvrp1mgo.html
 idpnqha9qq8.html
 dmlo99blvc8.html
