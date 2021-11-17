@@ -3,7 +3,6 @@ ccl5fe49pro.html
 14hn4ndkfd8.html
 figures/diagramma
 kn86dl78lu.html
-49q0245htbg.html
 8fol31ufjho.tex
 jhpae3lmido.html
 d92hep8ifh.html
