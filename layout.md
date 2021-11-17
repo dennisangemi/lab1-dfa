@@ -4,7 +4,6 @@ ccl5fe49pro.html
 figures/diagramma
 kn86dl78lu.html
 8fol31ufjho.tex
-jhpae3lmido.html
 d92hep8ifh.html
 pibe9uuq6m8.html
 os0pbsh518o.tex
