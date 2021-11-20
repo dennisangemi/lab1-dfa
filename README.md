@@ -21,7 +21,7 @@ In questo repo verranno caricati i dati sperimentali e gli script realizzati nel
 ```
 
 ## Licenza
-CC-BY?
+<a href="https://creativecommons.org/licenses/by/4.0/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/CC-BY_icon.svg/640px-CC-BY_icon.svg.png" width="150"/></a>
 
 ## Author
 **Dennis Angemi**
