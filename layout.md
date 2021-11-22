@@ -1,6 +1,5 @@
 abstract.html
 untitled.html
-14hn4ndkfd8.html
 figures/diagramma
 kn86dl78lu.html
 8fol31ufjho.tex
