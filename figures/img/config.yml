@@ -8,7 +8,7 @@ grid:
   rows: 1
   columns: 1
   grid_elements:
-  - path: figures/img/img.png
+  - path: figures/img/apparato-sperimentale.png
     type: static
     from:
     - 1
@@ -17,4 +17,4 @@ grid:
     - 1
     - 1
     folder_url: "/users/446429/articles/545668/master/folder/figures/img"
-    url: "/users/446429/articles/545668/master/file/figures/img/img.png"
+    url: "/users/446429/articles/545668/master/file/figures/img/apparato-sperimentale.png"
