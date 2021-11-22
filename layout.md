@@ -15,7 +15,6 @@ figures/img
 sc80k44p8m8.html
 c3betuoturo.md
 crho8qu602o.html
-jpdvd95o5dg.html
 rsitpu5p6m.html
 hfis4m6c4mg.html
 vq8c18cp8lo.html
