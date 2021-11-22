@@ -9,7 +9,6 @@ pibe9uuq6m8.html
 os0pbsh518o.tex
 5jop3tnbm3g.html
 qn0312ie9lo.html
-ed8ai5rnsvo.html
 figures/img
 sc80k44p8m8.html
 c3betuoturo.md
