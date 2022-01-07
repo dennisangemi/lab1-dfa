@@ -8,12 +8,14 @@ In questo repo verranno caricati i dati sperimentali e gli script realizzati nel
 📂lab1
 ├── 📂exp-1
 │   ├── 📄experimental-data.csv
+│   ├── 📄datapackage.yaml
 │   ├── 📄report.md
 │   ├── 📄report.tex
 │   ├── 📄livescript.mlx
 │   └── 📄script.m
 └── 📂exp-n
     ├── 📄experimental-data.csv
+    ├── 📄datapackage.yaml
     ├── 📄report.md
     ├── 📄report.tex
     ├── 📄livescript.mlx
