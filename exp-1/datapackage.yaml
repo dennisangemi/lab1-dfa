@@ -1,0 +1,54 @@
+# --------
+# metadata: experimental-data-1.csv experimental-data-2.csv
+# --------
+
+profile: data-package
+resources:
+  - encoding: utf-8
+    format: csv
+    hashing: md5
+    name: experimental-data-1
+    path: experimental-data-1.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: index
+          type: integer
+        - name: t1
+          type: number
+          description: Intervallo di tempo misurato in secondi (s) nella configurazione 'ruote libere'
+        - name: t2
+          type: number
+          description: Intervallo di tempo misurato in secondi (s) nella configurazione 'ruote bloccate'
+        - name: incertezza
+          type: number
+          description: Incertezza dello strumento
+        - name: udm
+          title: Unità di misura
+          type: string
+    scheme: file
+  - encoding: utf-8
+    format: csv
+    hashing: md5
+    name: experimental-data-2
+    path: experimental-data-2.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: descrizione
+          type: string
+          description: Descrizione della misura effettuata
+        - name: valore
+          type: number
+          description: Valore della misura effettuata
+        - name: incertezza
+          type: number
+          description: Incertezza della misura effettuata
+        - name: udm
+          title: Unità di misura
+          type: string
+        - name: strumento
+          type: string
+          description: Strumento utilizzato per effettuare la misura
+    scheme: file
+
