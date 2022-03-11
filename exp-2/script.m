@@ -13,6 +13,10 @@ tools=readtable("tools.csv")
 % incertezza
 ds=tools.Sensibilita(1);
 dt=tools.Sensibilita(3);
+dg=0.01;
+
+% costanti
+g=9.81;
 
 % tempi
 t=df2.t;
@@ -138,8 +142,8 @@ end
 horzcat(a,da,rea)
 
 % propagazione errori
-dg= 0.01;
-g=9.81;
+
+
 n=length(t1);
 
 % creating empty array
@@ -169,6 +173,7 @@ end
 % creating output array
 acceleration=string(horzcat(a,da,rea))
 coefficient=string(horzcat(mu,dmu,rec))
+
 % correggere cifre significative output
 %%
 % exporting csv
