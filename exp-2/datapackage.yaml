@@ -1,0 +1,88 @@
+# --------
+# metadata: experimental-data-1.csv experimental-data-2.csv output-data-1.csv output-data-2.csv tools.csv
+# --------
+
+profile: data-package
+resources:
+  - encoding: utf-8
+    format: csv
+    hashing: md5
+    name: experimental-data-1
+    path: experimental-data-1.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: grandezza
+          type: string
+        - name: valore
+          type: number
+        - name: incertezza
+          type: number
+        - name: udm
+          type: string
+    scheme: file
+  - encoding: utf-8
+    format: csv
+    hashing: md5
+    name: experimental-data-2
+    path: experimental-data-2.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: index
+          type: integer
+        - name: massa
+          type: string
+        - name: t
+          type: number
+        - name: inertezza
+          type: number
+        - name: udm
+          type: string
+    scheme: file
+  - encoding: utf-8
+    format: csv
+    hashing: md5
+    name: output-data-1
+    path: output-data-1.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: accelerazione
+          type: number
+        - name: incertezza
+          type: number
+        - name: errore_relativo
+          type: number
+    scheme: file
+  - encoding: utf-8
+    format: csv
+    hashing: md5
+    name: output-data-2
+    path: output-data-2.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: coefficiente_attrito
+          type: number
+        - name: incertezza
+          type: number
+        - name: errore_relativo
+          type: number
+    scheme: file
+  - encoding: utf-8
+    format: csv
+    hashing: md5
+    name: tools
+    path: tools.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: Strumento
+          type: string
+        - name: Sensibilita
+          type: number
+        - name: udm
+          type: string
+    scheme: file
+
