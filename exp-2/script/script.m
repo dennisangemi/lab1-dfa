@@ -4,11 +4,12 @@
 % cleaning
 clc
 clear
+pwd
 
 % importing data
-df1=readtable("experimental-data-1.csv")
-df2=readtable("experimental-data-2.csv")
-tools=readtable("tools.csv")
+df1=readtable("..\data\experimental-data-1.csv")
+df2=readtable("..\data\experimental-data-2.csv")
+tools=readtable("..\data\tools.csv")
 %%
 % incertezza
 ds=tools.Sensibilita(1);
@@ -177,8 +178,8 @@ coefficient=string(horzcat(mu,dmu,rec))
 % correggere cifre significative output
 %%
 % exporting csv
-writetable(array2table(acceleration,'VariableNames',{'accelerazione','incertezza','errore_relativo'}),'output-data-1.csv','Delimiter',',','Encoding','UTF-8')
-writetable(array2table(coefficient,'VariableNames',{'coefficiente_attrito','incertezza','errore_relativo'}),'output-data-2.csv','Delimiter',',','Encoding','UTF-8')
+% writetable(array2table(acceleration,'VariableNames',{'accelerazione','incertezza','errore_relativo'}),'..\data\output-data-1.csv','Delimiter',',','Encoding','UTF-8')
+% writetable(array2table(coefficient,'VariableNames',{'coefficiente_attrito','incertezza','errore_relativo'}),'..\data\output-data-2.csv','Delimiter',',','Encoding','UTF-8')
 
 % exporting mlx2m
 mlxloc = fullfile(pwd,'livescript.mlx');
