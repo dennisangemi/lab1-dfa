@@ -142,27 +142,32 @@ cfr=zeros(lm,1);
 
 for i=1:lm
 
-    % calculating acceleration and coefficient of friction
+    % calculating accelerations
     a(i)=(2.*s)/((tm(i)).^2);
+
+    % calculating coefficient of friction
     mu(i)=tan(rteta)-(a(i)./g.*cos(rteta));
     
     % propagation of uncertainty acceleration
     da(i)=(2.*(ds+(4.*s.*dt)))./(tm(i).^2);
-    rea(i)=(da(i)/a(i))*100;
-
+    
     % propagation of uncertainty coefficient
     dmu(i)=(((2.*ds)/(((cos(rteta)).^2)*sqrt(s.^2-h^2))).*(1-((a(i).*sin(rteta))./g)).*(1+(h./s)))+((2.*(ds+(4.*s.*dt)))./((tm(i).^2).*g.*cos(rteta)))+((a(i).*dg)./((g.^2).*cos(rteta)));
-    rec(i)=(dmu(i)./mu(i))*100;
-
+    
     % rounding values
     cfr(i)=-floor(log10(dmu(i)));
     dmu(i)=round(dmu(i),cfr(i));
     mu(i)=round(mu(i),cfr(i));
-    rec(i)=round(rec(i),2);
     cfra(i)=-floor(log10(da(i)));
     da(i)=round(da(i),cfra(i));
     a(i)=round(a(i),cfra(i));
+    
+    % relative error
+    rea(i)=(da(i)/a(i))*100;
     rea(i)=round(rea(i),2);
+    rec(i)=(dmu(i)./mu(i))*100;
+    rec(i)=round(rec(i),2);
+
 end
 
 % creating output array
