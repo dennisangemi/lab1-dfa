@@ -19,6 +19,7 @@ resources:
         - name: incertezza
           type: number
         - name: udm
+          title: Unità di misura
           type: string
     scheme: file
   - encoding: utf-8
@@ -38,6 +39,7 @@ resources:
         - name: inertezza
           type: number
         - name: udm
+          title: Unità di misura
           type: string
     scheme: file
   - encoding: utf-8
@@ -78,11 +80,12 @@ resources:
     profile: tabular-data-resource
     schema:
       fields:
-        - name: Strumento
+        - name: strumento
           type: string
-        - name: Sensibilita
+        - name: sensibilita
           type: number
         - name: udm
+          title: Unità di misura
           type: string
     scheme: file
 

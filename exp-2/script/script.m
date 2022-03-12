@@ -12,8 +12,8 @@ df2=readtable("..\data\experimental-data-2.csv")
 tools=readtable("..\data\tools.csv")
 %%
 % incertezza
-ds=tools.Sensibilita(1);
-dt=tools.Sensibilita(3);
+ds=tools.sensibilita(1);
+dt=tools.sensibilita(3);
 dg=0.01;
 
 % costanti
@@ -178,12 +178,10 @@ coefficient=string(horzcat(mu,dmu,rec))
 % correggere cifre significative output
 %%
 % exporting csv
-% writetable(array2table(acceleration,'VariableNames',{'accelerazione','incertezza','errore_relativo'}),'..\data\output-data-1.csv','Delimiter',',','Encoding','UTF-8')
-% writetable(array2table(coefficient,'VariableNames',{'coefficiente_attrito','incertezza','errore_relativo'}),'..\data\output-data-2.csv','Delimiter',',','Encoding','UTF-8')
+writetable(array2table(acceleration,'VariableNames',{'accelerazione','incertezza','errore_relativo'}),'..\data\output-data-1.csv','Delimiter',',','Encoding','UTF-8')
+writetable(array2table(coefficient,'VariableNames',{'coefficiente_attrito','incertezza','errore_relativo'}),'..\data\output-data-2.csv','Delimiter',',','Encoding','UTF-8')
 
 % exporting mlx2m
 mlxloc = fullfile(pwd,'livescript.mlx');
 fileout = 'script.m';
 matlab.internal.liveeditor.openAndConvert(mlxloc,fileout);
-%% 
-%
