@@ -6,16 +6,6 @@ In questo repo verranno caricati i dati sperimentali e gli script realizzati nel
 ## Struttura repository
 ```
 📂lab1
-├── 📂exp-1
-│   ├── 📂data
-│   │   ├── 📄datapackage.yaml
-│   │   └── 📄experimental-data.csv
-│   ├── 📂report
-│   │   ├── 📄report.md
-│   │   └── 📄report.tex
-│   └── 📂script
-│       ├── 📄livescript.mlx
-│       └── 📄script.m
 └── 📂exp-n
     ├── 📂data
     │   ├── 📄datapackage.yaml
