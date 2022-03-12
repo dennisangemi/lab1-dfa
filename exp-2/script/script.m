@@ -4,38 +4,99 @@
 % cleaning
 clc
 clear
-pwd
 
 % importing data
 df1=readtable("..\data\experimental-data-1.csv")
 df2=readtable("..\data\experimental-data-2.csv")
 tools=readtable("..\data\tools.csv")
-%%
-% incertezza
+%% defining variables
+
+% uncertainty
 ds=tools.sensibilita(1);
 dt=tools.sensibilita(3);
 dg=0.01;
 
-% costanti
+% creating masses array
+m=unique(df2.massa);
+lm=length(m);
+
+% gravitational acceleration
 g=9.81;
 
 % tempi
-t=df2.t;
-t1=t(1:40,:);
-%histfit(t1m1)
-%hist(tm1)
-
+t1=df2.t(1:40,:);
 t2=df2.t(41:80,:);
-%hist(tm2)
-
 t3=df2.t(81:120,:);
-%hist(tm3)
-
 t4=df2.t(121:160,:);
-%hist(tm4)
-
 t5=df2.t(161:200,:);
-%hist(tm5)
+
+% space
+s1=df1.valore(3);
+s2=df1.valore(4);
+
+% height
+h2=df1.valore(1);
+h1=df1.valore(2);
+
+% general variable
+n=length(t1);
+%% plotting
+
+% histogram
+figure
+title('histogram of t')
+subplot(2,3,1)
+hist(t1)
+title('m1')
+
+subplot(2,3,2)
+hist(t2)
+title('m2')
+
+subplot(2,3,3)
+hist(t3)
+title('m3')
+
+subplot(2,3,4)
+hist(t4)
+title('m4')
+
+subplot(2,3,5)
+hist(t5)
+title('m5')
+
+% scatter plot
+figure
+subplot(2,3,1)
+plot(1:40,t1,".")
+title('m1')
+ylabel('t(s)')
+xlabel('index')
+
+subplot(2,3,2)
+plot(1:40,t2,".")
+title('m2')
+ylabel('t(s)')
+xlabel('index')
+
+subplot(2,3,3)
+plot(1:40,t3,".")
+title('m3')
+ylabel('t(s)')
+xlabel('index')
+
+subplot(2,3,4)
+plot(1:40,t4,".")
+title('m4')
+ylabel('t(s)')
+xlabel('index')
+
+subplot(2,3,5)
+plot(1:40,t5,".")
+title('m5')
+ylabel('t(s)')
+xlabel('index')
+%% calculating
 
 % average time
 tm1=mean(t1);
@@ -44,123 +105,56 @@ tm3=mean(t3);
 tm4=mean(t4);
 tm5=mean(t5);
 
-% creating array
-tm=[tm1,tm2,tm3,tm4,tm5];
+% creating array tm
+tm=[tm1;tm2;tm3;tm4;tm5];
 
 % space
-s1=df1.valore(3);
-s2=df1.valore(4);
 s=s1-s2;
 
 % height
-h2=df1.valore(1);
-h1=df1.valore(2);
 h=h1-h2;
 
 % angle
 rteta=asin(h./s); %rad
 dteta=(180./pi)*rteta; %deg
-
-% plotting times
-figure
-plot(1:40,t1,".")
-title('m1')
-ylabel('t(s)')
-xlabel('index')
-
-figure
-plot(1:40,t2,".")
-title('m2')
-ylabel('t(s)')
-xlabel('index')
-
-figure
-plot(1:40,t3,".")
-title('m3')
-ylabel('t(s)')
-xlabel('index')
-
-figure
-plot(1:40,t4,".")
-title('m4')
-ylabel('t(s)')
-xlabel('index')
-
-figure
-plot(1:40,t5,".")
-title('m5')
-ylabel('t(s)')
-xlabel('index')
-
-% subplot
-% subplot(5,1,1)
-% plot(1:40,tm1,".")
-% title('m1')
-% ylabel('t(s)')
-% xlabel('index')
-% subplot(5,1,2)
-% plot(1:40,tm2,".")
-% title('m2')
-% ylabel('t(s)')
-% xlabel('index')
-% subplot(5,1,3)
-% plot(1:40,tm3,".")
-% title('m3')
-% ylabel('t(s)')
-% xlabel('index')
-% subplot(5,1,4)
-% plot(1:40,tm4,".")
-% title('m4')
-% ylabel('t(s)')
-% xlabel('index')
-% subplot(5,1,5)
-% plot(1:40,tm5,".")
-% title('m5')
-% ylabel('t(s)')
-% xlabel('index')
 %%
-% test calculating g
+% test g
 g1=(2.*s)/(sin(rteta).*((mean(t1)).^2))
 g2=(2.*s)/(sin(rteta).*((mean(t2)).^2))
 g3=(2.*s)/(sin(rteta).*((mean(t3)).^2))
 g4=(2.*s)/(sin(rteta).*((mean(t4)).^2))
 g5=(2.*s)/(sin(rteta).*((mean(t5)).^2))
 %%
-
+% creating empty array
 % acceleration
-a=zeros(length(tm),1);
-da=zeros(length(tm),1);
-rea=zeros(length(tm),1);
-
-for i=1:length(tm)
-    a(i)=(2.*s)/((tm(i)).^2);
-    da(i)=(2.*(ds+(4.*s.*dt)))./(tm(i).^2);
-    rea(i)=(da(i)/a(i))*100;
-end
+a=zeros(lm,1);
+da=zeros(lm,1);
+rea=zeros(lm,1); % relative error (acceleration)
+%coefficient of friction
+mu=zeros(lm,1);
+dmu=zeros(lm,1);
+rec=zeros(lm,1); % relative error (coefficient)
+% first significant value position
+cfra=zeros(lm,1);
+cfr=zeros(lm,1);
 
 % c'è qualcosa che non va nell'errore relativo dell'accelerazione?
 
-horzcat(a,da,rea)
+for i=1:lm
 
-% propagazione errori
-
-
-n=length(t1);
-
-% creating empty array
-dmu=zeros(length(tm),1);
-mu=zeros(length(tm),1);
-rec=zeros(length(tm),1); % relative error
-cfr=zeros(length(tm),1);
-cfra=zeros(length(tm),1);
-
-% calculating dmu and mu
-for i=1:length(tm)
-    dmu(i)=(((2.*ds)/(((cos(rteta)).^2)*sqrt(s.^2-h^2))).*(1-((a(i).*sin(rteta))./g)).*(1+(h./s)))+((2.*(ds+(4.*s.*dt)))./((tm(i).^2).*g.*cos(rteta)))+((a(i).*dg)./((g.^2).*cos(rteta)));
+    % calculating acceleration and coefficient of friction
+    a(i)=(2.*s)/((tm(i)).^2);
     mu(i)=tan(rteta)-(a(i)./g.*cos(rteta));
+    
+    % propagation of uncertainty acceleration
+    da(i)=(2.*(ds+(4.*s.*dt)))./(tm(i).^2);
+    rea(i)=(da(i)/a(i))*100;
+
+    % propagation of uncertainty coefficient
+    dmu(i)=(((2.*ds)/(((cos(rteta)).^2)*sqrt(s.^2-h^2))).*(1-((a(i).*sin(rteta))./g)).*(1+(h./s)))+((2.*(ds+(4.*s.*dt)))./((tm(i).^2).*g.*cos(rteta)))+((a(i).*dg)./((g.^2).*cos(rteta)));
     rec(i)=(dmu(i)./mu(i))*100;
 
-    % rounding 
+    % rounding values
     cfr(i)=-floor(log10(dmu(i)));
     dmu(i)=round(dmu(i),cfr(i));
     mu(i)=round(mu(i),cfr(i));
