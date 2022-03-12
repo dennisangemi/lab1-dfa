@@ -9,7 +9,9 @@ In questo repo verranno caricati i dati sperimentali e gli script realizzati nel
 └── 📂exp-n
     ├── 📂data
     │   ├── 📄datapackage.yaml
-    │   └── 📄experimental-data.csv
+    │   └── 📄experimental-data-n.csv
+    ├── 📂img
+    │   └── 📄img-n.png
     ├── 📂report
     │   ├── 📄report.md
     │   └── 📄report.tex
