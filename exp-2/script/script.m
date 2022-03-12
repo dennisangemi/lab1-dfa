@@ -43,7 +43,7 @@ n=length(t1);
 %% plotting
 
 % histogram
-figure
+histogram=figure;
 title('histogram of t')
 subplot(2,3,1)
 hist(t1)
@@ -66,7 +66,7 @@ hist(t5)
 title('m5')
 
 % scatter plot
-figure
+scatter=figure;
 subplot(2,3,1)
 plot(1:40,t1,".")
 title('m1')
@@ -167,18 +167,43 @@ for i=1:lm
     rea(i)=round(rea(i),2);
     rec(i)=(dmu(i)./mu(i))*100;
     rec(i)=round(rec(i),2);
+end
 
+% significant digits
+
+as=string(zeros(lm,1));     %acceleration significant digits (temp)
+mus=string(zeros(lm,1));    %mu significant digits (temp)
+
+for i=1:lm
+    as(i)=sprintf(strcat('%.',num2str(cfra(i)),'f'),round(a(i),cfra(i)));
+    mus(i)=sprintf(strcat('%.',num2str(cfr(i)),'f'),round(mu(i),cfr(i)));
+end
+
+% converting a,mu,rea,rec array to string
+a=string(a);
+mu=string(mu);
+rea=string(rea);
+rec=string(rec);
+
+% substituting values
+for i=1:lm
+    a(i)=as(i);
+    mu(i)=mus(i);
+    rec(i)=sprintf('%.2f',rec(i));
+    rea(i)=sprintf('%.2f',rea(i));
 end
 
 % creating output array
 acceleration=string(horzcat(a,da,rea))
 coefficient=string(horzcat(mu,dmu,rec))
-
-% correggere cifre significative output
 %%
 % exporting csv
 writetable(array2table(acceleration,'VariableNames',{'accelerazione','incertezza','errore_relativo'}),'..\data\output-data-1.csv','Delimiter',',','Encoding','UTF-8')
 writetable(array2table(coefficient,'VariableNames',{'coefficiente_attrito','incertezza','errore_relativo'}),'..\data\output-data-2.csv','Delimiter',',','Encoding','UTF-8')
+
+% exporting img
+saveas(histogram,'..\img\img-1.png');
+saveas(scatter,'..\img\img-2.png');
 
 % exporting mlx2m
 mlxloc = fullfile(pwd,'livescript.mlx');
