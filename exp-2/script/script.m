@@ -12,12 +12,12 @@ tools=readtable("..\data\tools.csv")
 %% defining variables
 
 % uncertainty
-ds=tools.sensibilita(1);
-dt=tools.sensibilita(3);
+ds=tools.uncertainty(1);
+dt=tools.uncertainty(3);
 dg=0.01;
 
 % creating masses array
-m=unique(df2.massa);
+m=unique(df2.mass);
 lm=length(m);
 
 % gravitational acceleration
@@ -31,12 +31,12 @@ t4=df2.t(121:160,:);
 t5=df2.t(161:200,:);
 
 % space
-s1=df1.valore(3);
-s2=df1.valore(4);
+s1=df1.value(3);
+s2=df1.value(4);
 
 % height
-h2=df1.valore(1);
-h1=df1.valore(2);
+h2=df1.value(1);
+h1=df1.value(2);
 
 % general variable
 n=length(t1);
