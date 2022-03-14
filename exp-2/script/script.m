@@ -198,8 +198,8 @@ acceleration=string(horzcat(a,da,rea))
 coefficient=string(horzcat(mu,dmu,rec))
 %%
 % exporting csv
-writetable(array2table(acceleration,'VariableNames',{'accelerazione','incertezza','errore_relativo'}),'..\data\output-data-1.csv','Delimiter',',','Encoding','UTF-8')
-writetable(array2table(coefficient,'VariableNames',{'coefficiente_attrito','incertezza','errore_relativo'}),'..\data\output-data-2.csv','Delimiter',',','Encoding','UTF-8')
+writetable(array2table(acceleration,'VariableNames',{'acceleration','uncertainty','relative_error'}),'..\data\output-data-1.csv','Delimiter',',','Encoding','UTF-8')
+writetable(array2table(coefficient,'VariableNames',{'coefficient_friction','uncertainty','relative_error'}),'..\data\output-data-2.csv','Delimiter',',','Encoding','UTF-8')
 
 % exporting img
 saveas(histogram,'..\img\img-1.png');
