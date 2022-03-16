@@ -20,11 +20,11 @@ resources:
         - name: t2
           type: number
           description: Intervallo di tempo misurato in secondi (s) nella configurazione 'ruote bloccate'
-        - name: incertezza
+        - name: uncertainty
           type: number
           description: Incertezza dello strumento
-        - name: udm
-          title: Unità di misura
+        - name: uom
+          title: Codici standard unità di misura introdotti dalla Reccomendation 20 dell'UNECE
           type: string
     scheme: file
   - encoding: utf-8
@@ -35,19 +35,19 @@ resources:
     profile: tabular-data-resource
     schema:
       fields:
-        - name: descrizione
+        - name: description
           type: string
-          description: Descrizione della misura effettuata
-        - name: valore
+          description: Descrizione della grandezza misurata
+        - name: value
           type: number
           description: Valore della misura effettuata
-        - name: incertezza
+        - name: uncertainty
           type: number
           description: Incertezza della misura effettuata
-        - name: udm
-          title: Unità di misura
+        - name: uom
+          title: Codici standard unità di misura introdotti dalla Reccomendation 20 dell'UNECE
           type: string
-        - name: strumento
+        - name: tool
           type: string
           description: Strumento utilizzato per effettuare la misura
     scheme: file
