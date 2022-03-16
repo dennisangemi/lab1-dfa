@@ -1,4 +1,4 @@
 tool,uncertainty,uom
-Flessometro,0.001,m
-Bilancia,0.01,g
-Cronometro,0.01,s
+Flessometro,0.001,MTR
+Bilancia,0.01,GRM
+Cronometro,0.01,SEC
