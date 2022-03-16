@@ -11,17 +11,17 @@ tm2=round(mean(df1.t2),3);
 df2=readtable("https://raw.githubusercontent.com/dennisangemi/lab1-dfa/main/exp-1/experimental-data-2.csv");
 
 % definisco variabili
-m1=df2.valore(1);
-m2=df2.valore(2);
-mc=df2.valore(3);
-diametro=df2.valore(4);
-Diametro=df2.valore(5);
+m1=df2.value(1);
+m2=df2.value(2);
+mc=df2.value(3);
+diametro=df2.value(4);
+Diametro=df2.value(5);
 
 % definisco incertezze
-dm=df2.incertezza(1);
-dd=df2.incertezza(4);
-dD=df2.incertezza(5);
-dt=df1.incertezza(1);
+dm=df2.uncertainty(1);
+dd=df2.uncertainty(4);
+dD=df2.uncertainty(5);
+dt=df1.uncertainty(1);
 
 % Definisco variabili
 r=diametro./2;
