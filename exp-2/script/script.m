@@ -96,6 +96,13 @@ plot(1:40,t5,".")
 title('m5')
 ylabel('t(s)')
 xlabel('index')
+
+% small multiples 2
+test=figure
+subplot(5,2,1)
+hist(t1)
+subplot(5,2,2)
+
 %% calculating
 
 % average time
