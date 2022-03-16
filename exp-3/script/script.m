@@ -58,8 +58,6 @@ f=zeros(lt,1);      % force
 df=zeros(lt,1);     % delta F
 ref=zeros(lt,1);     % relative error force
 
-%%% --- WIP --- %%%
-
 % core
 for i=1:lt
 
@@ -74,15 +72,16 @@ for i=1:lt
     cfra(i)=-floor(log10(da(i)));   % position first significant digit a
     da(i)=round(da(i),cfra(i));     % round da
     a(i)=round(a(i),cfra(i));       %round acceleration
-    rea(i)=round((da(i)./a(i))*100,2); % relative error a
     
     % propagation of error force
     df(i)=((g-a(i))*2*dm)+(m(i)*dg)+(m(i)*((2.*ds+((4.*s.*dt)/(tm(i))))./(tm(i).^2)));
     cfrf(i)=-floor(log10(df(i)));   % position first significant digit f
     df(i)=round(df(i),cfrf(i));     % round df
     f(i)=round(f(i),cfrf(i));       % round f
-    ref(i)=round((df(i)./f(i))*100,2);
-
+    
+    % relative error
+    rea(i)=round((da(i)./a(i))*100,2);  % relative error a
+    ref(i)=round((df(i)./f(i))*100,2);  % relative error f
 end
 
 % plotting
@@ -96,8 +95,6 @@ force=horzcat(f,df,ref)
 
 % visualize acceleration array
 acceleration=horzcat(a,da,rea)
-
-%%% --- WIP --- %%%
 
 % significant digits
 as=zeros(lt,1);     % acceleration significant digits
@@ -114,7 +111,11 @@ da=string(da);
 rea=string(rea);
 f=string(f);
 df=string(df);
-ref=string(df);
+ref=string(ref);
+
+% creating uom array
+uoma=string(zeros(lt,1));
+uomf=string(zeros(lt,1));
 
 % substituting values
 for i=1:lt
@@ -122,11 +123,13 @@ for i=1:lt
     f(i)=fs(i);
     rea(i)=sprintf('%.2f',rea(i));
     ref(i)=sprintf('%.2f',ref(i));
+    uoma(i)='MSK'
+    uomf(i)='NEW'
 end
 
 % creating output array
-acceleration=horzcat(a,da,rea)
-force=horzcat(f,df,ref)
+acceleration=horzcat(a,da,uoma,rea)
+force=horzcat(f,df,uomf,ref)
 
 % testing (deleted m2)
 % a2=zeros(lt-1,1);
@@ -142,8 +145,8 @@ force=horzcat(f,df,ref)
 % f2(4)=f(5);
 %%
 % exporting csv
-writetable(array2table(acceleration,'VariableNames',{'acceleration','uncertainty','relative_error'}),'..\data\output-data-1.csv','Delimiter',',','Encoding','UTF-8')
-writetable(array2table(force,'VariableNames',{'force','uncertainty','relative_error'}),'..\data\output-data-2.csv','Delimiter',',','Encoding','UTF-8')
+writetable(array2table(acceleration,'VariableNames',{'acceleration','uncertainty','uom','relative_error'}),'..\data\output-data-1.csv','Delimiter',',','Encoding','UTF-8')
+writetable(array2table(force,'VariableNames',{'force','uncertainty','uom','relative_error'}),'..\data\output-data-2.csv','Delimiter',',','Encoding','UTF-8')
 
 % exporting img
 saveas(scatter,'..\img\img-1.png');
