@@ -24,7 +24,7 @@ In questo repo verranno caricati i dati sperimentali e gli script realizzati nel
 Ogni cartella `exp-n` è dotata di un file denominato `datapackage.yaml` che contiene i metadati dei file CSV in accordo con gli standard [fricrionless data](https://frictionlessdata.io/standards/#standards-toolkit).
 
 ### Unità di misura
-Attualmente le unità di misura presenti nei file CSV (campo `uom` acronimo di "unit of measure") sono quelle del SI. Verranno in seguito sostituite con i codici standard introdotti dalla [Reccomendation 20 dell'UNECE](https://datahub.io/core/unece-units-of-measure) come da [issue #8](https://github.com/dennisangemi/lab1-dfa/issues/8).
+Le unità di misura presenti nei file CSV (campo `uom` acronimo di "unit of measure") sono rappresentate dai codici standard introdotti dalla [Reccomendation 20 dell'UNECE](https://datahub.io/core/unece-units-of-measure). Per maggiori informazioni si visiti la pagina web precedenemente linkata.
 
 ## Licenza
 <a href="https://creativecommons.org/licenses/by/4.0/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/CC-BY_icon.svg/640px-CC-BY_icon.svg.png" width="150"/></a>
