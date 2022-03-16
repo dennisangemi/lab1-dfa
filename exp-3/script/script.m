@@ -123,8 +123,8 @@ for i=1:lt
     f(i)=fs(i);
     rea(i)=sprintf('%.2f',rea(i));
     ref(i)=sprintf('%.2f',ref(i));
-    uoma(i)='MSK'
-    uomf(i)='NEW'
+    uoma(i)='MSK';
+    uomf(i)='NEW';
 end
 
 % creating output array
