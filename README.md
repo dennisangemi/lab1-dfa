@@ -21,7 +21,7 @@ In questo repo verranno caricati i dati sperimentali e gli script realizzati nel
 ```
 
 ## Metadati
-Ogni cartella `exp-n` è dotata di un file denominato `datapackage.yaml` che contiene i metadati dei file CSV in accordo con gli standard [fricrionless data](https://frictionlessdata.io/standards/#standards-toolkit).
+Ogni cartella `exp-n` è dotata di un file denominato `datapackage.yaml` che contiene i metadati dei file CSV in accordo con gli standard [frictionless data](https://frictionlessdata.io/standards/#standards-toolkit).
 
 ### Unità di misura
 Le unità di misura presenti nei file CSV (campo `uom` acronimo di "unit of measure") sono rappresentate dai codici standard introdotti dalla [Reccomendation 20 dell'UNECE](https://datahub.io/core/unece-units-of-measure). Per maggiori informazioni si visiti la pagina web precedenemente linkata.
