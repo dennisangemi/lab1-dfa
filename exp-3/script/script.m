@@ -13,11 +13,21 @@ t1=df2.t1(11:20,:);
 t2=df2.t1(21:30,:);
 t3=df2.t1(31:40,:);
 t4=df2.t1(41:50,:);
+dt=df2.uncertainty(2);
+
+% uncomment to aproximate t
+% dt=0.01;
+% t0=round(t0,2);
+% t1=round(t1,2);
+% t2=round(t2,2);
+% t3=round(t3,2);
+% t4=round(t4,2);
+
 s1=df1.value(1);
 s2=df1.value(2);
 ds=df1.uncertainty(1);
 dm=df1.uncertainty(5)./1000; %kg
-dt=df2.uncertainty(2);
+
 
 % average t
 tm0=mean(t0);
@@ -57,6 +67,7 @@ cfrf=zeros(lt,1);   % position first significant digit df
 f=zeros(lt,1);      % force
 df=zeros(lt,1);     % delta F
 ref=zeros(lt,1);     % relative error force
+mc=zeros(lt,1);
 
 % core
 for i=1:lt
@@ -82,13 +93,38 @@ for i=1:lt
     % relative error
     rea(i)=round((da(i)./a(i))*100,2);  % relative error a
     ref(i)=round((df(i)./f(i))*100,2);  % relative error f
+
+    % carrello test
+    mc(i)=m(i).*((g./a(i))-1);
 end
+
+mc
+mean(mc)*1000
 
 % plotting
 scatter=figure;
 errorbar(a,f,df,df,da,da,'.')
 xlabel('Acceleration (m/s^2)')
 ylabel('Force (N)')
+
+% distribuzione dei tempi
+tdist=figure;
+subplot(2,3,1)
+plot(1:10,t0,'o')
+title('t0')
+subplot(2,3,2)
+plot(1:10,t1,'o')
+title('t1')
+subplot(2,3,3)
+plot(1:10,t2,'o')
+title('t2')
+subplot(2,3,4)
+plot(1:10,t3,'o')
+title('t3')
+subplot(2,3,5)
+plot(1:10,t4,'o')
+title('t4')
+sgtitle('t distribution')
 
 % visualize force array
 force=horzcat(f,df,ref)
@@ -150,7 +186,7 @@ writetable(array2table(force,'VariableNames',{'force','uncertainty','uom','relat
 
 % exporting img
 saveas(scatter,'..\img\img-1.png');
-%saveas(name-figure,'..\img\img-2.png');
+saveas(tdist,'..\img\img-2.png');
 
 % exporting mlx2m
 mlxloc = fullfile(pwd,'livescript.mlx');
