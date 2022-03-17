@@ -15,9 +15,10 @@ In questo repo verranno caricati i dati sperimentali e gli script realizzati nel
     ├── 📂report
     │   ├── 📄report.md
     │   └── 📄report.tex
-    └── 📂script
-        ├── 📄livescript.mlx
-        └── 📄script.m
+    ├── 📂script
+    │   ├── 📄livescript.mlx
+    │   └── 📄script.m
+    └── 📄README.md
 ```
 
 ## Metadati
