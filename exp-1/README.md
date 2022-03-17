@@ -1,0 +1,1 @@
+# Energia cinetica di rotazione
