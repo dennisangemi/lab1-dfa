@@ -160,7 +160,21 @@ plot(1:20,t4,'o')
 title('t4')
 fg.Position=[10 10 800 1600]; % [left bottom width height]
 
+xt=[0:2];
+yt=0.296*xt;
+
 % scatterplot F-a
+teo=figure;
+errorbar(a,f,df,df,da,da,'.')
+xlabel('Acceleration (m/s^2)')
+ylabel('Force (N)')
+xlim([0,2])
+ylim([0,0.5])
+hold on
+plot(0:2,yt,'--')
+hold off
+legend('dati','teorica','Location','northwest')
+
 scatter=figure;
 errorbar(a,f,df,df,da,da,'.')
 xlabel('Acceleration (m/s^2)')
@@ -224,8 +238,9 @@ writetable(array2table(force,'VariableNames',{'force','uncertainty','uom','relat
 writetable(array2table(masscart,'VariableNames',{'mass','uncertainty','uom','relative_error'}),'..\data\output-data-3.csv','Delimiter',',','Encoding','UTF-8')
 
 % exporting img
-saveas(fg,'..\img\img-1.png');
-saveas(scatter,'..\img\img-2.png');
+saveas(fg,'..\img\grid.png');
+saveas(scatter,'..\img\scatter.png');
+saveas(teo,'..\img\scatter+teorica.png');
 
 % exporting mlx2m
 mlxloc = fullfile(pwd,'livescript.mlx');
