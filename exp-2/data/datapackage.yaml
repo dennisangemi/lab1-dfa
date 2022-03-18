@@ -72,6 +72,7 @@ resources:
     schema:
       fields:
         - name: coefficient_friction
+          title: coefficiente d'attrito
           type: number
         - name: uncertainty
           description: incertezza della misura o sensibilità dello strumento
@@ -88,6 +89,7 @@ resources:
     schema:
       fields:
         - name: tool
+          description: strumento utilizzato
           type: string
         - name: uncertainty
           description: incertezza della misura o sensibilità dello strumento
