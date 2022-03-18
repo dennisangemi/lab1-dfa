@@ -61,6 +61,7 @@ resources:
           description: incertezza della misura o sensibilità dello strumento
           type: number
         - name: relative_error
+          description: errore relativo in %
           type: number
     scheme: file
   - encoding: utf-8
@@ -78,6 +79,7 @@ resources:
           description: incertezza della misura o sensibilità dello strumento
           type: number
         - name: relative_error
+          description: errore relativo in %
           type: number
     scheme: file
   - encoding: utf-8
