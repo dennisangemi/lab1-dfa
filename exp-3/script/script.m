@@ -77,6 +77,9 @@ mc=zeros(lt,1);     % mass of the cart
 dmc=zeros(lt,1);    % error mass cart
 remc=zeros(lt,1);   % rleative error mass cart
 cfrmc=zeros(lt,1);  % position first significant digit dmc
+as=zeros(lt,1);     % acceleration significant digits
+fs=zeros(lt,1);     % force significant digits
+mcs=zeros(lt,1);    % mass cart significant digits
 uoma=string(zeros(lt,1));   % uom acceleration
 uomf=string(zeros(lt,1));   % uom force
 uommc=string(zeros(lt,1));  % uom mass cart
@@ -120,57 +123,42 @@ end
 
 % plotting
 
-% distribution t1,t2,t3,t4,t5 scatterplot
-tdist1=figure;
+% number of bins
+nb=5;
 
-subplot(2,3,1)
+% full grid
+fg=figure;
+subplot(5,2,1)
+histogram(t0,nb)
+title(strcat('\sigma=',string(std0)))
+subplot(5,2,2)
 plot(1:20,t0,'o')
-% xlim([0,20])
-% ylim([0,2.5])
 title('t0')
-
-subplot(2,3,2)
+subplot(5,2,3)
+histogram(t1,nb)
+title(strcat('\sigma=',string(std1)))
+subplot(5,2,4)
 plot(1:20,t1,'o')
-% xlim([0,20])
-% ylim([0,2])
 title('t1')
-
-subplot(2,3,3)
+subplot(5,2,5)
+histogram(t2,nb)
+title(strcat('\sigma=',string(std2)))
+subplot(5,2,6)
 plot(1:20,t2,'o')
-% xlim([0,20])
-% ylim([0,2])
 title('t2')
-
-subplot(2,3,4)
+subplot(5,2,7)
+histogram(t3,nb)
+title(strcat('\sigma=',string(std3)))
+subplot(5,2,8)
 plot(1:20,t3,'o')
-% xlim([0,20])
-% ylim([0,2])
 title('t3')
-
-subplot(2,3,5)
+subplot(5,2,9)
+histogram(t4,nb)
+title(strcat('\sigma=',string(std4)))
+subplot(5,2,10)
 plot(1:20,t4,'o')
-% xlim([0,20])
-% ylim([0,2])
 title('t4')
-
-% histogram
-b=5;
-tdist2=figure;
-subplot(2,3,1)
-histogram(t0,b)
-title(strcat('m_0 ',' \sigma=',string(std0)))
-subplot(2,3,2)
-histogram(t1,b)
-title(strcat('m_0 + m_1 ',' \sigma=',string(std1)))
-subplot(2,3,3)
-histogram(t2,b)
-title(strcat('m_0 + m_2 ',' \sigma=',string(std2)))
-subplot(2,3,4)
-histogram(t3,b)
-title(strcat('m_0 + m_3 ',' \sigma=',string(std3)))
-subplot(2,3,5)
-histogram(t4,b)
-title(strcat('m_0 + m_4 ',' \sigma=',string(std4)))
+fg.Position=[10 10 800 1600]; % [left bottom width height]
 
 % scatterplot F-a
 scatter=figure;
@@ -195,10 +183,6 @@ dmc=dmc*1000;
 masscart=horzcat(mc,dmc,remc)
 
 % significant digits
-as=zeros(lt,1);     % acceleration significant digits
-fs=zeros(lt,1);     % force significant digits
-mcs=zeros(lt,1);    % mass cart significant digits
-
 for i=1:lt
     as(i)=sprintf(strcat('%.',string(cfra(i)),'f'),a(i));
     fs(i)=sprintf(strcat('%.',string(cfrf(i)),'f'),f(i));
@@ -240,9 +224,8 @@ writetable(array2table(force,'VariableNames',{'force','uncertainty','uom','relat
 writetable(array2table(masscart,'VariableNames',{'mass','uncertainty','uom','relative_error'}),'..\data\output-data-3.csv','Delimiter',',','Encoding','UTF-8')
 
 % exporting img
-saveas(tdist1,'..\img\img-1.png');
-saveas(tdist2,'..\img\img-2.png');
-saveas(scatter,'..\img\img-3.png');
+saveas(fg,'..\img\img-1.png');
+saveas(scatter,'..\img\img-2.png');
 
 % exporting mlx2m
 mlxloc = fullfile(pwd,'livescript.mlx');
