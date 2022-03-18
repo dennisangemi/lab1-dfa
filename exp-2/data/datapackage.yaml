@@ -12,14 +12,17 @@ resources:
     profile: tabular-data-resource
     schema:
       fields:
-        - name: grandezza
+        - name: dimension
+          description: grandezza misurata
           type: string
-        - name: valore
+        - name: value
           type: number
-        - name: incertezza
+        - name: uncertainty
+          description: incertezza della misura o sensibilità dello strumento
           type: number
-        - name: udm
-          title: Unità di misura
+        - name: uom
+          title: Unit of measure (unità di misura)
+          description: Codici standard unità di misura introdotti dalla Reccomendation 20 dell'UNECE
           type: string
     scheme: file
   - encoding: utf-8
@@ -32,14 +35,16 @@ resources:
       fields:
         - name: index
           type: integer
-        - name: massa
+        - name: mass
           type: string
         - name: t
           type: number
-        - name: inertezza
+        - name: uncertainty
+          description: incertezza della misura o sensibilità dello strumento
           type: number
-        - name: udm
-          title: Unità di misura
+        - name: uom
+          title: Unit of measure (unità di misura)
+          description: Codici standard unità di misura introdotti dalla Reccomendation 20 dell'UNECE
           type: string
     scheme: file
   - encoding: utf-8
@@ -50,11 +55,12 @@ resources:
     profile: tabular-data-resource
     schema:
       fields:
-        - name: accelerazione
+        - name: acceleration
           type: number
-        - name: incertezza
+        - name: uncertainty
+          description: incertezza della misura o sensibilità dello strumento
           type: number
-        - name: errore_relativo
+        - name: relative_error
           type: number
     scheme: file
   - encoding: utf-8
@@ -65,11 +71,12 @@ resources:
     profile: tabular-data-resource
     schema:
       fields:
-        - name: coefficiente_attrito
+        - name: coefficient_friction
           type: number
-        - name: incertezza
+        - name: uncertainty
+          description: incertezza della misura o sensibilità dello strumento
           type: number
-        - name: errore_relativo
+        - name: relative_error
           type: number
     scheme: file
   - encoding: utf-8
@@ -80,12 +87,14 @@ resources:
     profile: tabular-data-resource
     schema:
       fields:
-        - name: strumento
+        - name: tool
           type: string
-        - name: sensibilita
+        - name: uncertainty
+          description: incertezza della misura o sensibilità dello strumento
           type: number
-        - name: udm
-          title: Unità di misura
+        - name: uom
+          title: Unit of measure (unità di misura)
+          description: Codici standard unità di misura introdotti dalla Reccomendation 20 dell'UNECE
           type: string
     scheme: file
 
