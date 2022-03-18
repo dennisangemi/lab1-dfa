@@ -24,7 +24,8 @@ resources:
           type: number
           description: Incertezza dello strumento
         - name: uom
-          title: Codici standard unità di misura introdotti dalla Reccomendation 20 dell'UNECE
+          title: Unità di misura
+          description: Codici standard unità di misura introdotti dalla Reccomendation 20 dell'UNECE
           type: string
     scheme: file
   - encoding: utf-8
@@ -45,7 +46,8 @@ resources:
           type: number
           description: Incertezza della misura effettuata
         - name: uom
-          title: Codici standard unità di misura introdotti dalla Reccomendation 20 dell'UNECE
+          title: Unità di misura
+          description: Codici standard unità di misura introdotti dalla Reccomendation 20 dell'UNECE
           type: string
         - name: tool
           type: string

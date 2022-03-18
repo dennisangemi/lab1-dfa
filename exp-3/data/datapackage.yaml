@@ -1,0 +1,163 @@
+# --------
+# metadata: experimental-data-1.csv experimental-data-2.csv experimental-data-3.csv output-data-1.csv output-data-2.csv output-data-3.csv tools.csv
+# --------
+
+profile: data-package
+resources:
+  - encoding: utf-8
+    format: csv
+    hashing: md5
+    name: experimental-data-1
+    path: experimental-data-1.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: dimension
+          type: string
+        - name: value
+          type: number
+        - name: uncertainty
+          description: incertezza della misura o sensibilità dello strumento
+          type: number
+        - name: uom
+          title: Unit of measure (unità di misura)
+          description: Codici standard unità di misura introdotti dalla Reccomendation 20 dell'UNECE
+          type: string
+    scheme: file
+  - encoding: utf-8
+    format: csv
+    hashing: md5
+    name: experimental-data-2
+    path: experimental-data-2.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: index
+          type: integer
+        - name: mass
+          type: string
+        - name: t1
+          description: intervallo di tempo registrato dalla prima fotocellula
+          type: number
+        - name: t2
+          description: intervallo di tempo registrato dalla seconda fotocellula
+          type: number
+        - name: uncertainty
+          description: incertezza della misura o sensibilità dello strumento
+          type: number
+        - name: uom
+          title: Unit of measure (unità di misura)
+          description: Codici standard unità di misura introdotti dalla Reccomendation 20 dell'UNECE
+          type: string
+    scheme: file
+  - encoding: utf-8
+    format: csv
+    hashing: md5
+    name: experimental-data-3
+    path: experimental-data-3.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: index
+          type: integer
+        - name: mass
+          type: string
+        - name: t1
+          description: intervallo di tempo registrato dalla prima fotocellula
+          type: number
+        - name: uncertainty
+          description: incertezza della misura o sensibilità dello strumento
+          type: number
+        - name: uom
+          title: Unit of measure (unità di misura)
+          description: Codici standard unità di misura introdotti dalla Reccomendation 20 dell'UNECE
+          type: string
+    scheme: file
+  - encoding: utf-8
+    format: csv
+    hashing: md5
+    name: output-data-1
+    path: output-data-1.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: acceleration
+          type: number
+        - name: uncertainty
+          description: incertezza della misura o sensibilità dello strumento
+          type: number
+        - name: uom
+          title: Unit of measure (unità di misura)
+          description: Codici standard unità di misura introdotti dalla Reccomendation 20 dell'UNECE
+          type: string
+        - name: relative_error
+          title: relative error
+          description: Errore relativo in % 
+          type: number
+    scheme: file
+  - encoding: utf-8
+    format: csv
+    hashing: md5
+    name: output-data-2
+    path: output-data-2.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: force
+          description: forza applicata
+          type: number
+        - name: uncertainty
+          description: incertezza della misura o sensibilità dello strumento
+          type: number
+        - name: uom
+          title: Unit of measure (unità di misura)
+          description: Codici standard unità di misura introdotti dalla Reccomendation 20 dell'UNECE
+          type: string
+        - name: relative_error
+          title: relative error
+          description: Errore relativo in % 
+          type: number
+    scheme: file
+  - encoding: utf-8
+    format: csv
+    hashing: md5
+    name: output-data-3
+    path: output-data-3.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: mass
+          description: stima della massa del carrello
+          type: integer
+        - name: uncertainty
+          description: incertezza della misura o sensibilità dello strumento
+          type: integer
+        - name: uom
+          title: Unit of measure (unità di misura)
+          description: Codici standard unità di misura introdotti dalla Reccomendation 20 dell'UNECE
+          type: string
+        - name: relative_error
+          title: relative error
+          description: Errore relativo in % 
+          type: number
+    scheme: file
+  - encoding: utf-8
+    format: csv
+    hashing: md5
+    name: tools
+    path: tools.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: tool
+          description: strumento utilizzato
+          type: string
+        - name: uncertainty
+          description: incertezza della misura o sensibilità dello strumento
+          type: number
+        - name: uom
+          title: Unit of measure (unità di misura)
+          description: Codici standard unità di misura introdotti dalla Reccomendation 20 dell'UNECE
+          type: string
+    scheme: file
+
