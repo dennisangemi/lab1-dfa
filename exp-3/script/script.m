@@ -19,6 +19,12 @@ s2=df1.value(2);
 ds=df1.uncertainty(1);
 dm=df1.uncertainty(5)./1000; %kg
 
+mctmax=df1.value(10)+df1.uncertainty(10);
+mctmax=repelem(mctmax,5);
+mctmin=df1.value(10)-df1.uncertainty(10);
+%mctmin=repelem(mctmin,5);
+
+
 % uncomment to aproximate t
 % dt=0.01;
 % t0=round(t0,2);
@@ -121,6 +127,11 @@ for i=1:lt
     
 end
 
+% kg2g
+mcm=mean(mc)*1000;
+mc=mc*1000;
+dmc=dmc*1000;
+
 % plotting
 
 % number of bins
@@ -182,16 +193,32 @@ ylabel('Force (N)')
 xlim([0,2])
 ylim([0,0.5])
 
+% mass of the cart
+cart=figure;
+subplot(1,2,1)
+errorbar(1:5,mc,dmc,'.')
+hold on
+area([1:5],mctmax,mctmin,"EdgeColor","none","LineStyle","none","FaceColor","#ffc29e")
+hold off
+title('Massa del carrello')
+xlabel('index')
+ylabel('Stima massa carrello (g)')
+legend('Stima','Valore atteso','Location','south')
+xlim([0,6])
+ylim([0,300])
+subplot(1,2,2)
+errorbar(1:5,mc,dmc,'.')
+hold on
+area([1:5],mctmax,mctmin,"EdgeColor","none","LineStyle","none","FaceColor","#ffc29e")
+hold off
+title('zoom')
+cart.Position=[10 10 1600 800]; % [left bottom width height]
+
 % visualize force array
 force=horzcat(f,df,ref)
 
 % visualize acceleration array
 acceleration=horzcat(a,da,rea)
-
-% kg2g
-mcm=mean(mc)*1000
-mc=mc*1000;
-dmc=dmc*1000;
 
 % visualize mass of cart array
 masscart=horzcat(mc,dmc,remc)
@@ -241,6 +268,7 @@ writetable(array2table(masscart,'VariableNames',{'mass','uncertainty','uom','rel
 saveas(fg,'..\img\grid.png');
 saveas(scatter,'..\img\scatter.png');
 saveas(teo,'..\img\scatter+teorica.png');
+saveas(cart,'..\img\cart-plot.png');
 
 % exporting mlx2m
 mlxloc = fullfile(pwd,'livescript.mlx');
