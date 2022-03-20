@@ -212,6 +212,7 @@ hold on
 area([1:5],mctmax,mctmin,"EdgeColor","none","LineStyle","none","FaceColor","#ffc29e")
 hold off
 title('zoom')
+xlim([0,6])
 cart.Position=[10 10 1600 800]; % [left bottom width height]
 
 % visualize force array
