@@ -11,7 +11,7 @@ In questo repo verranno caricati i dati sperimentali e gli script realizzati nel
 | [exp-2](https://github.com/dennisangemi/lab1-dfa/tree/main/exp-2)     | Inclined plane               | Piano inclinato |
 | [exp-3](https://github.com/dennisangemi/lab1-dfa/tree/main/exp-3)     | Air track       | Dispositivo di Fletcher |
 | [exp-4](https://github.com/dennisangemi/lab1-dfa/tree/main/exp-4)     | Compound pendulum                | Pendolo fisico |
-| [exp-5](https://github.com/dennisangemi/lab1-dfa/tree/main/exp-5)     | Pycnometer                    | pycnometer |
+| [exp-5](https://github.com/dennisangemi/lab1-dfa/tree/main/exp-5)     | Pycnometer                    | Picnometro |
 
 ```
 📂lab1
