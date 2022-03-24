@@ -30,13 +30,13 @@ In questo repo verranno caricati i dati sperimentali e gli script realizzati nel
     └── 📄README.md
 ```
 
-## Metadati
+## Metadata
 Ogni cartella `exp-n` è dotata di un file denominato `datapackage.yaml` che contiene i metadati dei file CSV in accordo con gli standard [frictionless data](https://frictionlessdata.io/standards/#standards-toolkit).
 
-### Unità di misura
+### Unit of measure
 Le unità di misura presenti nei file CSV (campo `uom` acronimo di "unit of measure") sono rappresentate dai codici standard introdotti dalla [Reccomendation 20 dell'UNECE](https://datahub.io/core/unece-units-of-measure). Per maggiori informazioni si visiti la pagina web precedenemente linkata.
 
-## Licenza
+## Licence
 <a href="https://creativecommons.org/licenses/by/4.0/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/CC-BY_icon.svg/640px-CC-BY_icon.svg.png" width="150"/></a>
 
 ## Author
