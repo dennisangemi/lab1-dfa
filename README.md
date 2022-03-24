@@ -36,7 +36,7 @@ Ogni cartella `exp-n` è dotata di un file denominato `datapackage.yaml` che con
 ### Unit of measure
 Le unità di misura presenti nei file CSV (campo `uom` acronimo di "unit of measure") sono rappresentate dai codici standard introdotti dalla [Reccomendation 20 dell'UNECE](https://datahub.io/core/unece-units-of-measure). Per maggiori informazioni si visiti la pagina web precedenemente linkata.
 
-## Licence
+## License
 <a href="https://creativecommons.org/licenses/by/4.0/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/CC-BY_icon.svg/640px-CC-BY_icon.svg.png" width="150"/></a>
 
 ## Author
