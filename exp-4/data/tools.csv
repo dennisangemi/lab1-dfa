@@ -1,3 +1,3 @@
 tool,uncertainty,uom
-sensore prossimità,0.001,SEC
-asta graduata,0.01,MTR
+proximity sensor tmd4906,0.05,SEC
+graduated rod,0.01,MTR
