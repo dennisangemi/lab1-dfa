@@ -12,9 +12,9 @@ hd=unique(df2.distance);
 ld=length(hd);
 
 % defining variable
-l0=1;       % pendulum length
-g=9.8;      % gravitational acceleration
-dg=0.1;     % error gravitational acceleration
+l0=1;                       % pendulum length
+g=9.8;                      % gravitational acceleration
+dg=0.1;                     % error gravitational acceleration
 dt=tools.uncertainty(1);    % error t
 dr=tools.uncertainty(2);    % errror distance
 
@@ -27,6 +27,10 @@ r=[0:0.0001:0.5];   % theoretical distance
 gc=zeros(ld,1);     % gravitational acceleration calculated
 dgc=zeros(ld,1);    % error gc
 regc=zeros(ld,1);   % relative error gravitational acceleration
+cfrg=zeros(ld,1);   % position first significant digit gravitational acceleration
+uomd=string(zeros(ld,1));   % uom distance
+uomg=string(zeros(ld,1));   % uom g
+uomt=string(zeros(ld,1));   % uom t
 
 % multiply *2 and converttng ms2s
 for i=1:height(df2)
@@ -35,7 +39,6 @@ for i=1:height(df2)
     % rounding
     df2.time(i)=round(df2.time(i),2);
 end
-
 
 % core
 for i=1:ld
@@ -57,20 +60,34 @@ for i=1:ld
     % gravitational acceleration
     gc(i)=(l0.^2.*pi.^2)./(3.*d(i).*tm(i).^2)+(4.*pi.^2.*d(i))./(tm(i).^2);
     dgc(i)=((pi.^2).*2.*l0.*dd(i))./(3.*d(i).*tm(i).^2)  +  (((((l0.^2).*pi.^2)/(3.*d(i).*tm(i).^4))+(4.*pi^2.*d(i)./tm(i).^4)).*8.*tm(i).*dtm(i))  +  abs(-((l0.^2.*pi.^2)./(3.*d(i).^2.*tm(i).^2)) + (4.*pi.^2)./(tm(i).^2)).*dd(i);
+    
+    % propagation of error g
+    cfrg(i)=-floor(log10(dgc(i)));  % position first significant digit g
+    dgc(i)=round(dgc(i),cfrg(i));   % round dgc
+    gc(i)=round(gc(i),cfrg(i)+2);     % round g calculated
+
+    % relative error g
     regc(i)=round(dgc(i)./gc(i)*100,2);
+    
+    % unit of measure
+    uomd(i)="MTR";
+    uomg(i)="MSK";
+    uomt(i)="SEC";
 end
 
-% view array2table
-output1=array2table(cat(2,string(hd),d,gc,dgc,regc),"VariableNames",{'configuration','distance_CM','gravitational_acceleration','uncertainty','relative_error'});
-output1=sortrows(output1,"distance_CM")
-round(mean(gc(2:10)),1)
-round(mean(dgc(2:10)),0)
+% significant digits time
+cfrt=-floor(log10(dt));         % position first significant digit time
+tm=round(tm,cfrt);              % round 
+
+% mean gravitational acceleration (output3)
+gm=round(mean(gc(2:10)),2);
+dgm=round(mean(dgc(2:10)),0);
+regm=round((dgm/gm)*100,2);
+
+gm;
 
 % theoretical curve
 tt=(2.*pi./sqrt(g)).*sqrt(((l0.^2)./(12.*r))+r);
-
-% visualizing array
-output2=sortrows(array2table(cat(2,string(hd),d,dd,tm,dtm),"VariableNames",{'configuration','distance_CM','uncertainty_distance','time','uncertainty_time'}),"distance_CM")
 
 % plotting
 plt=figure;
@@ -83,10 +100,33 @@ plot(r,tt)
 hold off
 ylim([0,8])
 legend('data','theoretical curve')
+% converting array to string
+d=string(d);
+tm=string(tm);
+gc=string(gc);
+regc=string(regc);
+
+for i=1:ld
+    d(i)=sprintf('%.3f',d(i));
+    tm(i)=sprintf('%.2f',tm(i));
+    gc(i)=sprintf('%.2f',gc(i));
+    regc(i)=sprintf('%.2f',regc(i));
+end
+
+% significant digit output1
+output1=array2table(cat(2,string(hd),d,gc,dgc,regc,uomg),"VariableNames",{'configuration','distance_CM','gravitational_acceleration','uncertainty','relative_error','uom_gravitational_acceleration'});
+output1=sortrows(output1,"distance_CM");
+output1=output1(:,{'configuration','gravitational_acceleration','uncertainty','relative_error','uom_gravitational_acceleration'}) %remove distance_CM
+
+% generating output2
+output2=sortrows(array2table(cat(2,string(hd),d,dd,uomd,tm,dtm,uomt),"VariableNames",{'configuration','distance_CM','uncertainty_distance','uom_distance','time','uncertainty_time','uom_time'}),"distance_CM")
+% generating output2
+output3=array2table(cat(2,gm,dgm,uomg(1),regm),"VariableNames",{'gravitational_acceleration','uncertainty','uom','relative_error'})
 %%
 % exporting csv
 writetable(output1,'..\data\output-data-1.csv','Delimiter',',','Encoding','UTF-8')
 writetable(output2,'..\data\output-data-2.csv','Delimiter',',','Encoding','UTF-8')
+writetable(output3,'..\data\output-data-3.csv','Delimiter',',','Encoding','UTF-8')
 
 % exporting img
 saveas(plt,'..\img\plot.png');
