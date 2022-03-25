@@ -64,7 +64,7 @@ for i=1:ld
     % propagation of error g
     cfrg(i)=-floor(log10(dgc(i)));  % position first significant digit g
     dgc(i)=round(dgc(i),cfrg(i));   % round dgc
-    gc(i)=round(gc(i),cfrg(i)+2);     % round g calculated
+    gc(i)=round(gc(i),cfrg(i)+2);   % round g calculated
 
     % relative error g
     regc(i)=round(dgc(i)./gc(i)*100,2);
@@ -83,8 +83,6 @@ tm=round(tm,cfrt);              % round
 gm=round(mean(gc(2:10)),2);
 dgm=round(mean(dgc(2:10)),0);
 regm=round((dgm/gm)*100,2);
-
-gm;
 
 % theoretical curve
 tt=(2.*pi./sqrt(g)).*sqrt(((l0.^2)./(12.*r))+r);
