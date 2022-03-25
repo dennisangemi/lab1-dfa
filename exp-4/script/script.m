@@ -61,7 +61,8 @@ for i=1:ld
 end
 
 % view array2table
-output1=array2table(cat(2,string(hd),d,gc,dgc,regc),"VariableNames",{'configuration','distance_CM','gravitational_acceleration','uncertainty','relative_error'})
+output1=array2table(cat(2,string(hd),d,gc,dgc,regc),"VariableNames",{'configuration','distance_CM','gravitational_acceleration','uncertainty','relative_error'});
+output1=sortrows(output1,"distance_CM")
 round(mean(gc(2:10)),1)
 round(mean(dgc(2:10)),0)
 
@@ -69,7 +70,7 @@ round(mean(dgc(2:10)),0)
 tt=(2.*pi./sqrt(g)).*sqrt(((l0.^2)./(12.*r))+r);
 
 % visualizing array
-cat(2,string(hd),d,dd,tm,dtm)
+output2=sortrows(array2table(cat(2,string(hd),d,dd,tm,dtm),"VariableNames",{'configuration','distance_CM','uncertainty_distance','time','uncertainty_time'}),"distance_CM")
 
 % plotting
 plt=figure;
@@ -82,14 +83,10 @@ plot(r,tt)
 hold off
 ylim([0,8])
 legend('data','theoretical curve')
-
-
-
-% df2(df2.distance=="d1","time") % sostituire "d1" con gli elementi degli array
-% mean(table2array(df2(df2.distance=="d1","time")))
 %%
 % exporting csv
 writetable(output1,'..\data\output-data-1.csv','Delimiter',',','Encoding','UTF-8')
+writetable(output2,'..\data\output-data-2.csv','Delimiter',',','Encoding','UTF-8')
 
 % exporting img
 saveas(plt,'..\img\plot.png');
