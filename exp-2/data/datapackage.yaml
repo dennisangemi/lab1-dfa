@@ -55,11 +55,17 @@ resources:
     profile: tabular-data-resource
     schema:
       fields:
+        - name: configuration
+          type: string
         - name: acceleration
           type: number
         - name: uncertainty
-          description: Instrumental uncertainty or measurement uncertainty
           type: number
+          description: Instrumental uncertainty or measurement uncertainty
+        - name: uom
+          type: string
+          title: Unit of measurement
+          description: Alphanumeric codes for representing units of measurement according to UNECE Recommendation 20
         - name: relative_error
           description: relative error (%)
           type: number
@@ -72,6 +78,8 @@ resources:
     profile: tabular-data-resource
     schema:
       fields:
+        - name: configuration
+          type: string
         - name: coefficient_friction
           title: coefficient of friction
           type: number
