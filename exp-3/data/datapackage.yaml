@@ -81,6 +81,8 @@ resources:
     profile: tabular-data-resource
     schema:
       fields:
+        - name: configuration
+          type: string
         - name: acceleration
           type: number
         - name: uncertainty
@@ -103,6 +105,8 @@ resources:
     profile: tabular-data-resource
     schema:
       fields:
+        - name: configuration
+          type: string
         - name: force
           description: applied force
           type: number
@@ -115,7 +119,7 @@ resources:
           type: string
         - name: relative_error
           title: relative error
-          description: relative error (%) 
+          description: relative error (%)
           type: number
     scheme: file
   - encoding: utf-8
@@ -126,6 +130,8 @@ resources:
     profile: tabular-data-resource
     schema:
       fields:
+        - name: configuration
+          type: string
         - name: mass
           description: estimate of the mass of the cart
           type: integer
