@@ -40,69 +40,49 @@ h1=df1.value(2);
 
 % general variable
 n=length(t1);
+
+% number of bins
+nb=6;
 %% plotting
 
-% histogram
-histogram=figure;
-title('histogram of t')
-subplot(2,3,1)
-hist(t1)
-title('m1')
-
-subplot(2,3,2)
-hist(t2)
-title('m2')
-
-subplot(2,3,3)
-hist(t3)
-title('m3')
-
-subplot(2,3,4)
-hist(t4)
-title('m4')
-
-subplot(2,3,5)
-hist(t5)
-title('m5')
-
-% scatter plot
-scatter=figure;
-subplot(2,3,1)
-plot(1:40,t1,".")
-title('m1')
-ylabel('t(s)')
-xlabel('index')
-
-subplot(2,3,2)
-plot(1:40,t2,".")
-title('m2')
-ylabel('t(s)')
-xlabel('index')
-
-subplot(2,3,3)
-plot(1:40,t3,".")
-title('m3')
-ylabel('t(s)')
-xlabel('index')
-
-subplot(2,3,4)
-plot(1:40,t4,".")
-title('m4')
-ylabel('t(s)')
-xlabel('index')
-
-subplot(2,3,5)
-plot(1:40,t5,".")
-title('m5')
-ylabel('t(s)')
-xlabel('index')
-
-% small multiples 2
-test=figure
+% small multiples
+grid=figure;
 subplot(5,2,1)
-hist(t1)
+histogram(t1,nb)
+title('Configurazione m_1')
 subplot(5,2,2)
-
+plot(1:40,t1,".")
+ylabel('t(s)')
+xlabel('index')
+subplot(5,2,3)
+histogram(t2,nb)
+title('Configurazione m_2')
+subplot(5,2,4)
+plot(1:40,t2,".")
+ylabel('t(s)')
+xlabel('index')
+subplot(5,2,5)
+histogram(t3,nb)
+title('Configurazione m_3')
+subplot(5,2,6)
+plot(1:40,t3,".")
+ylabel('t(s)')
+xlabel('index')
+subplot(5,2,7)
+histogram(t4,nb)
+title('Configurazione m_4')
+subplot(5,2,8)
+plot(1:40,t4,".")
+ylabel('t(s)')
+xlabel('index')
+subplot(5,2,9)
+histogram(t5,nb)
+title('Configurazione m_5')
+subplot(5,2,10)
+plot(1:40,t5,".")
+ylabel('t(s)')
+xlabel('index')
+grid.Position=[10 10 800 1600]; % [left bottom width height]
 %% calculating
 
 % average time
@@ -125,27 +105,19 @@ h=h1-h2;
 rteta=asin(h./s); %rad
 dteta=(180./pi)*rteta; %deg
 %%
-% test g
-g1=(2.*s)/(sin(rteta).*((mean(t1)).^2))
-g2=(2.*s)/(sin(rteta).*((mean(t2)).^2))
-g3=(2.*s)/(sin(rteta).*((mean(t3)).^2))
-g4=(2.*s)/(sin(rteta).*((mean(t4)).^2))
-g5=(2.*s)/(sin(rteta).*((mean(t5)).^2))
-%%
 % creating empty array
-% acceleration
-a=zeros(lm,1);
-da=zeros(lm,1);
-rea=zeros(lm,1); % relative error (acceleration)
-%coefficient of friction
-mu=zeros(lm,1);
-dmu=zeros(lm,1);
-rec=zeros(lm,1); % relative error (coefficient)
-% first significant value position
-cfra=zeros(lm,1);
+a=zeros(lm,1);      % acceleration
+da=zeros(lm,1);     % error acceleration
+rea=zeros(lm,1);    % relative error (acceleration)
+mu=zeros(lm,1);     % coefficient of friction
+dmu=zeros(lm,1);    % error coefficient of friction
+rec=zeros(lm,1);    % relative error (coefficient)
+cfra=zeros(lm,1);   % position first significant value (acceleration)
 cfr=zeros(lm,1);
+uoma=string(zeros(lm,1));  % uom acceleration
 
-% c'è qualcosa che non va nell'errore relativo dell'accelerazione?
+% multiply ds*2 because s=s1-s2
+ds=ds.*2;
 
 for i=1:lm
 
@@ -174,10 +146,13 @@ for i=1:lm
     rea(i)=round(rea(i),2);
     rec(i)=(dmu(i)./mu(i))*100;
     rec(i)=round(rec(i),2);
+
+    % uom
+    uoma(i)="MSK";
 end
 
-% significant digits
 
+% significant digits
 as=string(zeros(lm,1));     %acceleration significant digits (temp)
 mus=string(zeros(lm,1));    %mu significant digits (temp)
 
@@ -201,16 +176,15 @@ for i=1:lm
 end
 
 % creating output array
-acceleration=string(horzcat(a,da,rea))
-coefficient=string(horzcat(mu,dmu,rec))
+acceleration=array2table(string(horzcat(string(m),a,da,uoma,rea)),"VariableNames",{'configuration','acceleration','uncertainty','uom','relative_error'})
+coefficient=array2table(string(horzcat(string(m),mu,dmu,rec)),'VariableNames',{'configuration','coefficient_friction','uncertainty','relative_error'})
 %%
 % exporting csv
-writetable(array2table(acceleration,'VariableNames',{'acceleration','uncertainty','relative_error'}),'..\data\output-data-1.csv','Delimiter',',','Encoding','UTF-8')
-writetable(array2table(coefficient,'VariableNames',{'coefficient_friction','uncertainty','relative_error'}),'..\data\output-data-2.csv','Delimiter',',','Encoding','UTF-8')
+writetable(acceleration,'..\data\output-data-1.csv','Delimiter',',','Encoding','UTF-8')
+writetable(coefficient,'..\data\output-data-2.csv','Delimiter',',','Encoding','UTF-8')
 
 % exporting img
-saveas(histogram,'..\img\img-1.png');
-saveas(scatter,'..\img\img-2.png');
+saveas(grid,'..\img\plot-1.png');
 
 % exporting mlx2m
 mlxloc = fullfile(pwd,'livescript.mlx');
