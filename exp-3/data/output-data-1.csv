@@ -1,6 +1,6 @@
-acceleration,uncertainty,uom,relative_error
-0.339,0.002,MSK,0.59
-0.688,0.006,MSK,0.87
-1.002,0.008,MSK,0.80
-1.320,0.007,MSK,0.53
-1.600,0.009,MSK,0.56
+configuration,acceleration,uncertainty,uom,relative_error
+m0,0.339,0.002,MSK,0.59
+m0+m1,0.688,0.006,MSK,0.87
+m0+m2,1.002,0.008,MSK,0.80
+m0+m3,1.320,0.007,MSK,0.53
+m0+m4,1.600,0.009,MSK,0.56

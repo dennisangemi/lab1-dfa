@@ -44,6 +44,9 @@ tm4=mean(t4);
 tm=[tm0,tm1,tm2,tm3,tm4];
 lt=length(tm);
 
+% configuration
+config=string(unique(df2.mass));
+
 % space
 s=s1-s2;
 
@@ -137,7 +140,7 @@ dmc=dmc*1000;
 % number of bins
 nb=5;
 
-% full grid
+% full grid - small multiples
 fg=figure;
 subplot(5,2,1)
 histogram(t0,nb)
@@ -202,7 +205,7 @@ area([1:5],mctmax,mctmin,"EdgeColor","none","LineStyle","none","FaceColor","#ffc
 hold off
 title('Massa del carrello')
 xlabel('index')
-ylabel('Stima massa carrello (g)')
+ylabel('Massa (g)')
 legend('Stima','Valore atteso','Location','south')
 xlim([0,6])
 ylim([0,300])
@@ -213,16 +216,16 @@ area([1:5],mctmax,mctmin,"EdgeColor","none","LineStyle","none","FaceColor","#ffc
 hold off
 title('zoom')
 xlim([0,6])
-cart.Position=[10 10 1600 800]; % [left bottom width height]
+cart.Position=[10 10 800 400]; % [left bottom width height]
 
 % visualize force array
-force=horzcat(f,df,ref)
+force=horzcat(config,f,df,ref)
 
 % visualize acceleration array
-acceleration=horzcat(a,da,rea)
+acceleration=horzcat(config,a,da,rea)
 
 % visualize mass of cart array
-masscart=horzcat(mc,dmc,remc)
+masscart=horzcat(config,mc,dmc,remc)
 
 % significant digits
 for i=1:lt
@@ -256,20 +259,20 @@ for i=1:lt
 end
 
 % creating output array
-acceleration=horzcat(a,da,uoma,rea)
-force=horzcat(f,df,uomf,ref)
-masscart=horzcat(mc,dmc,uommc,remc)
+acceleration=array2table(horzcat(config,a,da,uoma,rea),"VariableNames",{'configuration','acceleration','uncertainty','uom','relative_error'})
+force=array2table(horzcat(config,f,df,uomf,ref),"VariableNames",{'configuration','force','uncertainty','uom','relative_error'})
+masscart=array2table(horzcat(config,mc,dmc,uommc,remc),"VariableNames",{'configuration','mass','uncertainty','uom','relative_error'})
 %%
 % exporting csv
-writetable(array2table(acceleration,'VariableNames',{'acceleration','uncertainty','uom','relative_error'}),'..\data\output-data-1.csv','Delimiter',',','Encoding','UTF-8')
-writetable(array2table(force,'VariableNames',{'force','uncertainty','uom','relative_error'}),'..\data\output-data-2.csv','Delimiter',',','Encoding','UTF-8')
-writetable(array2table(masscart,'VariableNames',{'mass','uncertainty','uom','relative_error'}),'..\data\output-data-3.csv','Delimiter',',','Encoding','UTF-8')
+writetable(acceleration,'..\data\output-data-1.csv','Delimiter',',','Encoding','UTF-8')
+writetable(force,'..\data\output-data-2.csv','Delimiter',',','Encoding','UTF-8')
+writetable(masscart,'..\data\output-data-3.csv','Delimiter',',','Encoding','UTF-8')
 
 % exporting img
-saveas(fg,'..\img\grid.png');
-saveas(scatter,'..\img\scatter.png');
-saveas(teo,'..\img\scatter+teorica.png');
-saveas(cart,'..\img\cart-plot.png');
+saveas(fg,'..\img\plot-1.png');
+saveas(scatter,'..\img\plot-2.png');
+saveas(teo,'..\img\plot-3.png');
+saveas(cart,'..\img\plot-5.png');
 
 % exporting mlx2m
 mlxloc = fullfile(pwd,'livescript.mlx');

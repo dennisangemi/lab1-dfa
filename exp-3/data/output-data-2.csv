@@ -1,6 +1,6 @@
-force,uncertainty,uom,relative_error
-0.093,0.001,NEW,1.08
-0.183,0.002,NEW,1.09
-0.263,0.003,NEW,1.14
-0.341,0.004,NEW,1.17
-0.410,0.006,NEW,1.46
+configuration,force,uncertainty,uom,relative_error
+m0,0.093,0.001,NEW,1.08
+m0+m1,0.183,0.002,NEW,1.09
+m0+m2,0.263,0.003,NEW,1.14
+m0+m3,0.341,0.004,NEW,1.17
+m0+m4,0.410,0.006,NEW,1.46

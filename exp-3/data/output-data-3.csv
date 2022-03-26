@@ -1,6 +1,6 @@
-mass,uncertainty,uom,relative_error
-275,5,GRM,1.82
-266,6,GRM,2.26
-263,6,GRM,2.28
-258,5,GRM,1.94
-256,5,GRM,1.95
+configuration,mass,uncertainty,uom,relative_error
+m0,275,5,GRM,1.82
+m0+m1,266,6,GRM,2.26
+m0+m2,263,6,GRM,2.28
+m0+m3,258,5,GRM,1.94
+m0+m4,256,5,GRM,1.95
