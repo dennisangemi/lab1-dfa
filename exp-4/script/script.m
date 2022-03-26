@@ -32,39 +32,34 @@ uomd=string(zeros(ld,1));   % uom distance
 uomg=string(zeros(ld,1));   % uom g
 uomt=string(zeros(ld,1));   % uom t
 
-% multiply *2 and converttng ms2s
-for i=1:height(df2)
-    df2.time(i)=df2.time(i).*2./1000;
-    
-    % rounding
-    df2.time(i)=round(df2.time(i),2);
-end
+% multiply *2, converting ms2s and rounding
+df2.time=round(df2.time.*2./1000,2);
+df2.uncertainty=df2.uncertainty/1000;
 
 % core
 for i=1:ld
-    % calculating mean and converting ms2s
+    % calculating mean
     tm(i)=mean(table2array(df2(df2.distance==string(hd(i)),"time")));
     
     % error t
-    % dtm(i)=round(std(table2array(df2(df2.distance==string(hd(i)),"time"))),2);
     dtm(i)=dt;
 
     % distance from CM
     d(i)=table2array(df1(df1.dimension==string(hd(i)),"value"));
     d(i)=d(i)-50;
-    d(i)=d(i)/100; %cm2m
+    d(i)=d(i)/100; %convering cm2m
     
     % error distance from CM
     dd(i)=dr;
 
-    % gravitational acceleration
+    % calculating gravitational acceleration
     gc(i)=(l0.^2.*pi.^2)./(3.*d(i).*tm(i).^2)+(4.*pi.^2.*d(i))./(tm(i).^2);
     dgc(i)=((pi.^2).*2.*l0.*dd(i))./(3.*d(i).*tm(i).^2)  +  (((((l0.^2).*pi.^2)/(3.*d(i).*tm(i).^4))+(4.*pi^2.*d(i)./tm(i).^4)).*8.*tm(i).*dtm(i))  +  abs(-((l0.^2.*pi.^2)./(3.*d(i).^2.*tm(i).^2)) + (4.*pi.^2)./(tm(i).^2)).*dd(i);
     
     % propagation of error g
     cfrg(i)=-floor(log10(dgc(i)));  % position first significant digit g
     dgc(i)=round(dgc(i),cfrg(i));   % round dgc
-    gc(i)=round(gc(i),cfrg(i)+2);   % round g calculated
+    gc(i)=round(gc(i),cfrg(i)+1);   % round g calculated
 
     % relative error g
     regc(i)=round(dgc(i)./gc(i)*100,2);
@@ -80,7 +75,7 @@ cfrt=-floor(log10(dt));         % position first significant digit time
 tm=round(tm,cfrt);              % round 
 
 % mean gravitational acceleration (output3)
-gm=round(mean(gc(2:10)),2);
+gm=round(mean(gc(2:10)),1);
 dgm=round(mean(dgc(2:10)),0);
 regm=round((dgm/gm)*100,2);
 
@@ -107,18 +102,18 @@ regc=string(regc);
 for i=1:ld
     d(i)=sprintf('%.3f',d(i));
     tm(i)=sprintf('%.2f',tm(i));
-    gc(i)=sprintf('%.2f',gc(i));
+    gc(i)=sprintf('%.1f',gc(i));
     regc(i)=sprintf('%.2f',regc(i));
 end
 
-% significant digit output1
-output1=array2table(cat(2,string(hd),d,gc,dgc,regc,uomg),"VariableNames",{'configuration','distance_CM','gravitational_acceleration','uncertainty','relative_error','uom_gravitational_acceleration'});
+% generating output 1
+output1=array2table(cat(2,string(hd),d,gc,dgc,regc,uomg),"VariableNames",{'configuration','distance_CM','gravitational_acceleration','uncertainty','relative_error','uom'});
 output1=sortrows(output1,"distance_CM");
-output1=output1(:,{'configuration','gravitational_acceleration','uncertainty','relative_error','uom_gravitational_acceleration'}) %remove distance_CM
+output1=output1(:,{'configuration','gravitational_acceleration','uncertainty','relative_error','uom'}) %remove distance_CM
 
 % generating output2
 output2=sortrows(array2table(cat(2,string(hd),d,dd,uomd,tm,dtm,uomt),"VariableNames",{'configuration','distance_CM','uncertainty_distance','uom_distance','time','uncertainty_time','uom_time'}),"distance_CM")
-% generating output2
+% generating output3
 output3=array2table(cat(2,gm,dgm,uomg(1),regm),"VariableNames",{'gravitational_acceleration','uncertainty','uom','relative_error'})
 %%
 % exporting csv
