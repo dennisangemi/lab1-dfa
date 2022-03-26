@@ -16,16 +16,16 @@ resources:
           type: integer
         - name: t1
           type: number
-          description: Intervallo di tempo misurato in secondi (s) nella configurazione 'ruote libere'
+          description: Time interval (s) configuration 'free wheels'
         - name: t2
           type: number
-          description: Intervallo di tempo misurato in secondi (s) nella configurazione 'ruote bloccate'
+          description: Time interval (s) configuration 'locked wheels'
         - name: uncertainty
           type: number
-          description: Incertezza dello strumento
+          description: Instrumental uncertainty
         - name: uom
-          title: Unità di misura
-          description: Codici standard unità di misura introdotti dalla Reccomendation 20 dell'UNECE
+          title: Unit of measurement
+          description: Alphanumeric codes for representing units of measurement according to UNECE Recommendation 20
           type: string
     scheme: file
   - encoding: utf-8
@@ -38,19 +38,19 @@ resources:
       fields:
         - name: description
           type: string
-          description: Descrizione della grandezza misurata
+          description: Description of measurement
         - name: value
           type: number
           description: Valore della misura effettuata
         - name: uncertainty
           type: number
-          description: Incertezza della misura effettuata
+          description: Instrumental uncertainty or measurement uncertainty
         - name: uom
-          title: Unità di misura
-          description: Codici standard unità di misura introdotti dalla Reccomendation 20 dell'UNECE
+          title: Unit of measurement
+          description: Alphanumeric codes for representing units of measurement according to UNECE Recommendation 20
           type: string
         - name: tool
           type: string
-          description: Strumento utilizzato per effettuare la misura
+          description: Instruments used
     scheme: file
 

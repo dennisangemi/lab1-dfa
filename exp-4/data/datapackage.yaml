@@ -1,5 +1,5 @@
 # --------
-# metadata: experimental-data-1.csv experimental-data-2.csv experimental-data-3.csv output-data-1.csv output-data-2.csv output-data-3.csv tools.csv
+# metadata: experimental-data-1.csv experimental-data-2.csv output-data-1.csv output-data-2.csv output-data-3.csv tools.csv
 # --------
 
 profile: data-package
@@ -32,39 +32,13 @@ resources:
     profile: tabular-data-resource
     schema:
       fields:
-        - name: index
+        - name: event
           type: integer
-        - name: mass
+        - name: distance
           type: string
-        - name: t1
-          description: Time interval (first photocell)
-          type: number
-        - name: t2
-          description: Time interval (second photocell)
-          type: number
-        - name: uncertainty
-          description: Instrumental uncertainty or measurement uncertainty
-          type: number
-        - name: uom
-          title: Unit of measurement
-          description: Alphanumeric codes for representing units of measurement according to UNECE Recommendation 20
-          type: string
-    scheme: file
-  - encoding: utf-8
-    format: csv
-    hashing: md5
-    name: experimental-data-3
-    path: experimental-data-3.csv
-    profile: tabular-data-resource
-    schema:
-      fields:
-        - name: index
+          description: distance from center of mass
+        - name: time
           type: integer
-        - name: mass
-          type: string
-        - name: t1
-          description: Time interval (first photocell)
-          type: number
         - name: uncertainty
           description: Instrumental uncertainty or measurement uncertainty
           type: number
@@ -81,19 +55,19 @@ resources:
     profile: tabular-data-resource
     schema:
       fields:
-        - name: acceleration
+        - name: configuration
+          type: string
+        - name: gravitational_acceleration
           type: number
         - name: uncertainty
+          type: number
           description: Instrumental uncertainty or measurement uncertainty
+        - name: relative_error
           type: number
         - name: uom
           title: Unit of measurement
           description: Alphanumeric codes for representing units of measurement according to UNECE Recommendation 20
           type: string
-        - name: relative_error
-          title: relative error
-          description: relative error (%) 
-          type: number
     scheme: file
   - encoding: utf-8
     format: csv
@@ -103,20 +77,27 @@ resources:
     profile: tabular-data-resource
     schema:
       fields:
-        - name: force
-          description: applied force
-          type: number
-        - name: uncertainty
-          description: Instrumental uncertainty or measurement uncertainty
-          type: number
-        - name: uom
-          title: Unit of measurement
-          description: Alphanumeric codes for representing units of measurement according to UNECE Recommendation 20
+        - name: configuration
           type: string
-        - name: relative_error
-          title: relative error
-          description: relative error (%) 
+        - name: distance_CM
           type: number
+          description: distance from center of mass
+        - name: uncertainty_distance
+          description: Instrumental uncertainty or measurement uncertainty (ref col distance_CM)
+          type: number
+        - name: uom_distance
+          title: Unit of measurement 
+          description: Alphanumeric codes for representing units of measurement according to UNECE Recommendation 20 (ref col distance_CM)
+          type: string
+        - name: time
+          type: number
+        - name: uncertainty_time
+          type: number
+          description: Instrumental uncertainty or measurement uncertainty (ref col distance_CM)
+        - name: uom_time
+          title: Unit of measurement
+          description: Alphanumeric codes for representing units of measurement according to UNECE Recommendation 20 (ref col time)
+          type: string
     scheme: file
   - encoding: utf-8
     format: csv
@@ -126,19 +107,15 @@ resources:
     profile: tabular-data-resource
     schema:
       fields:
-        - name: mass
-          description: estimate of the mass of the cart
-          type: integer
+        - name: gravitational_acceleration
+          type: number
         - name: uncertainty
-          description: Instrumental uncertainty or measurement uncertainty
           type: integer
         - name: uom
           title: Unit of measurement
           description: Alphanumeric codes for representing units of measurement according to UNECE Recommendation 20
           type: string
         - name: relative_error
-          title: relative error
-          description: relative error (%) 
           type: number
     scheme: file
   - encoding: utf-8
@@ -150,14 +127,14 @@ resources:
     schema:
       fields:
         - name: tool
-          description: Instruments used
           type: string
+          description: Instruments used
         - name: uncertainty
-          description: Instrumental uncertainty or measurement uncertainty
           type: number
+          description: Instrumental uncertainty or measurement uncertainty
         - name: uom
           title: Unit of measurement
-          description: Alphanumeric codes for representing units of measurement according to UNECE Recommendation 20
           type: string
+          description: Alphanumeric codes for representing units of measurement according to UNECE Recommendation 20
     scheme: file
 
