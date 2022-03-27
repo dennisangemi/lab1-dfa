@@ -1,9 +1,9 @@
-# Laboratorio di Fisica I
-Dipartimento di Fisica e Astronomia, Università degli Studi di Catania
+# Physics Laboratory 1
+Department of Physics and Astronomy, University of Catania.
 
-In questo repo verranno caricati i dati sperimentali e gli script realizzati nell'ambito del corso di Laboratorio di Fisica I (2021).
+Experimental data, data analysis script and laboratory report written during the course of Physics Laboratory I (2021).
 
-## Struttura repository
+## Repository structure
 
 | 📂 Folder | Experiment                    | Esperimento |
 |-----------|-------------------------------|---|
@@ -31,12 +31,13 @@ In questo repo verranno caricati i dati sperimentali e gli script realizzati nel
 ```
 
 ## Metadata
-Ogni cartella `exp-n` è dotata di un file denominato `datapackage.yaml` che contiene i metadati dei file CSV in accordo con gli standard [frictionless data](https://frictionlessdata.io/standards/#standards-toolkit).
+Each `exp-n` folder has a `data package.yaml` file which contains metadata according to [frictionless data standard](https://frictionlessdata.io/standards/#standards-toolkit).
 
 ### Unit of measurement
-Le unità di misura presenti nei file CSV (campo `uom` acronimo di "Unit of measurement") sono rappresentate dai codici standard introdotti dalla [Reccomendation 20 dell'UNECE](https://datahub.io/core/unece-units-of-measure). Per maggiori informazioni si visiti la pagina web precedenemente linkata.
+Units of measurement (column `uom`) are represented by alphanumeric codes according to [UNECE Recommendation 20]((https://datahub.io/core/unece-units-of-measure). For more information visit the web page linked above.
 
 ## License
+Data, code and images are licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 <a href="https://creativecommons.org/licenses/by/4.0/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/CC-BY_icon.svg/640px-CC-BY_icon.svg.png" width="150"/></a>
 
 ## Author
