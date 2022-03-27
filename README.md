@@ -37,7 +37,7 @@ Each `exp-n` folder has a `data package.yaml` file which contains metadata accor
 Units of measurement (column `uom`) are represented by alphanumeric codes according to [UNECE Recommendation 20]((https://datahub.io/core/unece-units-of-measure). For more information visit the web page linked above.
 
 ## License
-Data, code and images are licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+Data, code and images are licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/). <br>
 <a href="https://creativecommons.org/licenses/by/4.0/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/CC-BY_icon.svg/640px-CC-BY_icon.svg.png" width="150"/></a>
 
 ## Author
