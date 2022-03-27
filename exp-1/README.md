@@ -1,1 +1,1 @@
-# Energia cinetica di rotazione
+# Rotational Kinetic Energy (Energia cinetica di rotazione)

@@ -1,1 +1,1 @@
-# Pendolo composto
+# Compound pendulum (Pendolo composto)
