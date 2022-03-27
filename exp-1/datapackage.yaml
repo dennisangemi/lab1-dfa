@@ -54,7 +54,7 @@ resources:
           description: Instruments used
     scheme: file
 name: experiment-1
-title: Physics experiment 1. Rotational Kinetic Energy
+title: Rotational Kinetic Energy (experiment 1). Physics laboratory 1, Department of Physics and Astronomy, University of Catania.
 description: Using timer and photocell, we measured the time it takes for a cart (2 configuration) to slide.
 contributors:
   - title: Dennis Angemi

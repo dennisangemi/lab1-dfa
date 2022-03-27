@@ -138,7 +138,7 @@ resources:
           description: Alphanumeric codes for representing units of measurement according to UNECE Recommendation 20
     scheme: file
 name: experiment-4
-title: Physics experiment 4. Compound pendulum
+title: Compound pendulum (experiment 4). Physics laboratory 1, Department of Physics and Astronomy, University of Catania.
 description: Using proximity sensor tmd4906, we measured the time it takes for a compound pendulum to complete an oscillation. Then we calculated the gravitational acceleration.
 contributors:
   - title: Dennis Angemi

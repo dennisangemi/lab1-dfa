@@ -110,7 +110,7 @@ resources:
           type: string
     scheme: file
 name: experiment-2
-title: Physics experiment 2. Inclined plane
+title: Inclined plane (experiment 2). Physics laboratory 1, Department of Physics and Astronomy, University of Catania.
 description: Using timer and photocell, we measured the time it takes for several masses to slide.
 contributors:
   - title: Dennis Angemi

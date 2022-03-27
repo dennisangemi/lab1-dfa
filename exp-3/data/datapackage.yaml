@@ -167,7 +167,7 @@ resources:
           type: string
     scheme: file
 name: experiment-3
-title: Physics experiment 3. Air track
+title: Air track (experiment 3). Physics laboratory 1, Department of Physics and Astronomy, University of Catania.
 description: Using timer and photocell, we measured the time it takes for a cart to slide. Then we calculated the mass of that cart.
 contributors:
   - title: Dennis Angemi
