@@ -53,4 +53,20 @@ resources:
           type: string
           description: Instruments used
     scheme: file
-
+name: experiment-1
+title: Physics experiment 1. Rotational Kinetic Energy
+description: Using timer and photocell, we measured the time it takes for a cart (2 configuration) to slide.
+contributors:
+  - title: Dennis Angemi
+    email: dennisangemi@gmail.com
+    role: author
+  - title: Federica Ingrassia
+    email: fedeingrassia@outlook.com
+  - title: Giuseppe Di Silvestre
+    email: giuseppedisilv@gmail.com
+  - title: Giulia De Luca
+    email: giulia.deluca14@virgilio.it
+licenses:
+  - name: CC-BY-4.0
+    title: Creative Commons Attribution 4.0
+    path: https://creativecommons.org/licenses/by/4.0/
