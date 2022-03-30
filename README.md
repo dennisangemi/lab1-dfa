@@ -34,7 +34,7 @@ Experimental data, data analysis script and laboratory report written during the
 Each `exp-n` folder has a `data package.yaml` file which contains metadata according to [frictionless data standard](https://frictionlessdata.io/standards/#standards-toolkit).
 
 ### Unit of measurement
-Units of measurement (column `uom`) are represented by alphanumeric codes according to [UNECE Recommendation 20]((https://datahub.io/core/unece-units-of-measure). For more information visit the web page linked above.
+Units of measurement (column `uom`) are represented by alphanumeric codes according to [UNECE Recommendation 20](https://datahub.io/core/unece-units-of-measure). For more information visit the web page linked above.
 
 ## License
 Data, code and images are licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/). <br> <br>
