@@ -50,6 +50,32 @@ resources:
   - encoding: utf-8
     format: csv
     hashing: md5
+    name: experimental-data-3
+    path: experimental-data-3.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: body
+          type: string
+        - name: v1
+          type: integer
+          title: volume 1
+          description: initial volume (water)
+        - name: v2
+          type: integer
+          title: volume 2
+          description: final volume (water+body)
+        - name: uncertainty
+          type: integer
+          description: Instrumental uncertainty or measurement uncertainty
+        - name: uom
+          title: Unit of measurement
+          description: Alphanumeric codes for representing units of measurement according to UNECE Recommendation 20
+          type: string
+    scheme: file
+  - encoding: utf-8
+    format: csv
+    hashing: md5
     name: output-data-1
     path: output-data-1.csv
     profile: tabular-data-resource
@@ -89,6 +115,29 @@ resources:
         - name: relative_error
           description: relative error (%)
           type: number
+    scheme: file
+  - encoding: utf-8
+    format: csv
+    hashing: md5
+    name: output-data-3
+    path: output-data-3.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: mass
+          type: string
+        - name: density
+          type: number
+        - name: uncertainty
+          type: number
+          description: Instrumental uncertainty or measurement uncertainty
+        - name: uom
+          type: integer
+          title: Unit of measurement
+          description: Alphanumeric codes for representing units of measurement according to UNECE Recommendation 20
+        - name: relative_error
+          type: number
+          description: relative error (%)
     scheme: file
   - encoding: utf-8
     format: csv
