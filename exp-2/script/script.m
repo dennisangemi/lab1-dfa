@@ -8,17 +8,24 @@ clear
 % importing data
 df1=readtable("..\data\experimental-data-1.csv")
 df2=readtable("..\data\experimental-data-2.csv")
+df3=readtable("..\data\experimental-data-3.csv")
 tools=readtable("..\data\tools.csv")
-%% defining variables
+
+% defining variables
+v1=df3.v1;
+v2=df3.v2;
 
 % uncertainty
 ds=tools.uncertainty(1);
 dt=tools.uncertainty(3);
 dg=0.01;
+dm=tools.uncertainty(2);
+dv=tools.uncertainty(4);
 
 % creating masses array
-m=unique(df2.mass);
-lm=length(m);
+hm=unique(df2.mass);
+m=df1.value([5:7 9],:)
+lm=length(hm);
 
 % gravitational acceleration
 g=9.81;
@@ -43,7 +50,6 @@ n=length(t1);
 
 % number of bins
 nb=6;
-%% plotting
 
 % small multiples
 grid=figure;
@@ -82,8 +88,7 @@ subplot(5,2,10)
 plot(1:40,t5,".")
 ylabel('t(s)')
 xlabel('index')
-grid.Position=[10 10 800 1600]; % [left bottom width height]
-%% calculating
+grid.Position=[10 10 400 800]; % [left bottom width height]
 
 % average time
 tm1=mean(t1);
@@ -104,7 +109,7 @@ h=h1-h2;
 % angle
 rteta=asin(h./s); %rad
 dteta=(180./pi)*rteta; %deg
-%%
+
 % creating empty array
 a=zeros(lm,1);      % acceleration
 da=zeros(lm,1);     % error acceleration
@@ -151,7 +156,6 @@ for i=1:lm
     uoma(i)="MSK";
 end
 
-
 % significant digits
 as=string(zeros(lm,1));     %acceleration significant digits (temp)
 mus=string(zeros(lm,1));    %mu significant digits (temp)
@@ -175,13 +179,47 @@ for i=1:lm
     rea(i)=sprintf('%.2f',rea(i));
 end
 
+% calculating density
+v=v2-v1;
+d=m./(v);
+
+% error density
+dv=dv./2; % sensibilità siringa
+dd=dm./v + 2.*m.*dv./(v.^2);
+red=round((dd./d)*100,2);
+
+% creating empty array
+cfrd=zeros(length(m),1);   % position first significant value error density
+ds=string(zeros(length(m),1));     % density string
+ms=string(zeros(length(m),1));     % mass string
+reds=string(zeros(length(m),1));   % relative error density string
+ms=string(zeros(length(m),1));     % mass string
+hms=string(zeros(length(m),1));
+hms(1)="m1"; hms(2)="m2"; hms(3)="m3";hms(4)="m5";
+uomd=string(zeros(length(m),1));
+
+% significant digit
+for i=1:length(m)
+    cfrd(i)=-floor(log10(dd(i)));
+    dd(i)=round(dd(i),cfrd(i));
+    d(i)=round(d(i),cfrd(i));
+
+    uomd(i)="23";
+
+    reds(i)=sprintf('%.2f',red(i));
+    ms(i)=sprintf('%.2f',m(i));
+    ds(i)=sprintf(strcat('%.',string(cfrd(i)),'f'),d(i));
+end
+
 % creating output array
-acceleration=array2table(string(horzcat(string(m),a,da,uoma,rea)),"VariableNames",{'configuration','acceleration','uncertainty','uom','relative_error'})
-coefficient=array2table(string(horzcat(string(m),mu,dmu,rec)),'VariableNames',{'configuration','coefficient_friction','uncertainty','relative_error'})
+acceleration=array2table(string(horzcat(string(hm),a,da,uoma,rea)),"VariableNames",{'configuration','acceleration','uncertainty','uom','relative_error'})
+coefficient=array2table(string(horzcat(string(hm),mu,dmu,rec)),'VariableNames',{'configuration','coefficient_friction','uncertainty','relative_error'})
+density=array2table(horzcat(hms,ds,dd,uomd,reds),"VariableNames",{'mass','density','uncertainty','uom','relative_error'})
 %%
 % exporting csv
 writetable(acceleration,'..\data\output-data-1.csv','Delimiter',',','Encoding','UTF-8')
 writetable(coefficient,'..\data\output-data-2.csv','Delimiter',',','Encoding','UTF-8')
+writetable(density,'..\data\output-data-3.csv','Delimiter',',','Encoding','UTF-8')
 
 % exporting img
 saveas(grid,'..\img\plot-1.png');
