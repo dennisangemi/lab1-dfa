@@ -64,6 +64,7 @@ resources:
           description: Instrumental uncertainty or measurement uncertainty
         - name: relative_error
           type: number
+          description: Relative error (%)
         - name: uom
           title: Unit of measurement
           description: Alphanumeric codes for representing units of measurement according to UNECE Recommendation 20
@@ -117,6 +118,7 @@ resources:
           type: string
         - name: relative_error
           type: number
+          description: Relative error (%)
     scheme: file
   - encoding: utf-8
     format: csv

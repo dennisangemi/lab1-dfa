@@ -1,0 +1,81 @@
+# --------
+# metadata: experimental-data-1.csv output-data-1.csv tools.csv
+# --------
+
+profile: data-package
+resources:
+  - encoding: utf-8
+    format: csv
+    hashing: md5
+    name: experimental-data-1
+    path: experimental-data-1.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: dimension
+          type: string
+        - name: value
+          type: number
+        - name: uncertainty
+          type: number
+          description: Instrumental uncertainty or measurement uncertainty
+        - name: uom
+          type: string
+          title: Unit of measurement
+          description: Alphanumeric codes for representing units of measurement according to UNECE Recommendation 20
+    scheme: file
+  - encoding: utf-8
+    format: csv
+    hashing: md5
+    name: output-data-1
+    path: output-data-1.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: configuration
+          type: integer
+        - name: density
+          type: number
+        - name: uncertainty
+          type: number
+          description: Instrumental uncertainty or measurement uncertainty
+        - name: uom
+          type: integer
+          title: Unit of measurement
+          description: Alphanumeric codes for representing units of measurement according to UNECE Recommendation 20
+        - name: relative_error
+          type: number
+          description: Relative error (%)
+    scheme: file
+  - encoding: utf-8
+    format: csv
+    hashing: md5
+    name: tools
+    path: tools.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: tool
+          type: string
+        - name: uncertainty
+          type: number
+        - name: uom
+          type: string
+    scheme: file
+name: experiment-5
+title: Pycnometer (experiment 5). Physics laboratory 1, Department of Physics and Astronomy, University of Catania.
+description: Using a pycnometer, we calculated the density of 3 body.
+contributors:
+  - title: Dennis Angemi
+    email: dennisangemi@gmail.com
+    role: author
+  - title: Federica Ingrassia
+    email: fedeingrassia@outlook.com
+  - title: Giuseppe Di Silvestre
+    email: giuseppedisilv@gmail.com
+  - title: Giulia De Luca
+    email: giulia.deluca14@virgilio.it
+licenses:
+  - name: CC-BY-4.0
+    title: Creative Commons Attribution 4.0
+    path: https://creativecommons.org/licenses/by/4.0/
