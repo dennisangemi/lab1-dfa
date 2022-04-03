@@ -30,16 +30,16 @@ uomD=["23";"23";"23"]
 
 % empty array
 DD=zeros(length(M2),1);
-DDS=zeros(length(M2),1); % error D string
-DS=zeros(length(M2),1); % D string
-reDS=zeros(length(M2),1); % relative error D string
+DDS=string(zeros(length(M2),1)); % error D string
+DS=string(zeros(length(M2),1)); % D string
+reDS=string(zeros(length(M2),1)); % relative error D string
 
 % density
 D=((M2-M1).*DA)./(M2-M3)
 
 % uncertainty
 DD=(2.*DA.*DM)./(M2-M3) + abs(((M2-M1).*DDA)./((M2-M3).^2)) + ((M2-M1).*DDA)./(M2-M3)
-reD=DD./D;
+reD=(DD./D)*100;
 
 % significant digits
 cfrD=zeros(length(D),1);
@@ -51,7 +51,7 @@ for i=1:length(D)
     D(i)=round(D(i),cfrD(i));
     DS(i)=sprintf(strcat('%.',string(cfrD(i)),'f'),D(i));
     reD(i)=round(reD(i),cfrD(i));
-    reDS(i)=sprintf(strcat('%.',string(cfrD(i)),'f'),reD(i));
+    reDS(i)=sprintf('%.2f',reD(i));
 end
 
 % creating output array
