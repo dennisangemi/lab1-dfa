@@ -12,6 +12,7 @@ Experimental data, data analysis script and laboratory report written during the
 | [exp-3](https://github.com/dennisangemi/lab1-dfa/tree/main/exp-3)     | Air track       | Dispositivo di Fletcher |
 | [exp-4](https://github.com/dennisangemi/lab1-dfa/tree/main/exp-4)     | Compound pendulum                | Pendolo fisico |
 | [exp-5](https://github.com/dennisangemi/lab1-dfa/tree/main/exp-5)     | Pycnometer                    | Picnometro |
+| [exp-6](https://github.com/dennisangemi/lab1-dfa/tree/main/exp-6)     | Pendulum | Pendolo su arco |
 
 ```
 📂lab1
