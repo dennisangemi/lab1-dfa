@@ -1,10 +1,12 @@
 % importing data
 df1=readtable("../data/experimental-data-1.csv")
 df2=readtable("../data/experimental-data-2.csv")
+% df3=readtable("../data/experimental-data-3.csv")
 tools=readtable("../data/tools.csv")
 
 % defining values and converting to SI
-d=df1.value(1:4)/1000
+d=df1.value(2:5)/1000
+d(1)=df1.value(1)/1000
 r=d/2
 dd=df1.uncertainty(1)/1000
 F=table2array(df1(df1.dimension=="F","value"))/1000
@@ -12,9 +14,9 @@ c=table2array(df1(df1.dimension=="c","value"))/1000
 mh=unique(df2.mass)
 
 T1=table2array(df2(df2.mass=="m1","t5"))/5;
-T2=table2array(df2(df2.mass=="m2","t5"))/5;
-T3=table2array(df2(df2.mass=="m3","t5"))/5;
-T4=table2array(df2(df2.mass=="m4","t5"))/5;
+T2=table2array(df2(df2.mass=="m3","t5"))/5;
+T3=table2array(df2(df2.mass=="m4","t5"))/5;
+T4=table2array(df2(df2.mass=="m5","t5"))/5;
 
 dF=table2array(df1(df1.dimension=="F","uncertainty"))/1000
 dc=table2array(df1(df1.dimension=="c","uncertainty"))/1000
@@ -39,7 +41,7 @@ for i=1:length(T)
     g(i)= ((28*pi^2)*(R-r(i)))/(5*T(i)^2);
 
     % propagation of error
-    dg(i)=((28.*pi.^2)./(5.*T(i).^2)).*(2.*c.*dc)./(8.*F) + abs(1./2 - (c.^2)./(8.*F.^2)).*dF + 28.*pi.^2.*dr./(5*T(i)^2) + (R-r(i))*(2*T(i)*dT)/(5*T(i)^4);
+    dg(i)=((28.*pi.^2)./(5.*T(i).^2)).*((2.*c.*dc)./(8.*F) + abs(1./2 - (c.^2)./(8.*F.^2)).*dF) + 28.*pi.^2.*dr./(5*T(i)^2) + 28.*pi^2.*(R-r(i))*(2*T(i)*dT)/(5*T(i)^4);
 
     % uom
     uom(i)="MSK";
@@ -58,7 +60,7 @@ plot([0;1;2;3;4;5],[9.81;9.81;9.81;9.81;9.81;9.81])
 hold on
 errorbar([1;2;3;4],g,dg,dg,'.')
 xlim([0,5])
-ylim([8,11])
+ylim([0,15])
 hold off
 legend('theoretical','data','Location','southeast')
 title('Gravitational acceleration')

@@ -1,5 +1,5 @@
 body,gravitational_acceleration,uncertainty,uom,relative_error
-m1,9.89,0.05,MSK,0.51
-m2,8.49,0.04,MSK,0.47
-m3,10.18,0.05,MSK,0.49
-m4,9.79,0.05,MSK,0.51
+m1,10,2,MSK,20
+m3,8,1,MSK,12.5
+m4,10,2,MSK,20
+m5,10,2,MSK,20

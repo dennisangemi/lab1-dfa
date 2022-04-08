@@ -1,7 +1,8 @@
 dimension,value,uncertainty,uom
 d1,7.10,0.02,MMT
-d2,16.84,0.02,MMT
-d3,21.82,0.02,MMT
-d4,42.62,0.02,MMT
+d2,10.20,0.02,MMT
+d3,15.80,0.02,MMT
+d4,23.64,0.02,MMT
+d5,42.68,0.02,MMT
 F,71,1,MMT
 c,529,1,MMT
