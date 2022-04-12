@@ -23,7 +23,7 @@ touch report/report.tex
 echo "report folder created!"
 
 mkdir img
-touch img/temp.png
+# touch img/temp.png
 echo "img folder created!"
 
 touch README.md
