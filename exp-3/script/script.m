@@ -135,6 +135,10 @@ mcm=mean(mc)*1000;
 mc=mc*1000;
 dmc=dmc*1000;
 
+% cerating table
+massaveragecart=[round(mcm),round(mean(dmc)),"GRM",round((round(mean(dmc))/round(mcm))*100)];
+massaveragecart=array2table(massaveragecart,"VariableNames",{'mass','uncertainty','uom','relative_error'})
+
 % plotting
 
 % number of bins
@@ -267,6 +271,7 @@ masscart=array2table(horzcat(config,mc,dmc,uommc,remc),"VariableNames",{'configu
 writetable(acceleration,'..\data\output-data-1.csv','Delimiter',',','Encoding','UTF-8')
 writetable(force,'..\data\output-data-2.csv','Delimiter',',','Encoding','UTF-8')
 writetable(masscart,'..\data\output-data-3.csv','Delimiter',',','Encoding','UTF-8')
+writetable(massaveragecart,'..\data\output-data-4.csv','Delimiter',',','Encoding','UTF-8')
 
 % exporting img
 saveas(fg,'..\img\plot-1.png');
