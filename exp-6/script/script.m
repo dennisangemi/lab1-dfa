@@ -22,6 +22,7 @@ dF=table2array(df1(df1.dimension=="F","uncertainty"))/1000
 dc=table2array(df1(df1.dimension=="c","uncertainty"))/1000
 dT=df2.uncertainty(2)/5
 dr=df1.uncertainty(1)/1000
+dr=dr/2;
 
 % average of T
 T=[mean(T1);mean(T2);mean(T3);mean(T4)]
@@ -49,7 +50,7 @@ for i=1:length(T)
     % significant value
     cfr(i)=-floor(log10(dg(i)));
     dg(i)=round(dg(i),cfr(i));
-    g(i)=round(g(i),cfr(i));
+    g(i)=round(g(i),cfr(i)+1);
 
     % relative error
     re(i)=round((dg(i)./g(i))*100,2);
