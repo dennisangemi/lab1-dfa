@@ -14,6 +14,7 @@ Experimental data, data analysis script and laboratory report written during the
 | [exp-5](https://github.com/dennisangemi/lab1-dfa/tree/main/exp-5)     | Pycnometer                    | Picnometro |
 | [exp-6](https://github.com/dennisangemi/lab1-dfa/tree/main/exp-6)     | Pendulum | Pendolo su arco |
 | [exp-7](https://github.com/dennisangemi/lab1-dfa/tree/main/exp-7)     | Heat transfer | Propagazione del calore |
+| [exp-8](https://github.com/dennisangemi/lab1-dfa/tree/main/exp-8)     | Simple Pendulum | Pendolo semplice |
 
 ```
 📂lab1
