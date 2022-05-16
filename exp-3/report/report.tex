@@ -30,7 +30,7 @@ Si è verificata la dipendenza lineare tra forza e accelerazione dalla misura de
 
 \section{Introduzione e cenni teorici}
 La Macchina di Fletcher è un dispositivo che studia e analizza il secondo principio della dinamica, cioè la proporzionalità diretta tra la forza applicata ad un punto materiale e l'accelerazione che si ottiene.
-Il sistema è formato da un carrello collegato tramite un filo inestensibile ad una massa libera di muoversi verticalmente tramite una carrucola (considerata ideale).
+Il sistema è formato da un carrello collegato tramite un filo inestensibile ad una massa, libera di muoversi verticalmente tramite una carrucola (considerata ideale).
 Sul sistema agiscono le forze indicate in figura:
 
 \begin{figure}[H]
@@ -131,16 +131,17 @@ Dalla seconda legge della dinamica e secondo il diagramma delle forze illustrato
 Si procede alla propagazione degli errori
 
 \begin{equation}
-    \delta M = \left| \frac{\partial M}{\partial m} \right| \delta m + \left| \frac{\partial M}{\partial g} \right| \delta g + \left| \frac{\partial M}{\partial a} \right| \delta a
+    \delta M = \left| \frac{\partial M}{\partial m_a} \right| \delta m_a + \left| \frac{\partial M}{\partial g} \right| \delta g + \left| \frac{\partial M}{\partial a} \right| \delta a
 \end{equation}
+Avendo $\delta m_a=2\delta m$ e $\delta a=\frac{2}{<t>^2}\left(\delta s + \frac{2}{<t>}\delta t \right)$ otteniamo:
 
 \begin{equation}
     \delta M = \left( \frac{g}{a} -1 \right)2 \delta m + \frac{m}{a} \delta g + \frac{mg}{a^2}  \left [ \frac{2}{\langle t \rangle^2} \left( \delta s + \frac{2s}{\langle t \rangle}\delta t \right)\right]
 \end{equation}
 
 \section{Risultati e conclusioni}
-Bla bla 
-
+ Come si può notare dalla figura 3 la dipendenza lineare tra forza e accelerazione è stata verificata, tuttavia il valore della massa del carrello non corrisponde esattamente a quello reale, infatti, \\dalla (4) si ottiene $M=m\left(\frac{g}{a}-1 \right) = 264 \pm 5 \; g $ \\mentre dalle misure effettuate con la bilancia, la massa del carrello, risulta essere $(296.5 \pm 0.1)g$
+ 
 \begin{longtable}[]{@{}lllll@{}}
 \toprule
 configuration & acceleration ($m/s^2$) & relative error \tabularnewline
