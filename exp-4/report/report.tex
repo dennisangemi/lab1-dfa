@@ -1,0 +1,1160 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{float,graphicx,amsfonts,amsmath,amssymb,authblk,graphicx,longtable,booktabs,fullpage}
+\graphicspath{ {../img/} }
+\usepackage[colorlinks = true,
+            linkcolor = black,
+            urlcolor  = blue,
+            citecolor = blue,
+            anchorcolor = blue]{hyperref}
+
+\title{Pendolo composto}
+
+\author[1]{Dennis Angemi}%
+\author[1]{Federica Ingrassia}%
+\author[1]{Giuseppe Di Silvestre}%
+\author[1]{Giulia De Luca}%
+\affil[1]{Dipartimento di Fisica e Astronomia ``Ettore Majorana'' - Università degli Studi di Catania}%
+
+\date{March 2022}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+    Si è determinato il valore dell'accelerazione di gravità registrando il periodo di oscillazione di un pendolo composto al variare della distanza del centro di massa dall'asse di rotazione. Il valore ottenuto risulta essere accurato ma non preciso.
+\end{abstract}
+
+\section{Introduzione e cenni teorici}
+Il pendolo fisico è generalmente un corpo rigido in grado di oscillare attorno un'asse di rotazione (diverso dal suo baricentro).
+Quando il pendolo viene spostato dalla sua posizione di equilibrio (stabile) tende a tornare nella sua posizione originale compiendo delle oscillazioni. 
+Trascurando gli attriti, le forze agenti sul sistema sono:
+\begin{itemize}
+    \item Forza peso: che genera un momento di richiamo verso la posizione di equilibrio;
+    \item Reazione vincolare del perno: che sostiene la struttura del pendolo;
+    \item Forza centripeta: che consente il cambio di direzione del moto dell'asta durante l'oscillazione.
+\end{itemize}
+Il fenomeno avviene per oscillazioni con un angolo inferiore a 7° in modo da poter essere approssimato ad un moto armonico, pertanto la sua equazione è:
+\begin{equation}
+    \frac{d^2\theta}{dt^2}+\frac{mgh}{I_z}\theta=0
+\end{equation}
+In cui:
+\begin{itemize}
+    \item $\theta$ rappresenta l'angolo tra la posizione di partenza del corpo e la verticale;
+    \item $m$ è la massa del pendolo;
+    \item $g$ indica l'accelerazione di gravità;
+    \item $h$ è la distanza del centro di massa dall'asse di rotazione;
+    \item $I_z$ rappresenta il momento di inerzia del corpo rigido.
+    
+\end{itemize}
+\section{Apparato sperimentale}
+\subsection{Descrizione apparato}
+L'apparato sperimentale è costituito da un'asta rigida lunga un metro sostenuta da un perno che ne consente le oscillazioni.
+L'asta in oltre può essere alzata o abbassata in modo da poter cambiare il suo asse di rotazione.
+
+\subsection{Procedura di misura}
+Per poter misurare il periodo di oscillazione del pendolo, sotto l'asta, è stato posizionato un telefono, in modo da poterne registrare il passaggio con il sensore di prossimità.
+
+Sono state effettuate 900 misure, 100 per ogni configurazione in cui veniva impostato il pendolo.
+
+\subsection{Strumenti di misura}
+le misure sono state effettuate con i seguenti strumenti:
+\begin{longtable}[]{@{}lllll@{}}
+\toprule
+Strumento & Sensibilità & udm \tabularnewline
+\midrule
+\endhead
+Cronometro & 0.01 & s \tabularnewline
+\bottomrule
+\end{longtable}
+\section{Analisi dei dati e propagazione degli errori}
+\begin{equation}
+T=2\pi\sqrt{\frac{I}{mgd_{cm}}} \Longrightarrow T^2=4\pi^2\frac{I}{mgd_{cm}} 
+\end{equation}
+
+\begin{equation}
+    g=4\pi^2\frac{I}{md_{cm}T^2}=4\pi^2\frac{\frac{1}{12}ml_0^2+md_{cm}}{md_{cm}T^2}=\frac{l_0^2\pi^2}{3d_{cm}T^2}+4\pi^2\frac{d_{cm}}{T^2}
+\end{equation}
+\begin{equation}
+\delta g=\left | \frac{\partial g}{\partial l^2} \right | \delta l^2 + \left | \frac{\partial g}{\partial T^2} \right | \delta T^2 + \left | \frac{\partial g}{\partial d_{cm}^2} \right | \delta d_{cm}^2
+\end{equation}
+\begin{equation}
+\delta l^2=2l\delta l
+\end{equation}
+\begin{equation}
+\delta T^2=8t\delta t
+\end{equation}
+\begin{equation}
+\delta g=\frac{\pi^2}{3d_{cm}T^2}2l\delta l + \left (\frac{l_0^2\pi^2}{3d_{cm}T^4} + 4\pi^2\frac{d_{cm}}{T^4}\right )8t\delta t + \left |-\frac{l_0^2\pi^2}{3d_{cm}^2T^2} + \frac{4\pi^2}{T^2}\right |\delta d_{cm}
+\end{equation}
+
+\section{Risultati e conclusioni}
+
+\section{Appendice A}
+\begin{longtable}[]{@{}lllll@{}}
+    \toprule
+    dimension & value (cm) \tabularnewline
+    \midrule
+    \endhead
+    $d_1$ & $55.0 \pm 0.5 \; cm$ \tabularnewline
+    $d_2$ & $60.0 \pm 0.5 \; cm$ \tabularnewline
+    $d_3$ & $65.0 \pm 0.5 \; cm$ \tabularnewline
+    $d_4$ & $70.0 \pm 0.5 \; cm$ \tabularnewline
+    $d_5$ & $75.0 \pm 0.5 \; cm$ \tabularnewline
+    $d_6$ & $80.0 \pm 0.5 \; cm$ \tabularnewline
+    $d_7$ & $85.0 \pm 0.5 \; cm$ \tabularnewline
+    $d_8$ & $90.0 \pm 0.5 \; cm$ \tabularnewline
+    $d_9$ & $95.0 \pm 0.5 \; cm$ \tabularnewline
+    $d_{10}$ & $98.0 \pm 0.5 \; cm$ \tabularnewline
+    \bottomrule
+    \label{output3}
+\end{longtable}
+
+\subsection{Tabella 2}
+\begin{longtable}[]{@{}lllll@{}}
+    \toprule
+    event & distance  & time (ms) & uncertainty (ms) \tabularnewline
+    \midrule
+    \endhead
+    1 & $d_1$ & 1576 & 50 \tabularnewline
+    2 & $d_1$ & 1555 & 50 \tabularnewline
+    3 & $d_1$ & 1557 & 50 \tabularnewline
+    4 & $d_1$ & 1578 & 50 \tabularnewline
+    5 & $d_1$ & 1560 & 50 \tabularnewline
+    6 & $d_1$ & 1553 & 50 \tabularnewline
+    7 & $d_1$ & 1579 & 50 \tabularnewline
+    8 & $d_1$ & 1563 & 50 \tabularnewline
+    9 & $d_1$ & 1555 & 50 \tabularnewline
+    10 & $d_1$ & 1576 & 50 \tabularnewline
+    11 & $d_1$ & 1558 & 50 \tabularnewline
+    12 & $d_1$ & 1554 & 50 \tabularnewline
+    13 & $d_1$ & 1576 & 50 \tabularnewline
+    14 & $d_1$ & 1556 & 50 \tabularnewline
+    15 & $d_1$ & 1556 & 50 \tabularnewline
+    16 & $d_1$ & 1577 & 50 \tabularnewline
+    17 & $d_1$ & 1559 & 50 \tabularnewline
+    18 & $d_1$ & 1556 & 50 \tabularnewline
+    19 & $d_1$ & 1577 & 50 \tabularnewline
+    20 & $d_1$ & 1555 & 50 \tabularnewline
+    21 & $d_1$ & 1553 & 50 \tabularnewline
+    22 & $d_1$ & 1559 & 50 \tabularnewline
+    23 & $d_1$ & 1574 & 50 \tabularnewline
+    24 & $d_1$ & 1554 & 50 \tabularnewline
+    25 & $d_1$ & 1556 & 50 \tabularnewline
+    26 & $d_1$ & 1577 & 50 \tabularnewline
+    27 & $d_1$ & 1560 & 50 \tabularnewline
+    28 & $d_1$ & 1578 & 50 \tabularnewline
+    29 & $d_1$ & 1579 & 50 \tabularnewline
+    30 & $d_1$ & 1558 & 50 \tabularnewline
+    31 & $d_1$ & 1576 & 50 \tabularnewline
+    32 & $d_1$ & 1556 & 50 \tabularnewline
+    33 & $d_1$ & 1557 & 50 \tabularnewline
+    34 & $d_1$ & 1577 & 50 \tabularnewline
+    35 & $d_1$ & 1577 & 50 \tabularnewline
+    36 & $d_1$ & 1557 & 50 \tabularnewline
+    37 & $d_1$ & 1554 & 50 \tabularnewline
+    38 & $d_1$ & 1579 & 50 \tabularnewline
+    39 & $d_1$ & 1577 & 50 \tabularnewline
+    40 & $d_1$ & 1558 & 50 \tabularnewline
+    41 & $d_1$ & 1578 & 50 \tabularnewline
+    42 & $d_1$ & 1562 & 50 \tabularnewline
+    43 & $d_1$ & 1558 & 50 \tabularnewline
+    44 & $d_1$ & 1578 & 50 \tabularnewline
+    45 & $d_1$ & 1558 & 50 \tabularnewline
+    46 & $d_1$ & 1557 & 50 \tabularnewline
+    47 & $d_1$ & 1575 & 50 \tabularnewline
+    48 & $d_1$ & 1575 & 50 \tabularnewline
+    49 & $d_1$ & 1561 & 50 \tabularnewline
+    50 & $d_1$ & 1555 & 50 \tabularnewline
+    51 & $d_1$ & 1577 & 50 \tabularnewline
+    52 & $d_1$ & 1557 & 50 \tabularnewline
+    53 & $d_1$ & 1558 & 50 \tabularnewline
+    54 & $d_1$ & 1578 & 50 \tabularnewline
+    55 & $d_1$ & 1573 & 50 \tabularnewline
+    56 & $d_1$ & 1554 & 50 \tabularnewline
+    57 & $d_1$ & 1556 & 50 \tabularnewline
+    58 & $d_1$ & 1579 & 50 \tabularnewline
+    59 & $d_1$ & 1573 & 50 \tabularnewline
+    60 & $d_1$ & 1579 & 50 \tabularnewline
+    61 & $d_1$ & 1559 & 50 \tabularnewline
+    62 & $d_1$ & 1577 & 50 \tabularnewline
+    63 & $d_1$ & 1577 & 50 \tabularnewline
+    64 & $d_1$ & 1556 & 50 \tabularnewline
+    65 & $d_1$ & 1555 & 50 \tabularnewline
+    66 & $d_1$ & 1576 & 50 \tabularnewline
+    67 & $d_1$ & 1576 & 50 \tabularnewline
+    68 & $d_1$ & 1579 & 50 \tabularnewline
+    69 & $d_1$ & 1571 & 50 \tabularnewline
+    70 & $d_1$ & 1554 & 50 \tabularnewline
+    71 & $d_1$ & 1576 & 50 \tabularnewline
+    72 & $d_1$ & 1595 & 50 \tabularnewline
+    73 & $d_1$ & 1576 & 50 \tabularnewline
+    74 & $d_1$ & 1575 & 50 \tabularnewline
+    75 & $d_1$ & 1581 & 50 \tabularnewline
+    76 & $d_1$ & 1582 & 50 \tabularnewline
+    77 & $d_1$ & 1578 & 50 \tabularnewline
+    78 & $d_1$ & 1577 & 50 \tabularnewline
+    79 & $d_1$ & 1575 & 50 \tabularnewline
+    80 & $d_1$ & 1578 & 50 \tabularnewline
+    81 & $d_1$ & 1580 & 50 \tabularnewline
+    82 & $d_1$ & 1575 & 50 \tabularnewline
+    83 & $d_1$ & 1576 & 50 \tabularnewline
+    84 & $d_1$ & 1571 & 50 \tabularnewline
+    85 & $d_1$ & 1577 & 50 \tabularnewline
+    86 & $d_1$ & 1582 & 50 \tabularnewline
+    87 & $d_1$ & 1579 & 50 \tabularnewline
+    88 & $d_1$ & 1577 & 50 \tabularnewline
+    89 & $d_1$ & 1573 & 50 \tabularnewline
+    90 & $d_1$ & 1598 & 50 \tabularnewline
+    91 & $d_1$ & 1572 & 50 \tabularnewline
+    92 & $d_1$ & 1574 & 50 \tabularnewline
+    93 & $d_1$ & 1583 & 50 \tabularnewline
+    94 & $d_1$ & 1573 & 50 \tabularnewline
+    95 & $d_1$ & 1577 & 50 \tabularnewline
+    96 & $d_1$ & 1578 & 50 \tabularnewline
+    97 & $d_1$ & 1579 & 50 \tabularnewline
+    98 & $d_1$ & 1591 & 50 \tabularnewline
+    99 & $d_1$ & 1600 & 50 \tabularnewline
+    100 & $d_1$ & 1596 & 50 \tabularnewline
+    101 & $d_1$ & 1595 & 50 \tabularnewline
+    1 & $d_2$ & 1019 & 50 \tabularnewline
+    2 & $d_2$ & 1018 & 50 \tabularnewline
+    3 & $d_2$ & 998 & 50 \tabularnewline
+    4 & $d_2$ & 999 & 50 \tabularnewline
+    5 & $d_2$ & 1019 & 50 \tabularnewline
+    6 & $d_2$ & 1024 & 50 \tabularnewline
+    7 & $d_2$ & 997 & 50 \tabularnewline
+    8 & $d_2$ & 998 & 50 \tabularnewline
+    9 & $d_2$ & 1019 & 50 \tabularnewline
+    10 & $d_2$ & 1016 & 50 \tabularnewline
+    11 & $d_2$ & 1000 & 50 \tabularnewline
+    12 & $d_2$ & 998 & 50 \tabularnewline
+    13 & $d_2$ & 1020 & 50 \tabularnewline
+    14 & $d_2$ & 1017 & 50 \tabularnewline
+    15 & $d_2$ & 1016 & 50 \tabularnewline
+    16 & $d_2$ & 995 & 50 \tabularnewline
+    17 & $d_2$ & 1016 & 50 \tabularnewline
+    18 & $d_2$ & 1018 & 50 \tabularnewline
+    19 & $d_2$ & 1012 & 50 \tabularnewline
+    20 & $d_2$ & 998 & 50 \tabularnewline
+    21 & $d_2$ & 997 & 50 \tabularnewline
+    22 & $d_2$ & 1019 & 50 \tabularnewline
+    23 & $d_2$ & 1017 & 50 \tabularnewline
+    24 & $d_2$ & 997 & 50 \tabularnewline
+    25 & $d_2$ & 998 & 50 \tabularnewline
+    26 & $d_2$ & 1018 & 50 \tabularnewline
+    27 & $d_2$ & 1018 & 50 \tabularnewline
+    28 & $d_2$ & 998 & 50 \tabularnewline
+    29 & $d_2$ & 996 & 50 \tabularnewline
+    30 & $d_2$ & 1017 & 50 \tabularnewline
+    31 & $d_2$ & 1020 & 50 \tabularnewline
+    32 & $d_2$ & 1019 & 50 \tabularnewline
+    33 & $d_2$ & 1017 & 50 \tabularnewline
+    34 & $d_2$ & 997 & 50 \tabularnewline
+    35 & $d_2$ & 1018 & 50 \tabularnewline
+    36 & $d_2$ & 1016 & 50 \tabularnewline
+    37 & $d_2$ & 1001 & 50 \tabularnewline
+    38 & $d_2$ & 993 & 50 \tabularnewline
+    39 & $d_2$ & 1018 & 50 \tabularnewline
+    40 & $d_2$ & 1019 & 50 \tabularnewline
+    41 & $d_2$ & 1016 & 50 \tabularnewline
+    42 & $d_2$ & 1018 & 50 \tabularnewline
+    43 & $d_2$ & 1018 & 50 \tabularnewline
+    44 & $d_2$ & 997 & 50 \tabularnewline
+    45 & $d_2$ & 1018 & 50 \tabularnewline
+    46 & $d_2$ & 1015 & 50 \tabularnewline
+    47 & $d_2$ & 1021 & 50 \tabularnewline
+    48 & $d_2$ & 1001 & 50 \tabularnewline
+    49 & $d_2$ & 1016 & 50 \tabularnewline
+    50 & $d_2$ & 1018 & 50 \tabularnewline
+    51 & $d_2$ & 1017 & 50 \tabularnewline
+    52 & $d_2$ & 997 & 50 \tabularnewline
+    53 & $d_2$ & 996 & 50 \tabularnewline
+    54 & $d_2$ & 1020 & 50 \tabularnewline
+    55 & $d_2$ & 1020 & 50 \tabularnewline
+    56 & $d_2$ & 998 & 50 \tabularnewline
+    57 & $d_2$ & 995 & 50 \tabularnewline
+    58 & $d_2$ & 1017 & 50 \tabularnewline
+    59 & $d_2$ & 1020 & 50 \tabularnewline
+    60 & $d_2$ & 998 & 50 \tabularnewline
+    61 & $d_2$ & 1019 & 50 \tabularnewline
+    62 & $d_2$ & 995 & 50 \tabularnewline
+    63 & $d_2$ & 1018 & 50 \tabularnewline
+    64 & $d_2$ & 1020 & 50 \tabularnewline
+    65 & $d_2$ & 1018 & 50 \tabularnewline
+    66 & $d_2$ & 999 & 50 \tabularnewline
+    67 & $d_2$ & 1018 & 50 \tabularnewline
+    68 & $d_2$ & 1018 & 50 \tabularnewline
+    69 & $d_2$ & 1016 & 50 \tabularnewline
+    70 & $d_2$ & 997 & 50 \tabularnewline
+    71 & $d_2$ & 1000 & 50 \tabularnewline
+    72 & $d_2$ & 1017 & 50 \tabularnewline
+    73 & $d_2$ & 1017 & 50 \tabularnewline
+    74 & $d_2$ & 1019 & 50 \tabularnewline
+    75 & $d_2$ & 998 & 50 \tabularnewline
+    76 & $d_2$ & 998 & 50 \tabularnewline
+    77 & $d_2$ & 1017 & 50 \tabularnewline
+    78 & $d_2$ & 1019 & 50 \tabularnewline
+    79 & $d_2$ & 1017 & 50 \tabularnewline
+    80 & $d_2$ & 1017 & 50 \tabularnewline
+    81 & $d_2$ & 1018 & 50 \tabularnewline
+    82 & $d_2$ & 1016 & 50 \tabularnewline
+    83 & $d_2$ & 1002 & 50 \tabularnewline
+    84 & $d_2$ & 994 & 50 \tabularnewline
+    85 & $d_2$ & 1015 & 50 \tabularnewline
+    86 & $d_2$ & 1017 & 50 \tabularnewline
+    87 & $d_2$ & 1019 & 50 \tabularnewline
+    88 & $d_2$ & 1000 & 50 \tabularnewline
+    89 & $d_2$ & 1019 & 50 \tabularnewline
+    90 & $d_2$ & 1017 & 50 \tabularnewline
+    98 & $d_2$ & 998 & 50 \tabularnewline
+    99 & $d_2$ & 998 & 50 \tabularnewline
+    100 & $d_2$ & 1018 & 50 \tabularnewline
+    101 & $d_2$ & 1019 & 50 \tabularnewline
+    102 & $d_2$ & 998 & 50 \tabularnewline
+    103 & $d_2$ & 997 & 50 \tabularnewline
+    104 & $d_2$ & 1018 & 50 \tabularnewline
+    105 & $d_2$ & 1015 & 50 \tabularnewline
+    106 & $d_2$ & 997 & 50 \tabularnewline
+    107 & $d_2$ & 998 & 50 \tabularnewline
+    1 & $d_3$ & 877 & 50 \tabularnewline
+    2 & $d_3$ & 858 & 50 \tabularnewline
+    3 & $d_3$ & 874 & 50 \tabularnewline
+    4 & $d_3$ & 856 & 50 \tabularnewline
+    5 & $d_3$ & 853 & 50 \tabularnewline
+    6 & $d_3$ & 882 & 50 \tabularnewline
+    7 & $d_3$ & 855 & 50 \tabularnewline
+    8 & $d_3$ & 887 & 50 \tabularnewline
+    9 & $d_3$ & 874 & 50 \tabularnewline
+    10 & $d_3$ & 856 & 50 \tabularnewline
+    11 & $d_3$ & 882 & 50 \tabularnewline
+    12 & $d_3$ & 876 & 50 \tabularnewline
+    13 & $d_3$ & 857 & 50 \tabularnewline
+    14 & $d_3$ & 874 & 50 \tabularnewline
+    15 & $d_3$ & 877 & 50 \tabularnewline
+    16 & $d_3$ & 860 & 50 \tabularnewline
+    17 & $d_3$ & 874 & 50 \tabularnewline
+    18 & $d_3$ & 875 & 50 \tabularnewline
+    19 & $d_3$ & 855 & 50 \tabularnewline
+    20 & $d_3$ & 875 & 50 \tabularnewline
+    21 & $d_3$ & 881 & 50 \tabularnewline
+    22 & $d_3$ & 876 & 50 \tabularnewline
+    23 & $d_3$ & 854 & 50 \tabularnewline
+    24 & $d_3$ & 878 & 50 \tabularnewline
+    25 & $d_3$ & 882 & 50 \tabularnewline
+    26 & $d_3$ & 857 & 50 \tabularnewline
+    27 & $d_3$ & 877 & 50 \tabularnewline
+    28 & $d_3$ & 880 & 50 \tabularnewline
+    29 & $d_3$ & 856 & 50 \tabularnewline
+    30 & $d_3$ & 872 & 50 \tabularnewline
+    31 & $d_3$ & 875 & 50 \tabularnewline
+    32 & $d_3$ & 889 & 50 \tabularnewline
+    33 & $d_3$ & 872 & 50 \tabularnewline
+    34 & $d_3$ & 876 & 50 \tabularnewline
+    35 & $d_3$ & 861 & 50 \tabularnewline
+    36 & $d_3$ & 876 & 50 \tabularnewline
+    37 & $d_3$ & 882 & 50 \tabularnewline
+    38 & $d_3$ & 854 & 50 \tabularnewline
+    39 & $d_3$ & 878 & 50 \tabularnewline
+    40 & $d_3$ & 880 & 50 \tabularnewline
+    41 & $d_3$ & 881 & 50 \tabularnewline
+    42 & $d_3$ & 862 & 50 \tabularnewline
+    43 & $d_3$ & 874 & 50 \tabularnewline
+    44 & $d_3$ & 876 & 50 \tabularnewline
+    45 & $d_3$ & 863 & 50 \tabularnewline
+    46 & $d_3$ & 877 & 50 \tabularnewline
+    47 & $d_3$ & 875 & 50 \tabularnewline
+    48 & $d_3$ & 879 & 50 \tabularnewline
+    49 & $d_3$ & 881 & 50 \tabularnewline
+    50 & $d_3$ & 876 & 50 \tabularnewline
+    51 & $d_3$ & 878 & 50 \tabularnewline
+    52 & $d_3$ & 884 & 50 \tabularnewline
+    53 & $d_3$ & 883 & 50 \tabularnewline
+    54 & $d_3$ & 878 & 50 \tabularnewline
+    55 & $d_3$ & 876 & 50 \tabularnewline
+    56 & $d_3$ & 875 & 50 \tabularnewline
+    57 & $d_3$ & 876 & 50 \tabularnewline
+    58 & $d_3$ & 876 & 50 \tabularnewline
+    59 & $d_3$ & 875 & 50 \tabularnewline
+    60 & $d_3$ & 875 & 50 \tabularnewline
+    61 & $d_3$ & 879 & 50 \tabularnewline
+    62 & $d_3$ & 876 & 50 \tabularnewline
+    63 & $d_3$ & 878 & 50 \tabularnewline
+    64 & $d_3$ & 875 & 50 \tabularnewline
+    65 & $d_3$ & 888 & 50 \tabularnewline
+    66 & $d_3$ & 874 & 50 \tabularnewline
+    67 & $d_3$ & 887 & 50 \tabularnewline
+    68 & $d_3$ & 885 & 50 \tabularnewline
+    69 & $d_3$ & 876 & 50 \tabularnewline
+    70 & $d_3$ & 879 & 50 \tabularnewline
+    71 & $d_3$ & 884 & 50 \tabularnewline
+    72 & $d_3$ & 876 & 50 \tabularnewline
+    73 & $d_3$ & 876 & 50 \tabularnewline
+    74 & $d_3$ & 875 & 50 \tabularnewline
+    75 & $d_3$ & 874 & 50 \tabularnewline
+    76 & $d_3$ & 873 & 50 \tabularnewline
+    77 & $d_3$ & 873 & 50 \tabularnewline
+    78 & $d_3$ & 877 & 50 \tabularnewline
+    79 & $d_3$ & 877 & 50 \tabularnewline
+    80 & $d_3$ & 889 & 50 \tabularnewline
+    81 & $d_3$ & 881 & 50 \tabularnewline
+    82 & $d_3$ & 876 & 50 \tabularnewline
+    83 & $d_3$ & 878 & 50 \tabularnewline
+    84 & $d_3$ & 876 & 50 \tabularnewline
+    85 & $d_3$ & 887 & 50 \tabularnewline
+    86 & $d_3$ & 880 & 50 \tabularnewline
+    87 & $d_3$ & 878 & 50 \tabularnewline
+    88 & $d_3$ & 882 & 50 \tabularnewline
+    89 & $d_3$ & 875 & 50 \tabularnewline
+    90 & $d_3$ & 878 & 50 \tabularnewline
+    91 & $d_3$ & 898 & 50 \tabularnewline
+    92 & $d_3$ & 876 & 50 \tabularnewline
+    93 & $d_3$ & 878 & 50 \tabularnewline
+    94 & $d_3$ & 895 & 50 \tabularnewline
+    95 & $d_3$ & 881 & 50 \tabularnewline
+    96 & $d_3$ & 877 & 50 \tabularnewline
+    97 & $d_3$ & 874 & 50 \tabularnewline
+    98 & $d_3$ & 870 & 50 \tabularnewline
+    99 & $d_3$ & 882 & 50 \tabularnewline
+    1 & $d_4$ & 798 & 50 \tabularnewline
+    2 & $d_4$ & 797 & 50 \tabularnewline
+    3 & $d_4$ & 797 & 50 \tabularnewline
+    4 & $d_4$ & 795 & 50 \tabularnewline
+    5 & $d_4$ & 801 & 50 \tabularnewline
+    6 & $d_4$ & 797 & 50 \tabularnewline
+    7 & $d_4$ & 799 & 50 \tabularnewline
+    8 & $d_4$ & 798 & 50 \tabularnewline
+    9 & $d_4$ & 795 & 50 \tabularnewline
+    10 & $d_4$ & 802 & 50 \tabularnewline
+    11 & $d_4$ & 797 & 50 \tabularnewline
+    12 & $d_4$ & 798 & 50 \tabularnewline
+    13 & $d_4$ & 794 & 50 \tabularnewline
+    14 & $d_4$ & 797 & 50 \tabularnewline
+    15 & $d_4$ & 797 & 50 \tabularnewline
+    16 & $d_4$ & 802 & 50 \tabularnewline
+    17 & $d_4$ & 801 & 50 \tabularnewline
+    18 & $d_4$ & 800 & 50 \tabularnewline
+    19 & $d_4$ & 798 & 50 \tabularnewline
+    20 & $d_4$ & 798 & 50 \tabularnewline
+    21 & $d_4$ & 797 & 50 \tabularnewline
+    22 & $d_4$ & 798 & 50 \tabularnewline
+    23 & $d_4$ & 801 & 50 \tabularnewline
+    24 & $d_4$ & 801 & 50 \tabularnewline
+    25 & $d_4$ & 798 & 50 \tabularnewline
+    26 & $d_4$ & 795 & 50 \tabularnewline
+    27 & $d_4$ & 798 & 50 \tabularnewline
+    28 & $d_4$ & 795 & 50 \tabularnewline
+    29 & $d_4$ & 799 & 50 \tabularnewline
+    30 & $d_4$ & 797 & 50 \tabularnewline
+    31 & $d_4$ & 820 & 50 \tabularnewline
+    32 & $d_4$ & 817 & 50 \tabularnewline
+    33 & $d_4$ & 803 & 50 \tabularnewline
+    34 & $d_4$ & 796 & 50 \tabularnewline
+    35 & $d_4$ & 798 & 50 \tabularnewline
+    36 & $d_4$ & 797 & 50 \tabularnewline
+    37 & $d_4$ & 795 & 50 \tabularnewline
+    38 & $d_4$ & 798 & 50 \tabularnewline
+    39 & $d_4$ & 797 & 50 \tabularnewline
+    40 & $d_4$ & 794 & 50 \tabularnewline
+    41 & $d_4$ & 801 & 50 \tabularnewline
+    42 & $d_4$ & 800 & 50 \tabularnewline
+    43 & $d_4$ & 796 & 50 \tabularnewline
+    44 & $d_4$ & 828 & 50 \tabularnewline
+    45 & $d_4$ & 797 & 50 \tabularnewline
+    46 & $d_4$ & 798 & 50 \tabularnewline
+    47 & $d_4$ & 798 & 50 \tabularnewline
+    48 & $d_4$ & 798 & 50 \tabularnewline
+    49 & $d_4$ & 805 & 50 \tabularnewline
+    50 & $d_4$ & 798 & 50 \tabularnewline
+    51 & $d_4$ & 820 & 50 \tabularnewline
+    52 & $d_4$ & 797 & 50 \tabularnewline
+    53 & $d_4$ & 794 & 50 \tabularnewline
+    54 & $d_4$ & 796 & 50 \tabularnewline
+    55 & $d_4$ & 800 & 50 \tabularnewline
+    56 & $d_4$ & 794 & 50 \tabularnewline
+    57 & $d_4$ & 801 & 50 \tabularnewline
+    58 & $d_4$ & 796 & 50 \tabularnewline
+    59 & $d_4$ & 796 & 50 \tabularnewline
+    60 & $d_4$ & 801 & 50 \tabularnewline
+    61 & $d_4$ & 796 & 50 \tabularnewline
+    62 & $d_4$ & 794 & 50 \tabularnewline
+    63 & $d_4$ & 799 & 50 \tabularnewline
+    64 & $d_4$ & 794 & 50 \tabularnewline
+    65 & $d_4$ & 798 & 50 \tabularnewline
+    66 & $d_4$ & 794 & 50 \tabularnewline
+    67 & $d_4$ & 797 & 50 \tabularnewline
+    68 & $d_4$ & 795 & 50 \tabularnewline
+    69 & $d_4$ & 795 & 50 \tabularnewline
+    70 & $d_4$ & 802 & 50 \tabularnewline
+    71 & $d_4$ & 799 & 50 \tabularnewline
+    72 & $d_4$ & 797 & 50 \tabularnewline
+    73 & $d_4$ & 800 & 50 \tabularnewline
+    74 & $d_4$ & 798 & 50 \tabularnewline
+    75 & $d_4$ & 798 & 50 \tabularnewline
+    76 & $d_4$ & 797 & 50 \tabularnewline
+    77 & $d_4$ & 801 & 50 \tabularnewline
+    78 & $d_4$ & 799 & 50 \tabularnewline
+    79 & $d_4$ & 794 & 50 \tabularnewline
+    80 & $d_4$ & 797 & 50 \tabularnewline
+    81 & $d_4$ & 801 & 50 \tabularnewline
+    82 & $d_4$ & 798 & 50 \tabularnewline
+    83 & $d_4$ & 800 & 50 \tabularnewline
+    84 & $d_4$ & 798 & 50 \tabularnewline
+    85 & $d_4$ & 799 & 50 \tabularnewline
+    86 & $d_4$ & 798 & 50 \tabularnewline
+    87 & $d_4$ & 797 & 50 \tabularnewline
+    88 & $d_4$ & 797 & 50 \tabularnewline
+    89 & $d_4$ & 793 & 50 \tabularnewline
+    90 & $d_4$ & 801 & 50 \tabularnewline
+    91 & $d_4$ & 796 & 50 \tabularnewline
+    92 & $d_4$ & 798 & 50 \tabularnewline
+    93 & $d_4$ & 797 & 50 \tabularnewline
+    94 & $d_4$ & 798 & 50 \tabularnewline
+    95 & $d_4$ & 798 & 50 \tabularnewline
+    96 & $d_4$ & 800 & 50 \tabularnewline
+    97 & $d_4$ & 801 & 50 \tabularnewline
+    98 & $d_4$ & 795 & 50 \tabularnewline
+    99 & $d_4$ & 796 & 50 \tabularnewline
+    100 & $d_4$ & 796 & 50 \tabularnewline
+    1 & $d_5$ & 797 & 50 \tabularnewline
+    2 & $d_5$ & 778 & 50 \tabularnewline
+    3 & $d_5$ & 797 & 50 \tabularnewline
+    4 & $d_5$ & 781 & 50 \tabularnewline
+    5 & $d_5$ & 797 & 50 \tabularnewline
+    6 & $d_5$ & 778 & 50 \tabularnewline
+    7 & $d_5$ & 800 & 50 \tabularnewline
+    8 & $d_5$ & 781 & 50 \tabularnewline
+    9 & $d_5$ & 798 & 50 \tabularnewline
+    10 & $d_5$ & 777 & 50 \tabularnewline
+    11 & $d_5$ & 778 & 50 \tabularnewline
+    12 & $d_5$ & 802 & 50 \tabularnewline
+    13 & $d_5$ & 780 & 50 \tabularnewline
+    14 & $d_5$ & 802 & 50 \tabularnewline
+    15 & $d_5$ & 778 & 50 \tabularnewline
+    16 & $d_5$ & 799 & 50 \tabularnewline
+    17 & $d_5$ & 779 & 50 \tabularnewline
+    18 & $d_5$ & 782 & 50 \tabularnewline
+    19 & $d_5$ & 775 & 50 \tabularnewline
+    20 & $d_5$ & 782 & 50 \tabularnewline
+    21 & $d_5$ & 803 & 50 \tabularnewline
+    22 & $d_5$ & 780 & 50 \tabularnewline
+    23 & $d_5$ & 799 & 50 \tabularnewline
+    24 & $d_5$ & 781 & 50 \tabularnewline
+    25 & $d_5$ & 799 & 50 \tabularnewline
+    26 & $d_5$ & 781 & 50 \tabularnewline
+    27 & $d_5$ & 798 & 50 \tabularnewline
+    28 & $d_5$ & 778 & 50 \tabularnewline
+    29 & $d_5$ & 798 & 50 \tabularnewline
+    30 & $d_5$ & 777 & 50 \tabularnewline
+    31 & $d_5$ & 782 & 50 \tabularnewline
+    32 & $d_5$ & 798 & 50 \tabularnewline
+    33 & $d_5$ & 777 & 50 \tabularnewline
+    34 & $d_5$ & 800 & 50 \tabularnewline
+    35 & $d_5$ & 776 & 50 \tabularnewline
+    36 & $d_5$ & 799 & 50 \tabularnewline
+    37 & $d_5$ & 774 & 50 \tabularnewline
+    38 & $d_5$ & 798 & 50 \tabularnewline
+    39 & $d_5$ & 777 & 50 \tabularnewline
+    40 & $d_5$ & 799 & 50 \tabularnewline
+    41 & $d_5$ & 796 & 50 \tabularnewline
+    42 & $d_5$ & 779 & 50 \tabularnewline
+    43 & $d_5$ & 796 & 50 \tabularnewline
+    44 & $d_5$ & 781 & 50 \tabularnewline
+    45 & $d_5$ & 799 & 50 \tabularnewline
+    46 & $d_5$ & 777 & 50 \tabularnewline
+    47 & $d_5$ & 801 & 50 \tabularnewline
+    48 & $d_5$ & 778 & 50 \tabularnewline
+    49 & $d_5$ & 801 & 50 \tabularnewline
+    50 & $d_5$ & 779 & 50 \tabularnewline
+    51 & $d_5$ & 783 & 50 \tabularnewline
+    52 & $d_5$ & 794 & 50 \tabularnewline
+    53 & $d_5$ & 775 & 50 \tabularnewline
+    54 & $d_5$ & 798 & 50 \tabularnewline
+    55 & $d_5$ & 777 & 50 \tabularnewline
+    56 & $d_5$ & 796 & 50 \tabularnewline
+    57 & $d_5$ & 800 & 50 \tabularnewline
+    58 & $d_5$ & 802 & 50 \tabularnewline
+    59 & $d_5$ & 800 & 50 \tabularnewline
+    60 & $d_5$ & 801 & 50 \tabularnewline
+    61 & $d_5$ & 780 & 50 \tabularnewline
+    62 & $d_5$ & 800 & 50 \tabularnewline
+    63 & $d_5$ & 800 & 50 \tabularnewline
+    64 & $d_5$ & 797 & 50 \tabularnewline
+    65 & $d_5$ & 795 & 50 \tabularnewline
+    66 & $d_5$ & 802 & 50 \tabularnewline
+    67 & $d_5$ & 793 & 50 \tabularnewline
+    68 & $d_5$ & 803 & 50 \tabularnewline
+    69 & $d_5$ & 801 & 50 \tabularnewline
+    70 & $d_5$ & 779 & 50 \tabularnewline
+    71 & $d_5$ & 802 & 50 \tabularnewline
+    72 & $d_5$ & 804 & 50 \tabularnewline
+    73 & $d_5$ & 799 & 50 \tabularnewline
+    74 & $d_5$ & 781 & 50 \tabularnewline
+    75 & $d_5$ & 802 & 50 \tabularnewline
+    76 & $d_5$ & 782 & 50 \tabularnewline
+    77 & $d_5$ & 797 & 50 \tabularnewline
+    78 & $d_5$ & 802 & 50 \tabularnewline
+    79 & $d_5$ & 799 & 50 \tabularnewline
+    80 & $d_5$ & 801 & 50 \tabularnewline
+    81 & $d_5$ & 797 & 50 \tabularnewline
+    82 & $d_5$ & 796 & 50 \tabularnewline
+    83 & $d_5$ & 799 & 50 \tabularnewline
+    84 & $d_5$ & 798 & 50 \tabularnewline
+    85 & $d_5$ & 799 & 50 \tabularnewline
+    86 & $d_5$ & 798 & 50 \tabularnewline
+    87 & $d_5$ & 798 & 50 \tabularnewline
+    88 & $d_5$ & 799 & 50 \tabularnewline
+    89 & $d_5$ & 798 & 50 \tabularnewline
+    90 & $d_5$ & 801 & 50 \tabularnewline
+    91 & $d_5$ & 800 & 50 \tabularnewline
+    92 & $d_5$ & 782 & 50 \tabularnewline
+    93 & $d_5$ & 799 & 50 \tabularnewline
+    94 & $d_5$ & 803 & 50 \tabularnewline
+    95 & $d_5$ & 799 & 50 \tabularnewline
+    96 & $d_5$ & 800 & 50 \tabularnewline
+    97 & $d_5$ & 780 & 50 \tabularnewline
+    98 & $d_5$ & 799 & 50 \tabularnewline
+    99 & $d_5$ & 778 & 50 \tabularnewline
+    100 & $d_5$ & 795 & 50 \tabularnewline
+    1 & $d_6$ & 777 & 50 \tabularnewline
+    2 & $d_6$ & 778 & 50 \tabularnewline
+    3 & $d_6$ & 781 & 50 \tabularnewline
+    4 & $d_6$ & 776 & 50 \tabularnewline
+    5 & $d_6$ & 779 & 50 \tabularnewline
+    6 & $d_6$ & 797 & 50 \tabularnewline
+    7 & $d_6$ & 798 & 50 \tabularnewline
+    8 & $d_6$ & 779 & 50 \tabularnewline
+    9 & $d_6$ & 778 & 50 \tabularnewline
+    10 & $d_6$ & 783 & 50 \tabularnewline
+    11 & $d_6$ & 778 & 50 \tabularnewline
+    12 & $d_6$ & 778 & 50 \tabularnewline
+    13 & $d_6$ & 779 & 50 \tabularnewline
+    14 & $d_6$ & 779 & 50 \tabularnewline
+    15 & $d_6$ & 780 & 50 \tabularnewline
+    16 & $d_6$ & 777 & 50 \tabularnewline
+    17 & $d_6$ & 798 & 50 \tabularnewline
+    18 & $d_6$ & 780 & 50 \tabularnewline
+    19 & $d_6$ & 776 & 50 \tabularnewline
+    20 & $d_6$ & 778 & 50 \tabularnewline
+    21 & $d_6$ & 778 & 50 \tabularnewline
+    22 & $d_6$ & 778 & 50 \tabularnewline
+    23 & $d_6$ & 799 & 50 \tabularnewline
+    24 & $d_6$ & 777 & 50 \tabularnewline
+    25 & $d_6$ & 777 & 50 \tabularnewline
+    26 & $d_6$ & 779 & 50 \tabularnewline
+    27 & $d_6$ & 779 & 50 \tabularnewline
+    28 & $d_6$ & 780 & 50 \tabularnewline
+    29 & $d_6$ & 780 & 50 \tabularnewline
+    30 & $d_6$ & 779 & 50 \tabularnewline
+    31 & $d_6$ & 779 & 50 \tabularnewline
+    32 & $d_6$ & 781 & 50 \tabularnewline
+    33 & $d_6$ & 778 & 50 \tabularnewline
+    34 & $d_6$ & 778 & 50 \tabularnewline
+    35 & $d_6$ & 779 & 50 \tabularnewline
+    36 & $d_6$ & 778 & 50 \tabularnewline
+    37 & $d_6$ & 798 & 50 \tabularnewline
+    38 & $d_6$ & 778 & 50 \tabularnewline
+    39 & $d_6$ & 779 & 50 \tabularnewline
+    40 & $d_6$ & 778 & 50 \tabularnewline
+    41 & $d_6$ & 780 & 50 \tabularnewline
+    42 & $d_6$ & 781 & 50 \tabularnewline
+    43 & $d_6$ & 779 & 50 \tabularnewline
+    44 & $d_6$ & 780 & 50 \tabularnewline
+    45 & $d_6$ & 778 & 50 \tabularnewline
+    46 & $d_6$ & 777 & 50 \tabularnewline
+    47 & $d_6$ & 777 & 50 \tabularnewline
+    48 & $d_6$ & 778 & 50 \tabularnewline
+    49 & $d_6$ & 776 & 50 \tabularnewline
+    50 & $d_6$ & 799 & 50 \tabularnewline
+    51 & $d_6$ & 778 & 50 \tabularnewline
+    52 & $d_6$ & 776 & 50 \tabularnewline
+    53 & $d_6$ & 779 & 50 \tabularnewline
+    54 & $d_6$ & 779 & 50 \tabularnewline
+    55 & $d_6$ & 774 & 50 \tabularnewline
+    56 & $d_6$ & 777 & 50 \tabularnewline
+    57 & $d_6$ & 798 & 50 \tabularnewline
+    58 & $d_6$ & 778 & 50 \tabularnewline
+    59 & $d_6$ & 776 & 50 \tabularnewline
+    60 & $d_6$ & 778 & 50 \tabularnewline
+    61 & $d_6$ & 797 & 50 \tabularnewline
+    62 & $d_6$ & 778 & 50 \tabularnewline
+    63 & $d_6$ & 780 & 50 \tabularnewline
+    64 & $d_6$ & 782 & 50 \tabularnewline
+    65 & $d_6$ & 777 & 50 \tabularnewline
+    66 & $d_6$ & 779 & 50 \tabularnewline
+    67 & $d_6$ & 776 & 50 \tabularnewline
+    68 & $d_6$ & 798 & 50 \tabularnewline
+    69 & $d_6$ & 781 & 50 \tabularnewline
+    70 & $d_6$ & 777 & 50 \tabularnewline
+    71 & $d_6$ & 798 & 50 \tabularnewline
+    72 & $d_6$ & 776 & 50 \tabularnewline
+    73 & $d_6$ & 779 & 50 \tabularnewline
+    74 & $d_6$ & 779 & 50 \tabularnewline
+    75 & $d_6$ & 777 & 50 \tabularnewline
+    76 & $d_6$ & 779 & 50 \tabularnewline
+    77 & $d_6$ & 781 & 50 \tabularnewline
+    78 & $d_6$ & 780 & 50 \tabularnewline
+    79 & $d_6$ & 776 & 50 \tabularnewline
+    80 & $d_6$ & 779 & 50 \tabularnewline
+    81 & $d_6$ & 777 & 50 \tabularnewline
+    82 & $d_6$ & 778 & 50 \tabularnewline
+    83 & $d_6$ & 779 & 50 \tabularnewline
+    84 & $d_6$ & 777 & 50 \tabularnewline
+    85 & $d_6$ & 776 & 50 \tabularnewline
+    86 & $d_6$ & 779 & 50 \tabularnewline
+    87 & $d_6$ & 779 & 50 \tabularnewline
+    88 & $d_6$ & 775 & 50 \tabularnewline
+    89 & $d_6$ & 777 & 50 \tabularnewline
+    90 & $d_6$ & 779 & 50 \tabularnewline
+    91 & $d_6$ & 780 & 50 \tabularnewline
+    92 & $d_6$ & 779 & 50 \tabularnewline
+    93 & $d_6$ & 775 & 50 \tabularnewline
+    94 & $d_6$ & 777 & 50 \tabularnewline
+    95 & $d_6$ & 778 & 50 \tabularnewline
+    96 & $d_6$ & 778 & 50 \tabularnewline
+    97 & $d_6$ & 776 & 50 \tabularnewline
+    98 & $d_6$ & 778 & 50 \tabularnewline
+    99 & $d_6$ & 777 & 50 \tabularnewline
+    100 & $d_6$ & 779 & 50 \tabularnewline
+    1 & $d_7$ & 756 & 50 \tabularnewline
+    2 & $d_7$ & 776 & 50 \tabularnewline
+    3 & $d_7$ & 778 & 50 \tabularnewline
+    4 & $d_7$ & 757 & 50 \tabularnewline
+    5 & $d_7$ & 760 & 50 \tabularnewline
+    6 & $d_7$ & 755 & 50 \tabularnewline
+    7 & $d_7$ & 778 & 50 \tabularnewline
+    8 & $d_7$ & 761 & 50 \tabularnewline
+    9 & $d_7$ & 758 & 50 \tabularnewline
+    10 & $d_7$ & 778 & 50 \tabularnewline
+    11 & $d_7$ & 778 & 50 \tabularnewline
+    12 & $d_7$ & 761 & 50 \tabularnewline
+    13 & $d_7$ & 757 & 50 \tabularnewline
+    14 & $d_7$ & 781 & 50 \tabularnewline
+    15 & $d_7$ & 755 & 50 \tabularnewline
+    16 & $d_7$ & 761 & 50 \tabularnewline
+    17 & $d_7$ & 758 & 50 \tabularnewline
+    18 & $d_7$ & 778 & 50 \tabularnewline
+    19 & $d_7$ & 759 & 50 \tabularnewline
+    20 & $d_7$ & 757 & 50 \tabularnewline
+    21 & $d_7$ & 778 & 50 \tabularnewline
+    22 & $d_7$ & 758 & 50 \tabularnewline
+    23 & $d_7$ & 757 & 50 \tabularnewline
+    24 & $d_7$ & 760 & 50 \tabularnewline
+    25 & $d_7$ & 778 & 50 \tabularnewline
+    26 & $d_7$ & 759 & 50 \tabularnewline
+    27 & $d_7$ & 758 & 50 \tabularnewline
+    28 & $d_7$ & 756 & 50 \tabularnewline
+    29 & $d_7$ & 781 & 50 \tabularnewline
+    30 & $d_7$ & 759 & 50 \tabularnewline
+    31 & $d_7$ & 758 & 50 \tabularnewline
+    32 & $d_7$ & 778 & 50 \tabularnewline
+    33 & $d_7$ & 778 & 50 \tabularnewline
+    34 & $d_7$ & 759 & 50 \tabularnewline
+    35 & $d_7$ & 758 & 50 \tabularnewline
+    36 & $d_7$ & 779 & 50 \tabularnewline
+    37 & $d_7$ & 778 & 50 \tabularnewline
+    38 & $d_7$ & 759 & 50 \tabularnewline
+    39 & $d_7$ & 777 & 50 \tabularnewline
+    40 & $d_7$ & 761 & 50 \tabularnewline
+    41 & $d_7$ & 761 & 50 \tabularnewline
+    42 & $d_7$ & 760 & 50 \tabularnewline
+    43 & $d_7$ & 779 & 50 \tabularnewline
+    44 & $d_7$ & 763 & 50 \tabularnewline
+    45 & $d_7$ & 773 & 50 \tabularnewline
+    46 & $d_7$ & 777 & 50 \tabularnewline
+    47 & $d_7$ & 757 & 50 \tabularnewline
+    48 & $d_7$ & 759 & 50 \tabularnewline
+    49 & $d_7$ & 757 & 50 \tabularnewline
+    50 & $d_7$ & 776 & 50 \tabularnewline
+    51 & $d_7$ & 759 & 50 \tabularnewline
+    52 & $d_7$ & 777 & 50 \tabularnewline
+    53 & $d_7$ & 778 & 50 \tabularnewline
+    54 & $d_7$ & 760 & 50 \tabularnewline
+    55 & $d_7$ & 760 & 50 \tabularnewline
+    56 & $d_7$ & 776 & 50 \tabularnewline
+    57 & $d_7$ & 779 & 50 \tabularnewline
+    58 & $d_7$ & 757 & 50 \tabularnewline
+    59 & $d_7$ & 759 & 50 \tabularnewline
+    60 & $d_7$ & 759 & 50 \tabularnewline
+    61 & $d_7$ & 778 & 50 \tabularnewline
+    62 & $d_7$ & 759 & 50 \tabularnewline
+    63 & $d_7$ & 779 & 50 \tabularnewline
+    64 & $d_7$ & 779 & 50 \tabularnewline
+    65 & $d_7$ & 759 & 50 \tabularnewline
+    66 & $d_7$ & 763 & 50 \tabularnewline
+    67 & $d_7$ & 779 & 50 \tabularnewline
+    68 & $d_7$ & 780 & 50 \tabularnewline
+    69 & $d_7$ & 759 & 50 \tabularnewline
+    70 & $d_7$ & 759 & 50 \tabularnewline
+    71 & $d_7$ & 775 & 50 \tabularnewline
+    72 & $d_7$ & 755 & 50 \tabularnewline
+    73 & $d_7$ & 776 & 50 \tabularnewline
+    74 & $d_7$ & 777 & 50 \tabularnewline
+    75 & $d_7$ & 781 & 50 \tabularnewline
+    76 & $d_7$ & 756 & 50 \tabularnewline
+    77 & $d_7$ & 759 & 50 \tabularnewline
+    78 & $d_7$ & 761 & 50 \tabularnewline
+    79 & $d_7$ & 780 & 50 \tabularnewline
+    80 & $d_7$ & 759 & 50 \tabularnewline
+    81 & $d_7$ & 757 & 50 \tabularnewline
+    82 & $d_7$ & 759 & 50 \tabularnewline
+    83 & $d_7$ & 779 & 50 \tabularnewline
+    84 & $d_7$ & 765 & 50 \tabularnewline
+    85 & $d_7$ & 757 & 50 \tabularnewline
+    86 & $d_7$ & 761 & 50 \tabularnewline
+    87 & $d_7$ & 778 & 50 \tabularnewline
+    88 & $d_7$ & 760 & 50 \tabularnewline
+    89 & $d_7$ & 757 & 50 \tabularnewline
+    90 & $d_7$ & 759 & 50 \tabularnewline
+    91 & $d_7$ & 761 & 50 \tabularnewline
+    92 & $d_7$ & 778 & 50 \tabularnewline
+    93 & $d_7$ & 759 & 50 \tabularnewline
+    94 & $d_7$ & 757 & 50 \tabularnewline
+    95 & $d_7$ & 758 & 50 \tabularnewline
+    96 & $d_7$ & 780 & 50 \tabularnewline
+    97 & $d_7$ & 758 & 50 \tabularnewline
+    98 & $d_7$ & 755 & 50 \tabularnewline
+    99 & $d_7$ & 758 & 50 \tabularnewline
+    100 & $d_7$ & 777 & 50 \tabularnewline
+    1 & $d_8$ & 777 & 50 \tabularnewline
+    2 & $d_8$ & 778 & 50 \tabularnewline
+    3 & $d_8$ & 799 & 50 \tabularnewline
+    4 & $d_8$ & 778 & 50 \tabularnewline
+    5 & $d_8$ & 778 & 50 \tabularnewline
+    6 & $d_8$ & 779 & 50 \tabularnewline
+    7 & $d_8$ & 799 & 50 \tabularnewline
+    8 & $d_8$ & 778 & 50 \tabularnewline
+    9 & $d_8$ & 778 & 50 \tabularnewline
+    10 & $d_8$ & 798 & 50 \tabularnewline
+    11 & $d_8$ & 779 & 50 \tabularnewline
+    12 & $d_8$ & 778 & 50 \tabularnewline
+    13 & $d_8$ & 798 & 50 \tabularnewline
+    14 & $d_8$ & 779 & 50 \tabularnewline
+    15 & $d_8$ & 778 & 50 \tabularnewline
+    16 & $d_8$ & 797 & 50 \tabularnewline
+    17 & $d_8$ & 802 & 50 \tabularnewline
+    18 & $d_8$ & 778 & 50 \tabularnewline
+    19 & $d_8$ & 776 & 50 \tabularnewline
+    20 & $d_8$ & 799 & 50 \tabularnewline
+    21 & $d_8$ & 779 & 50 \tabularnewline
+    22 & $d_8$ & 780 & 50 \tabularnewline
+    23 & $d_8$ & 798 & 50 \tabularnewline
+    24 & $d_8$ & 797 & 50 \tabularnewline
+    25 & $d_8$ & 778 & 50 \tabularnewline
+    26 & $d_8$ & 780 & 50 \tabularnewline
+    27 & $d_8$ & 799 & 50 \tabularnewline
+    28 & $d_8$ & 779 & 50 \tabularnewline
+    29 & $d_8$ & 780 & 50 \tabularnewline
+    30 & $d_8$ & 777 & 50 \tabularnewline
+    31 & $d_8$ & 781 & 50 \tabularnewline
+    32 & $d_8$ & 799 & 50 \tabularnewline
+    33 & $d_8$ & 798 & 50 \tabularnewline
+    34 & $d_8$ & 779 & 50 \tabularnewline
+    35 & $d_8$ & 778 & 50 \tabularnewline
+    36 & $d_8$ & 798 & 50 \tabularnewline
+    37 & $d_8$ & 799 & 50 \tabularnewline
+    38 & $d_8$ & 779 & 50 \tabularnewline
+    39 & $d_8$ & 779 & 50 \tabularnewline
+    40 & $d_8$ & 801 & 50 \tabularnewline
+    41 & $d_8$ & 778 & 50 \tabularnewline
+    42 & $d_8$ & 800 & 50 \tabularnewline
+    43 & $d_8$ & 798 & 50 \tabularnewline
+    44 & $d_8$ & 779 & 50 \tabularnewline
+    45 & $d_8$ & 776 & 50 \tabularnewline
+    46 & $d_8$ & 796 & 50 \tabularnewline
+    47 & $d_8$ & 797 & 50 \tabularnewline
+    48 & $d_8$ & 779 & 50 \tabularnewline
+    49 & $d_8$ & 779 & 50 \tabularnewline
+    50 & $d_8$ & 796 & 50 \tabularnewline
+    51 & $d_8$ & 778 & 50 \tabularnewline
+    52 & $d_8$ & 778 & 50 \tabularnewline
+    53 & $d_8$ & 797 & 50 \tabularnewline
+    54 & $d_8$ & 796 & 50 \tabularnewline
+    55 & $d_8$ & 779 & 50 \tabularnewline
+    56 & $d_8$ & 782 & 50 \tabularnewline
+    57 & $d_8$ & 799 & 50 \tabularnewline
+    58 & $d_8$ & 797 & 50 \tabularnewline
+    59 & $d_8$ & 778 & 50 \tabularnewline
+    60 & $d_8$ & 778 & 50 \tabularnewline
+    61 & $d_8$ & 776 & 50 \tabularnewline
+    62 & $d_8$ & 776 & 50 \tabularnewline
+    63 & $d_8$ & 796 & 50 \tabularnewline
+    64 & $d_8$ & 779 & 50 \tabularnewline
+    65 & $d_8$ & 778 & 50 \tabularnewline
+    66 & $d_8$ & 778 & 50 \tabularnewline
+    67 & $d_8$ & 798 & 50 \tabularnewline
+    68 & $d_8$ & 777 & 50 \tabularnewline
+    69 & $d_8$ & 779 & 50 \tabularnewline
+    70 & $d_8$ & 779 & 50 \tabularnewline
+    71 & $d_8$ & 798 & 50 \tabularnewline
+    72 & $d_8$ & 779 & 50 \tabularnewline
+    73 & $d_8$ & 778 & 50 \tabularnewline
+    74 & $d_8$ & 799 & 50 \tabularnewline
+    75 & $d_8$ & 778 & 50 \tabularnewline
+    76 & $d_8$ & 780 & 50 \tabularnewline
+    77 & $d_8$ & 777 & 50 \tabularnewline
+    78 & $d_8$ & 799 & 50 \tabularnewline
+    79 & $d_8$ & 775 & 50 \tabularnewline
+    80 & $d_8$ & 779 & 50 \tabularnewline
+    81 & $d_8$ & 778 & 50 \tabularnewline
+    82 & $d_8$ & 799 & 50 \tabularnewline
+    83 & $d_8$ & 778 & 50 \tabularnewline
+    84 & $d_8$ & 781 & 50 \tabularnewline
+    85 & $d_8$ & 777 & 50 \tabularnewline
+    86 & $d_8$ & 797 & 50 \tabularnewline
+    87 & $d_8$ & 780 & 50 \tabularnewline
+    88 & $d_8$ & 778 & 50 \tabularnewline
+    89 & $d_8$ & 798 & 50 \tabularnewline
+    90 & $d_8$ & 792 & 50 \tabularnewline
+    91 & $d_8$ & 779 & 50 \tabularnewline
+    92 & $d_8$ & 797 & 50 \tabularnewline
+    93 & $d_8$ & 777 & 50 \tabularnewline
+    94 & $d_8$ & 777 & 50 \tabularnewline
+    95 & $d_8$ & 778 & 50 \tabularnewline
+    96 & $d_8$ & 795 & 50 \tabularnewline
+    97 & $d_8$ & 779 & 50 \tabularnewline
+    98 & $d_8$ & 780 & 50 \tabularnewline
+    99 & $d_8$ & 800 & 50 \tabularnewline
+    100 & $d_8$ & 797 & 50 \tabularnewline
+    1 & $d_9$ & 783 & 50 \tabularnewline
+    2 & $d_9$ & 797 & 50 \tabularnewline
+    3 & $d_9$ & 800 & 50 \tabularnewline
+    4 & $d_9$ & 798 & 50 \tabularnewline
+    5 & $d_9$ & 794 & 50 \tabularnewline
+    6 & $d_9$ & 778 & 50 \tabularnewline
+    7 & $d_9$ & 795 & 50 \tabularnewline
+    8 & $d_9$ & 798 & 50 \tabularnewline
+    9 & $d_9$ & 800 & 50 \tabularnewline
+    10 & $d_9$ & 799 & 50 \tabularnewline
+    11 & $d_9$ & 799 & 50 \tabularnewline
+    12 & $d_9$ & 797 & 50 \tabularnewline
+    13 & $d_9$ & 799 & 50 \tabularnewline
+    14 & $d_9$ & 797 & 50 \tabularnewline
+    15 & $d_9$ & 798 & 50 \tabularnewline
+    16 & $d_9$ & 800 & 50 \tabularnewline
+    17 & $d_9$ & 777 & 50 \tabularnewline
+    18 & $d_9$ & 796 & 50 \tabularnewline
+    19 & $d_9$ & 799 & 50 \tabularnewline
+    20 & $d_9$ & 797 & 50 \tabularnewline
+    21 & $d_9$ & 798 & 50 \tabularnewline
+    22 & $d_9$ & 795 & 50 \tabularnewline
+    23 & $d_9$ & 800 & 50 \tabularnewline
+    24 & $d_9$ & 800 & 50 \tabularnewline
+    25 & $d_9$ & 799 & 50 \tabularnewline
+    26 & $d_9$ & 800 & 50 \tabularnewline
+    27 & $d_9$ & 796 & 50 \tabularnewline
+    28 & $d_9$ & 798 & 50 \tabularnewline
+    29 & $d_9$ & 781 & 50 \tabularnewline
+    30 & $d_9$ & 798 & 50 \tabularnewline
+    31 & $d_9$ & 800 & 50 \tabularnewline
+    32 & $d_9$ & 800 & 50 \tabularnewline
+    33 & $d_9$ & 801 & 50 \tabularnewline
+    34 & $d_9$ & 797 & 50 \tabularnewline
+    35 & $d_9$ & 798 & 50 \tabularnewline
+    36 & $d_9$ & 799 & 50 \tabularnewline
+    37 & $d_9$ & 795 & 50 \tabularnewline
+    38 & $d_9$ & 799 & 50 \tabularnewline
+    39 & $d_9$ & 798 & 50 \tabularnewline
+    40 & $d_9$ & 795 & 50 \tabularnewline
+    41 & $d_9$ & 798 & 50 \tabularnewline
+    42 & $d_9$ & 799 & 50 \tabularnewline
+    43 & $d_9$ & 799 & 50 \tabularnewline
+    44 & $d_9$ & 800 & 50 \tabularnewline
+    45 & $d_9$ & 798 & 50 \tabularnewline
+    46 & $d_9$ & 781 & 50 \tabularnewline
+    47 & $d_9$ & 799 & 50 \tabularnewline
+    48 & $d_9$ & 801 & 50 \tabularnewline
+    49 & $d_9$ & 798 & 50 \tabularnewline
+    50 & $d_9$ & 797 & 50 \tabularnewline
+    51 & $d_9$ & 778 & 50 \tabularnewline
+    52 & $d_9$ & 798 & 50 \tabularnewline
+    53 & $d_9$ & 797 & 50 \tabularnewline
+    54 & $d_9$ & 801 & 50 \tabularnewline
+    55 & $d_9$ & 798 & 50 \tabularnewline
+    56 & $d_9$ & 801 & 50 \tabularnewline
+    57 & $d_9$ & 800 & 50 \tabularnewline
+    58 & $d_9$ & 802 & 50 \tabularnewline
+    59 & $d_9$ & 798 & 50 \tabularnewline
+    60 & $d_9$ & 799 & 50 \tabularnewline
+    61 & $d_9$ & 799 & 50 \tabularnewline
+    62 & $d_9$ & 797 & 50 \tabularnewline
+    63 & $d_9$ & 798 & 50 \tabularnewline
+    64 & $d_9$ & 778 & 50 \tabularnewline
+    65 & $d_9$ & 798 & 50 \tabularnewline
+    66 & $d_9$ & 801 & 50 \tabularnewline
+    67 & $d_9$ & 797 & 50 \tabularnewline
+    68 & $d_9$ & 797 & 50 \tabularnewline
+    69 & $d_9$ & 800 & 50 \tabularnewline
+    70 & $d_9$ & 798 & 50 \tabularnewline
+    71 & $d_9$ & 780 & 50 \tabularnewline
+    72 & $d_9$ & 798 & 50 \tabularnewline
+    73 & $d_9$ & 796 & 50 \tabularnewline
+    74 & $d_9$ & 800 & 50 \tabularnewline
+    75 & $d_9$ & 797 & 50 \tabularnewline
+    76 & $d_9$ & 797 & 50 \tabularnewline
+    77 & $d_9$ & 798 & 50 \tabularnewline
+    78 & $d_9$ & 799 & 50 \tabularnewline
+    79 & $d_9$ & 800 & 50 \tabularnewline
+    80 & $d_9$ & 797 & 50 \tabularnewline
+    81 & $d_9$ & 800 & 50 \tabularnewline
+    82 & $d_9$ & 798 & 50 \tabularnewline
+    83 & $d_9$ & 798 & 50 \tabularnewline
+    84 & $d_9$ & 801 & 50 \tabularnewline
+    85 & $d_9$ & 799 & 50 \tabularnewline
+    86 & $d_9$ & 797 & 50 \tabularnewline
+    87 & $d_9$ & 801 & 50 \tabularnewline
+    88 & $d_9$ & 798 & 50 \tabularnewline
+    89 & $d_9$ & 800 & 50 \tabularnewline
+    90 & $d_9$ & 798 & 50 \tabularnewline
+    91 & $d_9$ & 797 & 50 \tabularnewline
+    92 & $d_9$ & 801 & 50 \tabularnewline
+    93 & $d_9$ & 798 & 50 \tabularnewline
+    94 & $d_9$ & 799 & 50 \tabularnewline
+    95 & $d_9$ & 798 & 50 \tabularnewline
+    96 & $d_9$ & 797 & 50 \tabularnewline
+    97 & $d_9$ & 798 & 50 \tabularnewline
+    98 & $d_9$ & 803 & 50 \tabularnewline
+    99 & $d_9$ & 798 & 50 \tabularnewline
+    100 & $d_9$ & 799 & 50 \tabularnewline
+    1 & $d_{10}$ & 819 & 50 \tabularnewline
+    2 & $d_{10}$ & 799 & 50 \tabularnewline
+    3 & $d_{10}$ & 818 & 50 \tabularnewline
+    4 & $d_{10}$ & 819 & 50 \tabularnewline
+    5 & $d_{10}$ & 815 & 50 \tabularnewline
+    6 & $d_{10}$ & 817 & 50 \tabularnewline
+    7 & $d_{10}$ & 818 & 50 \tabularnewline
+    8 & $d_{10}$ & 798 & 50 \tabularnewline
+    9 & $d_{10}$ & 819 & 50 \tabularnewline
+    10 & $d_{10}$ & 819 & 50 \tabularnewline
+    11 & $d_{10}$ & 819 & 50 \tabularnewline
+    12 & $d_{10}$ & 817 & 50 \tabularnewline
+    13 & $d_{10}$ & 815 & 50 \tabularnewline
+    14 & $d_{10}$ & 819 & 50 \tabularnewline
+    15 & $d_{10}$ & 798 & 50 \tabularnewline
+    16 & $d_{10}$ & 819 & 50 \tabularnewline
+    17 & $d_{10}$ & 819 & 50 \tabularnewline
+    18 & $d_{10}$ & 818 & 50 \tabularnewline
+    19 & $d_{10}$ & 814 & 50 \tabularnewline
+    20 & $d_{10}$ & 818 & 50 \tabularnewline
+    21 & $d_{10}$ & 820 & 50 \tabularnewline
+    22 & $d_{10}$ & 818 & 50 \tabularnewline
+    23 & $d_{10}$ & 818 & 50 \tabularnewline
+    24 & $d_{10}$ & 799 & 50 \tabularnewline
+    25 & $d_{10}$ & 816 & 50 \tabularnewline
+    26 & $d_{10}$ & 819 & 50 \tabularnewline
+    27 & $d_{10}$ & 815 & 50 \tabularnewline
+    28 & $d_{10}$ & 819 & 50 \tabularnewline
+    29 & $d_{10}$ & 818 & 50 \tabularnewline
+    30 & $d_{10}$ & 818 & 50 \tabularnewline
+    31 & $d_{10}$ & 817 & 50 \tabularnewline
+    32 & $d_{10}$ & 819 & 50 \tabularnewline
+    33 & $d_{10}$ & 814 & 50 \tabularnewline
+    34 & $d_{10}$ & 819 & 50 \tabularnewline
+    35 & $d_{10}$ & 818 & 50 \tabularnewline
+    36 & $d_{10}$ & 818 & 50 \tabularnewline
+    37 & $d_{10}$ & 826 & 50 \tabularnewline
+    38 & $d_{10}$ & 818 & 50 \tabularnewline
+    39 & $d_{10}$ & 816 & 50 \tabularnewline
+    40 & $d_{10}$ & 818 & 50 \tabularnewline
+    41 & $d_{10}$ & 818 & 50 \tabularnewline
+    42 & $d_{10}$ & 816 & 50 \tabularnewline
+    43 & $d_{10}$ & 818 & 50 \tabularnewline
+    44 & $d_{10}$ & 799 & 50 \tabularnewline
+    45 & $d_{10}$ & 818 & 50 \tabularnewline
+    46 & $d_{10}$ & 817 & 50 \tabularnewline
+    47 & $d_{10}$ & 816 & 50 \tabularnewline
+    48 & $d_{10}$ & 820 & 50 \tabularnewline
+    49 & $d_{10}$ & 799 & 50 \tabularnewline
+    50 & $d_{10}$ & 819 & 50 \tabularnewline
+    51 & $d_{10}$ & 819 & 50 \tabularnewline
+    52 & $d_{10}$ & 816 & 50 \tabularnewline
+    53 & $d_{10}$ & 818 & 50 \tabularnewline
+    54 & $d_{10}$ & 819 & 50 \tabularnewline
+    55 & $d_{10}$ & 818 & 50 \tabularnewline
+    56 & $d_{10}$ & 818 & 50 \tabularnewline
+    57 & $d_{10}$ & 820 & 50 \tabularnewline
+    58 & $d_{10}$ & 815 & 50 \tabularnewline
+    59 & $d_{10}$ & 818 & 50 \tabularnewline
+    60 & $d_{10}$ & 797 & 50 \tabularnewline
+    61 & $d_{10}$ & 817 & 50 \tabularnewline
+    62 & $d_{10}$ & 816 & 50 \tabularnewline
+    63 & $d_{10}$ & 820 & 50 \tabularnewline
+    64 & $d_{10}$ & 818 & 50 \tabularnewline
+    65 & $d_{10}$ & 819 & 50 \tabularnewline
+    66 & $d_{10}$ & 818 & 50 \tabularnewline
+    67 & $d_{10}$ & 799 & 50 \tabularnewline
+    68 & $d_{10}$ & 820 & 50 \tabularnewline
+    69 & $d_{10}$ & 819 & 50 \tabularnewline
+    70 & $d_{10}$ & 817 & 50 \tabularnewline
+    71 & $d_{10}$ & 798 & 50 \tabularnewline
+    72 & $d_{10}$ & 818 & 50 \tabularnewline
+    73 & $d_{10}$ & 817 & 50 \tabularnewline
+    74 & $d_{10}$ & 816 & 50 \tabularnewline
+    75 & $d_{10}$ & 818 & 50 \tabularnewline
+    76 & $d_{10}$ & 819 & 50 \tabularnewline
+    77 & $d_{10}$ & 796 & 50 \tabularnewline
+    78 & $d_{10}$ & 798 & 50 \tabularnewline
+    79 & $d_{10}$ & 818 & 50 \tabularnewline
+    80 & $d_{10}$ & 818 & 50 \tabularnewline
+    81 & $d_{10}$ & 816 & 50 \tabularnewline
+    82 & $d_{10}$ & 818 & 50 \tabularnewline
+    83 & $d_{10}$ & 795 & 50 \tabularnewline
+    84 & $d_{10}$ & 799 & 50 \tabularnewline
+    85 & $d_{10}$ & 818 & 50 \tabularnewline
+    86 & $d_{10}$ & 820 & 50 \tabularnewline
+    87 & $d_{10}$ & 818 & 50 \tabularnewline
+    88 & $d_{10}$ & 819 & 50 \tabularnewline
+    89 & $d_{10}$ & 798 & 50 \tabularnewline
+    90 & $d_{10}$ & 799 & 50 \tabularnewline
+    91 & $d_{10}$ & 798 & 50 \tabularnewline
+    92 & $d_{10}$ & 798 & 50 \tabularnewline
+    93 & $d_{10}$ & 819 & 50 \tabularnewline
+    94 & $d_{10}$ & 818 & 50 \tabularnewline
+    95 & $d_{10}$ & 800 & 50 \tabularnewline
+    96 & $d_{10}$ & 798 & 50 \tabularnewline
+    97 & $d_{10}$ & 798 & 50 \tabularnewline
+    98 & $d_{10}$ & 797 & 50 \tabularnewline
+    99 & $d_{10}$ & 818 & 50 \tabularnewline
+    100 & $d_{10}$ & 815 & 50 \tabularnewline
+    \bottomrule
+    \label{output3}
+\end{longtable}
+
+
+
+\section{Additional notes}
+
+\subsection{Data Availability}
+The data that support the findings of this study are openly available in \href{https://github.com/dennisangemi/lab1-dfa/tree/main/exp-4/data}{dennisangemi/lab1-dfa GitHub Repository} at \href{https://github.com/dennisangemi/lab1-dfa/tree/main/exp-4/data}{https://github.com/dennisangemi/lab1-dfa/tree/main/exp-4/data} under \href{https://creativecommons.org/licenses/by/4.0/}{CC-BY 4.0 license}.
+
+\subsection{Code Availability}
+The MATLAB code written to get the findings of this study is openly available in \href{https://github.com/dennisangemi/lab1-dfa/tree/main/exp-2/script}{dennisangemi/lab1-dfa GitHub Repository} at \href{https://github.com/dennisangemi/lab1-dfa/tree/main/exp-4/script}{https://github.com/dennisangemi/lab1-dfa/tree/main/exp-4/script}
+
+
+\subsection{Software used}
+\begin{itemize}
+\item
+  \textbf{MATLAB}: Data Analysis
+\item
+  \textbf{Google Spreadsheet}: Data entry
+\item
+  \textbf{Adobe Experience Design}: Images designing
+\item
+  \textbf{GitHub}: Resource sharing
+\end{itemize}
+
+\section{Bibliography}
+\begin{itemize}
+\item
+  Taylor,~ J. (1999).~\emph{Introduzione all'analisi degli errori: Lo
+  studio delle incertezze nelle misure fisiche.~}Zanichelli
+\item
+  Bevington P. (2002).~\emph{Data Reduction and Error Analysis for the
+  Physical Sciences.~} McGraw-Hill Education ~
+\item Malthe-Sørenssen, A. (2015). \emph{Elementary Mechanics Using Matlab: A Modern Course Combining Analytical and Numerical Techniques}. Springer
+\end{itemize}
+
+
+
+\end{document}
