@@ -16,7 +16,7 @@
 \author[1]{Giulia De Luca}%
 \affil[1]{Dipartimento di Fisica e Astronomia ``Ettore Majorana'' - Università degli Studi di Catania}%
 
-\date{March 2022}
+\date{25 Marzo 2022}
 
 \begin{document}
 
@@ -51,12 +51,12 @@ In cui:
 \section{Apparato sperimentale}
 \subsection{Descrizione apparato}
 L'apparato sperimentale è costituito da un'asta rigida lunga un metro sostenuta da un perno che ne consente le oscillazioni.
-L'asta in oltre può essere alzata o abbassata in modo da poter cambiare il suo asse di rotazione.
+L'asta inoltre può essere regolata in modo tale da poter modificare il suo asse di rotazione.
 
 \subsection{Procedura di misura}
-Per poter misurare il periodo di oscillazione del pendolo, sotto l'asta, è stato posizionato un telefono, in modo da poterne registrare il passaggio con il sensore di prossimità.
+Per poter misurare il periodo di oscillazione del pendolo, è stato posizionato, al di sotto del pendolo, uno smartphone in modo da poterne registrare il passaggio mediante il sensore di prossimità (TMD4906); è stato sfruttato il software Physics Toolbox Sensor Suite.
 
-Sono state effettuate 900 misure, 100 per ogni configurazione in cui veniva impostato il pendolo.
+Sono state effettuate 1000 misure, 100 per ogni configurazione (si vedano le Tabelle 1 e 2 dell'appendice A)
 
 \subsection{Strumenti di misura}
 le misure sono state effettuate con i seguenti strumenti:
@@ -66,19 +66,26 @@ Strumento & Sensibilità & udm \tabularnewline
 \midrule
 \endhead
 Cronometro & 0.01 & s \tabularnewline
+Metro & 1 & cm \tabularnewline
+Sensore di prossimità TMD4906 & 0.05 & s \tabularnewline
 \bottomrule
 \end{longtable}
+
 \section{Analisi dei dati e propagazione degli errori}
+Si procede al calcolo dell'accelerazione gravitazionale $g$ sfruttando le caratteristiche periodiche del moto di un pendolo fisico per il quale valgono le seguenti relazioni
+
 \begin{equation}
 T=2\pi\sqrt{\frac{I}{mgd_{cm}}} \Longrightarrow T^2=4\pi^2\frac{I}{mgd_{cm}} 
 \end{equation}
 
 \begin{equation}
-    g=4\pi^2\frac{I}{md_{cm}T^2}=4\pi^2\frac{\frac{1}{12}ml_0^2+md_{cm}}{md_{cm}T^2}=\frac{l_0^2\pi^2}{3d_{cm}T^2}+4\pi^2\frac{d_{cm}}{T^2}
+    g=4\pi^2\frac{I}{md_{cm}T^2}=4\pi^2\frac{\frac{1}{12}ml_0^2+md_{cm}}{md_{cm}T^2}=\frac{l_0^2\pi^2}{3d_{cm}T^2}+4\pi^2\frac{d_{cm}}{T^2}.
 \end{equation}
+Di seguito si calcola l'errore assoluto di $g$
 \begin{equation}
 \delta g=\left | \frac{\partial g}{\partial l^2} \right | \delta l^2 + \left | \frac{\partial g}{\partial T^2} \right | \delta T^2 + \left | \frac{\partial g}{\partial d_{cm}^2} \right | \delta d_{cm}^2
 \end{equation}
+in cui 
 \begin{equation}
 \delta l^2=2l\delta l
 \end{equation}
@@ -86,12 +93,69 @@ T=2\pi\sqrt{\frac{I}{mgd_{cm}}} \Longrightarrow T^2=4\pi^2\frac{I}{mgd_{cm}}
 \delta T^2=8t\delta t
 \end{equation}
 \begin{equation}
-\delta g=\frac{\pi^2}{3d_{cm}T^2}2l\delta l + \left (\frac{l_0^2\pi^2}{3d_{cm}T^4} + 4\pi^2\frac{d_{cm}}{T^4}\right )8t\delta t + \left |-\frac{l_0^2\pi^2}{3d_{cm}^2T^2} + \frac{4\pi^2}{T^2}\right |\delta d_{cm}
+\delta g=\frac{\pi^2}{3d_{cm}T^2}2l\delta l + \left (\frac{l_0^2\pi^2}{3d_{cm}T^4} + 4\pi^2\frac{d_{cm}}{T^4}\right )8t\delta t + \left |-\frac{l_0^2\pi^2}{3d_{cm}^2T^2} + \frac{4\pi^2}{T^2}\right |\delta d_{cm}.
 \end{equation}
 
 \section{Risultati e conclusioni}
+I risultati ottenuti per l'accelerazione di gravità risultano essere accurati ma non precisi.
+Abbiamo ottenuto un valore medio di $g$ pari a $9.5 \pm 2 \; m/s^2$ con un errore relativo del 20\%.
+La grandezza dell'errore è dovuta, oltre alla scarsa sensibilità degli strumenti, ad imprecisioni dovute al posizionamento del pendolo fisico utilizzato: si è notato infatti che con l'avvicinarsi del centro di massa al perno, il periodo di oscillazione $T$ non è compatibile con i risultati aspettati. Si è inoltre rilevato che il pendolo non risulta essere completamente perpendicolare al piano di lavoro inficiando inequivocabilmente le misure di $T$. A seguito di queste considerazioni si è ritenuto opportuno scartare il valore di $g$ ottenuto nella configurazione $d_1$ in cui la distanza dal centro di massa è pari a 5 $\pm$ 1 $cm$. Di seguito si riportano i valori dell'accelerazione di gravità ($g$) ottenute nelle 10 configurazioni descritte nella sezione 2.
+
+\begin{longtable}[]{@{}lllll@{}}
+    \toprule
+    configuration & g ($m/s^2$)  & relative error \tabularnewline
+    \midrule
+    \endhead
+    $d_1$ & 6.9 $\pm$ 2 & 28.99 \% \tabularnewline
+    $d_2$ & 9.0 $\pm$ 2 & 22.22 \% \tabularnewline
+    $d_3$ & 9.1 $\pm$ 2 & 21.98 \% \tabularnewline
+    $d_4$ & 9.5 $\pm$ 3 & 31.58 \% \tabularnewline
+    $d_5$ & 9.2 $\pm$ 2 & 21.74 \% \tabularnewline
+    $d_6$ & 9.4 $\pm$ 2 & 21.28 \% \tabularnewline
+    $d_7$ & 9.9 $\pm$ 3 & 30.30 \% \tabularnewline
+    $d_8$ & 9.7 $\pm$ 3 & 30.93 \% \tabularnewline
+    $d_9$ & 9.9 $\pm$ 3 & 30.30 \% \tabularnewline
+    $d_{10}$ & 9.7 $\pm$ 2 & 20.62 \%  \tabularnewline
+    \bottomrule
+    \label{output3}
+\end{longtable}
+
+\section{Additional notes}
+
+\subsection{Data Availability}
+The data that support the findings of this study are openly available in \href{https://github.com/dennisangemi/lab1-dfa/tree/main/exp-4/data}{dennisangemi/lab1-dfa GitHub Repository} at \href{https://github.com/dennisangemi/lab1-dfa/tree/main/exp-4/data}{https://github.com/dennisangemi/lab1-dfa/tree/main/exp-4/data} under \href{https://creativecommons.org/licenses/by/4.0/}{CC-BY 4.0 license}.
+
+\subsection{Code Availability}
+The MATLAB code written to get the findings of this study is openly available in \href{https://github.com/dennisangemi/lab1-dfa/tree/main/exp-2/script}{dennisangemi/lab1-dfa GitHub Repository} at \href{https://github.com/dennisangemi/lab1-dfa/tree/main/exp-4/script}{https://github.com/dennisangemi/lab1-dfa/tree/main/exp-4/script}
+
+
+\subsection{Software used}
+\begin{itemize}
+\item
+  \textbf{MATLAB}: Data Analysis
+\item
+  \textbf{Google Spreadsheet}: Data entry
+\item
+  \textbf{Adobe Experience Design}: Images designing
+\item
+  \textbf{GitHub}: Resource sharing
+ \item
+ \textbf{Physics Toolbox Sensor Suite}: Data acquisition
+\end{itemize}
+
+\section{Bibliography}
+\begin{itemize}
+\item
+  Taylor,~ J. (1999).~\emph{Introduzione all'analisi degli errori: Lo
+  studio delle incertezze nelle misure fisiche.~}Zanichelli
+\item
+  Bevington P. (2002).~\emph{Data Reduction and Error Analysis for the
+  Physical Sciences.~} McGraw-Hill Education ~
+\item Malthe-Sørenssen, A. (2015). \emph{Elementary Mechanics Using Matlab: A Modern Course Combining Analytical and Numerical Techniques}. Springer
+\end{itemize}
 
 \section{Appendice A}
+\subsection{Tabella 1}
 \begin{longtable}[]{@{}lllll@{}}
     \toprule
     dimension & value (cm) \tabularnewline
@@ -1120,41 +1184,5 @@ T=2\pi\sqrt{\frac{I}{mgd_{cm}}} \Longrightarrow T^2=4\pi^2\frac{I}{mgd_{cm}}
     \bottomrule
     \label{output3}
 \end{longtable}
-
-
-
-\section{Additional notes}
-
-\subsection{Data Availability}
-The data that support the findings of this study are openly available in \href{https://github.com/dennisangemi/lab1-dfa/tree/main/exp-4/data}{dennisangemi/lab1-dfa GitHub Repository} at \href{https://github.com/dennisangemi/lab1-dfa/tree/main/exp-4/data}{https://github.com/dennisangemi/lab1-dfa/tree/main/exp-4/data} under \href{https://creativecommons.org/licenses/by/4.0/}{CC-BY 4.0 license}.
-
-\subsection{Code Availability}
-The MATLAB code written to get the findings of this study is openly available in \href{https://github.com/dennisangemi/lab1-dfa/tree/main/exp-2/script}{dennisangemi/lab1-dfa GitHub Repository} at \href{https://github.com/dennisangemi/lab1-dfa/tree/main/exp-4/script}{https://github.com/dennisangemi/lab1-dfa/tree/main/exp-4/script}
-
-
-\subsection{Software used}
-\begin{itemize}
-\item
-  \textbf{MATLAB}: Data Analysis
-\item
-  \textbf{Google Spreadsheet}: Data entry
-\item
-  \textbf{Adobe Experience Design}: Images designing
-\item
-  \textbf{GitHub}: Resource sharing
-\end{itemize}
-
-\section{Bibliography}
-\begin{itemize}
-\item
-  Taylor,~ J. (1999).~\emph{Introduzione all'analisi degli errori: Lo
-  studio delle incertezze nelle misure fisiche.~}Zanichelli
-\item
-  Bevington P. (2002).~\emph{Data Reduction and Error Analysis for the
-  Physical Sciences.~} McGraw-Hill Education ~
-\item Malthe-Sørenssen, A. (2015). \emph{Elementary Mechanics Using Matlab: A Modern Course Combining Analytical and Numerical Techniques}. Springer
-\end{itemize}
-
-
 
 \end{document}
