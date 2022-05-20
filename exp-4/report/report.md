@@ -1,5 +1,3 @@
-# Compound pendulum (Pendolo composto)
-
 ---
 abstract: |
     Si è determinato il valore dell'accelerazione di gravità registrando il
