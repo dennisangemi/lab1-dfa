@@ -23,7 +23,7 @@ g=l.*(((2.*pi)./(t./10)).^2);
 
 % propagazione errori
 for i=1:length(dg)
-    dg(i) = (2.*pi./t(i)).^2 .* 100 .* ( (2.*dt.*10)./(t(i))  +dl );
+    dg(i) = (2.*pi./t(i)).^2 .* 100 .* ( (l(i).*2.*dt.*10)./(t(i))  +dl );
 
     % rounding value
     cfr(i)=-floor(log10(dg(i))); % position first significant digit g
