@@ -3,6 +3,8 @@ Department of Physics and Astronomy, University of Catania.
 
 Experimental data, data analysis script and laboratory report written during the course of Physics Laboratory I (2021).
 
+⚠️ wip
+
 ## Repository structure
 
 | 📂 Folder | Experiment                    | Esperimento | Status |
