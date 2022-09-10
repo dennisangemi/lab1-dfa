@@ -44,7 +44,7 @@ Units of measurement (column `uom`) are represented by alphanumeric codes accord
 
 ## License
 Data, code and images are licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/). <br> <br>
-<a href="https://creativecommons.org/licenses/by/4.0/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/CC-BY_icon.svg/640px-CC-BY_icon.svg.png" width="150"/></a>
+<a href="https://creativecommons.org/licenses/by/4.0/"><img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by.png" width="150"/></a>
 
 ## Author
 **Dennis Angemi**
